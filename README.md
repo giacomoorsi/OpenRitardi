@@ -80,9 +80,9 @@ One of the thoughts that prompted us to pursue this project, is the absence of c
 
 [*Italo, competitor of Trenitalia*](https://www.itf-oecd.org/sites/default/files/docs/high-speed-rail-competition-italy.pdf)
 
-[*ViaggiaTreno, official Trenitalia platform](http://www.viaggiatreno.it/infomobilita/index.jsp)
+[*ViaggiaTreno, official Trenitalia platform*](http://www.viaggiatreno.it/infomobilita/index.jsp)
 
-[*Reddit Post, Users introducing scraping for italian trains *](https://www.reddit.com/r/italy/comments/d702r4/ho_creato_un_sito_per_monitorare_i_ritardi_di/)
+[*Reddit Post, Users introducing scraping for italian trains*](https://www.reddit.com/r/italy/comments/d702r4/ho_creato_un_sito_per_monitorare_i_ritardi_di/)
 
 [*Open Data Index*](http://index.okfn.org/place/)
 
