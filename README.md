@@ -58,7 +58,7 @@ After selecting the project's scope and goal, we began working with the dataset.
 
 With clean data, we were able to visualize various aspects, such as the distribution of delay on arrival for a given station or class of trains, explore the best and worst stations in terms of punctuality. We also identified a trend in southern Italy stations having the highest delays, so we will be investigating this further. We produced heatmaps highlighting the differences in service availability of Italian trains. 
 
-Finally, we plotted train paths on the map, utilizing an algorithm from [Bast and Bosi](https://developer.geops.io/apis/routing) to display the actual path of the railway, going beyond simple station-to-station straight lines. These steps serve as the foundation for the interactive visualizations we will build.
+Finally, we plotted train paths on the map, utilizing an algorithm from [Bast and Bosi](https://developer.geops.io/apis/routing) to display the actual path of the railway, going beyond simple station-to-station straight lines. These steps serve as the foundation for the interactive visualizations we will build. In [this folder](#exploratory-data-analysis) you will find the code for the data wrangling and exploratory data analysis, as well as the visualizations produced. 
 
 ### Related work 
 

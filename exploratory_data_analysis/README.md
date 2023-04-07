@@ -10,7 +10,7 @@ The data is organized in a set of daily `.json` files, where each file contains 
 
 ## Notebooks
 1. [Data Wrangling](data_wrangling.ipynb): this notebook contains the code to wrangle the data from the original source and to create the dataset used in the other notebooks. Specifically, it reads a set of daily `.json` files and it converts them to a single `.parquet` file, where each row represents a stop of a train in a specific station. 
-2. [Data Exploration](data_exploration.ipynb): this notebook contains some preliminary data analysis and visualization. 
+2. [Data Exploration](data_exploration.ipynb): this notebook contains some preliminary data analysis and visualization. It also shows maps in Plotly, so we recommend to open it using [nbviewer](https://nbviewer.jupyter.org/).
 
 
 ### Dependencies
