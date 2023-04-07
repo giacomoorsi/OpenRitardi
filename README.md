@@ -41,20 +41,28 @@ We plan on achieving this goal by working on two key visual axes:
 (at least) One big interactive visualization, where people can immediately get an overall picture of the situation on a national map. Ideally, users would be able to search for a specific train or a specific station, explore its connections on the map and visualize some aggregate historical statistics.
 A data story, where we can coherently unfold key insights about the national train landscape. This would include several smaller visualizations, focused on specific points serving our storytelling. Some questions that we would be interested in exploring are for example: Is there a substantial divide between North and South, in terms of connectivity and efficiency? What are the worse trains/stations/itineraries, and is there a temporal pattern during the day/week/month?
 
-### Exploratory Data Analysis (around 1500 chars)
+### Exploratory Data Analysis 
 
 > Pre-processing of the data set you chose
 > - Show some basic statistics and get insights about the data
 
+<figure>
+  <img align="right" src="images/heatmap_example.jpg" width="55%">
+</figure>
 
 
-<div style="float:left;margin:0 10px 10px 0" markdown="1">
-    ![heatmap](/images/heatmap_example.jpg)
-</div>
 
-After selecting the project's scope and goal, we began working with the dataset. The key steps involved handling the dataset's large size using pySpark, cleaning the data to ensure consistency across tables, lines, and time, and conducting exploratory data analysis to gain a better understanding of the data, produce visualizations of summary statistics and maps. This work is crucial for the next stages of the project, and all data wrangling and exploration steps have been documented in this folder. At the outset, the dataset was in JSON format, containing information on each train and stop, with feature names in Italian. Due to the timeframe considered, the dataset was 15GB in size, requiring the use of pySpark. Following some data wrangling, we obtained a convenient data frame format, manageable in size, in English, and with a row for each "route," defined as the path between two stops. With clean data, we were able to visualize various aspects, such as the distribution of delay on arrival for a given station or class of trains, explore the best and worst stations in terms of punctuality. We also identified a trend in southern Italy stations having the highest delays, so we will be investigating this further. We produced heatmaps highlighting the differences in service availability of Italian trains. Finally, we plotted train paths on the map, utilizing an algorithm from Bast and Bosi [[4]](https://developer.geops.io/apis/routing) to display the actual path of the railway, going beyond simple station-to-station straight lines. These steps serve as the foundation for the interactive visualizations we will build.
 
-### Related work (1500 chars)
+After selecting the project's scope and goal, we began working with the dataset. The key steps involved handling the dataset's large size using pySpark, cleaning the data to ensure consistency across tables, lines, and time, and conducting exploratory data analysis to gain a better understanding of the data, produce visualizations of summary statistics and maps. This work is crucial for the next stages of the project, and all data wrangling and exploration steps have been documented in this folder. At the outset, the dataset was in JSON format, containing information on each train and stop, with feature names in Italian. Due to the timeframe considered, the dataset was 15GB in size, requiring the use of pySpark. Following some data wrangling, we obtained a convenient data frame format, manageable in size, in English, and with a row for each "route," defined as the path between two stops. 
+<figure>
+  <img align="left" src="images/distribution_delays_example.jpg" width="55%">
+</figure
+
+With clean data, we were able to visualize various aspects, such as the distribution of delay on arrival for a given station or class of trains, explore the best and worst stations in terms of punctuality. We also identified a trend in southern Italy stations having the highest delays, so we will be investigating this further. We produced heatmaps highlighting the differences in service availability of Italian trains. 
+
+Finally, we plotted train paths on the map, utilizing an algorithm from Bast and Bosi [[4]](https://developer.geops.io/apis/routing) to display the actual path of the railway, going beyond simple station-to-station straight lines. These steps serve as the foundation for the interactive visualizations we will build.
+
+### Related work 
 
 
 > - What others have already done with the data?
