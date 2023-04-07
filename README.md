@@ -86,6 +86,8 @@ One of the thoughts that prompted us to pursue this project is the absence of cl
 
 [*Algorithm for plotting routes*](https://developer.geops.io/apis/routing)
 
+[*RTS interviews CFF for delays in Switzerland and shows a simple data story*](https://www.rts.ch/info/suisse/13573689-il-y-a-50-de-retards-en-plus-dans-les-gares-romandes-quailleurs-en-suisse.html)
+
 
 ## Milestone 2 (7th May, 5pm)
 
