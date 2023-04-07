@@ -73,6 +73,14 @@ Finally, we plotted train paths on the map, utilizing an algorithm from Bast and
 
 One of the thoughts that prompted us to pursue this project, is the absence of clear and powerful works that allow users to visualize and explore data about the Italian trains. This is clearly due to the absence of an official data source from Trenitalia, and the need to scrape data. Nevertheless, there is one main previous work that was done in the same direction as ours, the author of which is also who is kindly providing us with the scraped data. [Trainstats](https://trainstats.altervista.org) is a website with up-to-date information about Italian trains, including summary statistics regarding delays. Though we acknowledge the authors did a great job gathering the data, we think visualizations could be more intuitive and clearer, to reach a broader audience, and not only Data Scientists, Data Analysts and Engineers. We believe our approach is original because of 3 main reasons: firstly, the audience – our project is a unicum in providing the general audience with an unveiling of the performances of Italian railways; secondly, Italian train data in general has never been deeply explored and analyzed from Data Scientists, at least not in public; thirdly, we will gather insights that will expose strengths and weaknesses of Trenitalia, and could potentially be used by the company itself to improve the service. Our main inspiration is the [SBB case]( https://data.sbb.ch/) in Switzerland, both in terms of “data openness”, and in terms of visualizations. They provide users with interactive maps, that allow a full exploration of the public transport means, also showing real-time positions of the vehicles. They also publish reports about the delays, with meaningful graphics highlighting the best and worst-performing stations and lines in terms of punctuality. We aim at reproducing, at a smaller scale, similar functionalities for Italian public transport.
 
+### References
+[SBB case]( https://data.sbb.ch/)
+[Trainstats](https://trainstats.altervista.org)
+*Italo* ([[1]](https://www.itf-oecd.org/sites/default/files/docs/high-speed-rail-competition-italy.pdf)
+[ViaggiaTreno](http://www.viaggiatreno.it/infomobilita/index.jsp)
+[[2]](https://www.reddit.com/r/italy/comments/d702r4/ho_creato_un_sito_per_monitorare_i_ritardi_di/)
+Open Data Index [[3]](http://index.okfn.org/place/)
+[[4]](https://developer.geops.io/apis/routing)
 
 
 ## Milestone 2 (7th May, 5pm)
