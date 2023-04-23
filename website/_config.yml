@@ -1,7 +1,7 @@
 # Setup
 title:        OpenDelays Data Visualization
 tagline:      [...]
-baseurl:      ""
+baseurl:      "https://com-480-data-visualization.github.io/project-2023-rail-runners/"
 paginate:     1
 locale:       "en"
 
