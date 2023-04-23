@@ -11,7 +11,9 @@ author:
   url:        http://yourhomepage.com 
 
 # Gems
-theme: minimal-mistakes-jekyll
+plugins: [jekyll-include-cache]
 
 #Others
 markdown: kramdown
+
+remote_theme: "mmistakes/minimal-mistakes@4.24.0"
