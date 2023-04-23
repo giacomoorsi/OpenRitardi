@@ -1,0 +1,17 @@
+# Setup
+title:        OpenDelays Data Visualization
+tagline:      [...]
+baseurl:      ""
+paginate:     1
+locale:       "en"
+
+# About/contact
+author:
+  name:       Blabla
+  url:        http://yourhomepage.com 
+
+# Gems
+theme: minimal-mistakes-jekyll
+
+#Others
+markdown: kramdown
