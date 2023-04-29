@@ -142,3 +142,9 @@ target/
 
 # macOS
 .DS_Store
+
+
+
+# not sure about those but most likely unuseful Jekyll stuff
+website/_site/
+website/Gemfile.lock
