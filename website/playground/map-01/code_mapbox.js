@@ -98,6 +98,8 @@ function plotDots(data) {
         .style("top", (event.pageY - 28) + "px");
     })
     .on("mouseout", function(d) {
+      d3.select(this).lower();
+
       d3.select(this).transition()
             .duration('200')
             .attr("r", function (d) { return scale(d.count_stops) });
