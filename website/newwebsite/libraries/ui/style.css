@@ -1,0 +1,45 @@
+#map {
+    width: 100%;
+    /* compute height 100% - 100px */
+    height: calc(100vh - 100px);
+}
+div.tooltip {
+    position: absolute;
+    text-align: center;
+    padding: .2rem;
+    background: #313639;
+    color: #f9f9f9;
+    border: 0px;
+    border-radius: 8px;
+    pointer-events: none;
+    font-size: .7rem;
+}
+.tooltip {
+    position: absolute;
+    z-index: 1001;
+    pointer-events: none;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5px;
+    font-size: 14px;
+    opacity: 0;
+  }
+
+
+
+.map-legend {
+    background: #fff;
+    display:block;
+}
+body {
+    cursor: default;
+  }
+
+
+
+.uk-navbar-container {
+    background: #ededed;
+}
+  
+  

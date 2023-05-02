@@ -1,0 +1,135 @@
+<html>
+
+<head>
+    <title>Home</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.16.15/dist/css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.15/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.15/dist/js/uikit-icons.min.js"></script>
+
+
+    <!-- D3.js -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+
+    <!-- Mapbox -->
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="libraries/ui/style.css">
+</head>
+
+<body>
+    <!-- HEADER -->
+    <div class="uk-navbar-container tm-navbar-container uk-sticky uk-active uk-sticky-below uk-sticky-fixed"
+        uk-sticky="media: 960; "">
+        <div class=" uk-container uk-container-medium">
+        <nav class="uk-navbar" uk-navbar="" style="max-width: 1500px; margin:0 auto">
+            <div class="uk-navbar-left"><a class="uk-navbar-item uk-logo" href="/" aria-label="Back to Home"><img
+                        src="media/logo/logo.png" class="uk-margin-small-right" alt="UIkit"
+                        style="height:90px; margin-bottom:10px">
+                </a></div>
+            <div class="uk-navbar-right">
+                <ul class="uk-navbar-nav uk-visible@m">
+                    <li class="uk-active">
+                        <a href="index.html">
+                            Stations
+                        </a>
+                    </li>
+                    <li>
+                        <a href="trains.html">
+                            Trains
+                        </a>
+                    </li>
+                    <li>
+                        <a href="about.html">
+                            About
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    </div>
+    <!-- END OF HEADER-->
+
+    <!-- CONTENT -->
+    <div id="map">
+
+        <!-- Create an overlay on the map that is 200px width and 80% height -->
+        <div class="uk-position-center-left" style="z-index:1000000; margin-left: 15%">
+            <div class="uk-card uk-card-default uk-card-body" style="width:400px">
+                <h1 class="uk-card-title">Train delays</h1>
+                <p>This map shows the average delay of trains at each Italian station.<br>
+                    The size of the dot reflects the number of trains that go through each station every day, and the
+                    color gives an instant idea on the performance of each station. You can interact with the map to
+                    collect insights on specific stops and use the filters below to refine your search.</p>
+
+                <h4>Filters</h4>
+                <div uk-grid class="uk-grid-divider">
+                    <div>
+                        <span>Day of week</span>
+                        <div class="uk-margin-small">
+                            <div class="uk-form-controls">
+                                <select class="uk-select" id="form-horizontal-select">
+                                    <option>All days</option>
+                                    <option>Monday</option>
+                                    <option>Tuesday</option>
+                                    <option>Wednesday</option>
+                                    <option>Thursday</option>
+                                    <option>Friday</option>
+                                    <option>Saturday</option>
+                                    <option>Sunday</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <span>Train type</span>
+                        <div class="uk-margin-small">
+                            <div class="uk-form-controls">
+                                <select class="uk-select" id="form-horizontal-select">
+                                    <option>All trains</option>
+                                    <option>Regional</option>
+                                    <option>InterCity</option>
+                                    <option>High speed</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <h5>Search a train station</h5>
+                <div uk-grid>
+                    <div class="uk-form-controls">
+                        <input class="uk-input" type="text" placeholder="Type here...">
+                    </div>
+                    <!-- <div>
+                        <button class="uk-button uk-button-default uk-button-small">Search</button>
+                    </div> -->
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+    <script src="libraries/maps/legend.js" type="text/javascript"></script>
+    <script src="js/stations_map.js" type="text/javascript"></script>
+
+</body>
+
+</html>
