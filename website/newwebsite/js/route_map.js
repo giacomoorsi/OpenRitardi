@@ -55,6 +55,25 @@ function plotLines(data) {
   console.log(coordinates)
 
   map.on('load', () => {
+
+    const layers = map.getStyle().layers;
+    // Find the last symbol that contains streets. We highlight the railroad by placing a layer 
+    // just after this layer. This way the railroad is always on top of the streets but all the additional layers
+    // like station dots and city names will be on top of the railroad.
+    let lastSymbolId;
+    for (let i = 0; i < layers.length; i++) {
+      if (layers[i].id === 'streetName_path') {
+        lastSymbolId = layers[i].id;
+        console.log(layers[i])
+      }
+    }
+    console.log("lastSymbolId: ")
+    console.log(lastSymbolId)
+
+
+    console.log("lastSymbolId: ")
+    console.log(lastSymbolId)
+
     map.addSource('route', {
       'type': 'geojson',
       'data': {
@@ -66,6 +85,7 @@ function plotLines(data) {
         }
       }
     });
+    // specify low z-index 
     map.addLayer({
       'id': 'route',
       'type': 'line',
@@ -78,7 +98,8 @@ function plotLines(data) {
         'line-color': 'red',
         'line-width': 8
       }
-    });
+    },
+    lastSymbolId);
   });
 
   // extract max_lat, max_lon, min_lat, min_lon
