@@ -9,10 +9,10 @@
 
 
     <!-- UIkit CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.16.15/dist/css/uikit.min.css" />
+    <link rel="stylesheet" href="libraries/ui/uikit/theme.css" />
 
     <!-- UIkit JS -->
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.15/dist/js/uikit.min.js"></script>
+    <script src="libraries/ui/uikit/theme.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.15/dist/js/uikit-icons.min.js"></script>
 
 
@@ -34,8 +34,8 @@
         uk-sticky="media: 960; "">
         <div class=" uk-container uk-container-medium">
         <nav class="uk-navbar" uk-navbar="" style="max-width: 1500px; margin:0 auto">
-            <div class="uk-navbar-left"><a class="uk-navbar-item uk-logo" href="index.html" aria-label="Back to Home"><img
-                        src="media/logo/logo.png" class="uk-margin-small-right" alt="UIkit"
+            <div class="uk-navbar-left"><a class="uk-navbar-item uk-logo" href="index.html"
+                    aria-label="Back to Home"><img src="media/logo/logo.png" class="uk-margin-small-right" alt="UIkit"
                         style="height:90px; margin-bottom:10px">
                 </a></div>
             <div class="uk-navbar-right">
@@ -63,7 +63,7 @@
     <!-- END OF HEADER-->
 
     <!-- CONTENT -->
-    <!-- Add image trains_mockup.jpg fullscreen -->
+    <!-- Ranking -->
     <div class="uk-container uk-container-center uk-container-large uk-margin-large">
         <div uk-grid class="uk-grid-match uk-child-width-1-2@m">
             <!-- Worst trains -->
@@ -136,13 +136,15 @@
                                             <td>2%</td>
                                         </tr>
                                         <tr>
-                                            <td><img src="media/frecciarossa.svg" class="ot-train-logo ot-train-logo-fr"> FR
+                                            <td><img src="media/frecciarossa.svg"
+                                                    class="ot-train-logo ot-train-logo-fr"> FR
                                                 1</td>
                                             <td>Bologna <span uk-icon="arrow-right"></span> Milano Centrale</td>
                                             <td>4%</td>
                                         </tr>
                                         <tr>
-                                            <td><img src="media/RE.svg" class="ot-train-logo ot-train-logo-re"> RE 111</td>
+                                            <td><img src="media/RE.svg" class="ot-train-logo ot-train-logo-re"> RE 111
+                                            </td>
                                             <td>Bari <span uk-icon="arrow-right"></span> Foggia</td>
                                             <td>5%</td>
                                         </tr>
@@ -152,14 +154,40 @@
                         </div>
                     </div>
                 </div>
+            </div>
         </div>
-    </div>
+        <!-- End of ranking -->
+        <hr class="uk-divider uk-margin" />
+
+        <!-- Search your train -->
+        <div class="uk-container uk-container-large uk-margin-large">
+            <h1 class="uk-text-center">Search your train</h1>
+            <div class="uk-text-center">
+                <form class="uk-search uk-search-default uk-width-medium uk-margin-large ">
+                    <span uk-search-icon></span>
+                    <input class="uk-search-input" type="search" placeholder="Search...">
+            </div>
 
 
+            <div uk-grid class="uk-child-width-1-2@m">
+                <!-- START: Card for train info -->
+                <div class="ot-ranking-train-info">
+                    <div class="uk-card uk-card-default uk-card-body">
+                        <h2><img src="media/intercity.svg" class="ot-train-logo ot-train-logo-ic"> IC
+                            655</h2>
+                            <p class="uk-text-lead">Ventimiglia <span uk-icon="arrow-right"></span> Milano Centrale</p>
+                    </div>
+                </div>
+                <!-- END: Card for train info -->
 
-    <div class="uk-margin-large">
-        <img src="trains_mockup.jpg" alt="Trains Mockup" width="100%">
-    </div>
+            </div>
+
+        </div>
+        <!-- End Search your train -->
+        <!-- Add image trains_mockup.jpg fullscreen -->
+        <div class="uk-margin-large">
+            <img src="trains_mockup.jpg" alt="Trains Mockup" width="100%">
+        </div>
 
 </body>
 

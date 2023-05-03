@@ -59,4 +59,7 @@ body {
 .ot-ranking-table tbody tr {
     cursor: pointer;
 }
+.ot-ranking-train-info .ot-train-logo-ic {
+    height: 40px;
+}
 
