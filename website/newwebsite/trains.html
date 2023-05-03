@@ -166,6 +166,7 @@
                 <form class="uk-search uk-search-default uk-width-medium uk-margin-large ">
                     <span uk-search-icon></span>
                     <input class="uk-search-input" type="search" placeholder="Search...">
+                </form>
             </div>
 
 
@@ -175,20 +176,36 @@
                     <div class="uk-card uk-card-default uk-card-body">
                         <h2><img src="media/intercity.svg" class="ot-train-logo ot-train-logo-ic"> IC
                             655</h2>
-                            <p class="uk-text-lead">Ventimiglia <span uk-icon="arrow-right"></span> Milano Centrale</p>
+                        <p class="uk-text-lead">Ventimiglia <span uk-icon="arrow-right"></span> Milano Centrale</p>
+
+                        <div class="uk-child-width-1-2@s uk-grid-match uk-margin-large" uk-grid>
+                            <div>
+                                <div class="uk-text-center uk-card uk-card-default uk-card-body">
+                                    <span class="uk-h1 uk-margin-small uk-text-danger">5' 25''</span>
+                                    <div class="uk-h4 uk-margin-small">Average delay per stop</div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="uk-text-center uk-card uk-card-default uk-card-body"
+                                    uk-tooltip="A train is considered delayed if it arrives with a delay higher than 5'">
+                                    <span class="uk-h1 uk-text-warning">18%</span>
+                                    <div class="uk-h4 uk-margin-small">% trains delayed at arrival</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                    <!-- END: Card for train info -->
+
                 </div>
-                <!-- END: Card for train info -->
 
             </div>
-
-        </div>
-        <!-- End Search your train -->
-        <!-- Add image trains_mockup.jpg fullscreen -->
-        <div class="uk-margin-large">
-            <img src="trains_mockup.jpg" alt="Trains Mockup" width="100%">
-        </div>
-
+            <!-- End Search your train -->
+            <!-- Add image trains_mockup.jpg fullscreen -->
+            <div class=" uk-margin-large">
+                                        <img src="trains_mockup.jpg" alt="Trains Mockup" width="100%">
+                                </div>
+                            </div>
+                        </div>
 </body>
 
 </html>
