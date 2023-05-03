@@ -69,3 +69,8 @@ body {
     height: 500px;
 }
 
+.ot-about-page {
+    line-height: 25pt;
+    font-size: 14pt;
+    font-weight: 400;
+}
