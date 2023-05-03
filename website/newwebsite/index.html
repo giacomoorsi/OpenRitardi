@@ -34,8 +34,8 @@
         uk-sticky="media: 960; "">
         <div class=" uk-container uk-container-medium">
         <nav class="uk-navbar" uk-navbar="" style="max-width: 1500px; margin:0 auto">
-            <div class="uk-navbar-left"><a class="uk-navbar-item uk-logo" href="index.html" aria-label="Back to Home"><img
-                        src="media/logo/logo.png" class="uk-margin-small-right" alt="UIkit"
+            <div class="uk-navbar-left"><a class="uk-navbar-item uk-logo" href="index.html"
+                    aria-label="Back to Home"><img src="media/logo/logo.png" class="uk-margin-small-right" alt="UIkit"
                         style="height:90px; margin-bottom:10px">
                 </a></div>
             <div class="uk-navbar-right">
@@ -111,14 +111,11 @@
 
                 </div>
                 <h5>Search a train station</h5>
-                <div uk-grid>
-                    <div class="uk-form-controls">
-                        <input class="uk-input" type="text" placeholder="Type here...">
-                    </div>
-                    <!-- <div>
-                        <button class="uk-button uk-button-default uk-button-small">Search</button>
-                    </div> -->
-
+                <div>
+                    <form class="uk-search uk-search-default uk-width-medium uk-margin-large ">
+                        <span uk-search-icon></span>
+                        <input class="uk-search-input" type="search" placeholder="Search...">
+                    </form>
                 </div>
             </div>
 
