@@ -63,3 +63,9 @@ body {
     height: 40px;
 }
 
+#route-map {
+    width: 100%;
+    /* compute height 100% - 100px */
+    height: 500px;
+}
+

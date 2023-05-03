@@ -170,7 +170,7 @@
             </div>
 
 
-            <div uk-grid class="uk-child-width-1-2@m">
+            <div class="uk-child-width-1-2@m uk-flex uk-flex-middle" uk-grid>
                 <!-- START: Card for train info -->
                 <div class="ot-ranking-train-info">
                     <div class="uk-card uk-card-default uk-card-body">
@@ -194,18 +194,26 @@
                             </div>
                         </div>
                     </div>
-                    <!-- END: Card for train info -->
-
                 </div>
-
+                <!-- END: Card for train info -->
+                <!-- START: Map for train -->
+                <div>
+                    <div class="uk-card uk-card-default uk-card-body">
+                        <div id="route-map"></div>
+                    </div>
+                </div>
+                <!-- END: Map for train -->
             </div>
             <!-- End Search your train -->
             <!-- Add image trains_mockup.jpg fullscreen -->
             <div class=" uk-margin-large">
-                                        <img src="trains_mockup.jpg" alt="Trains Mockup" width="100%">
-                                </div>
-                            </div>
-                        </div>
+                <img src="trains_mockup.jpg" alt="Trains Mockup" width="100%">
+            </div>
+        </div>
+    </div>
+
+    <script src="libraries/maps/legend.js" type="text/javascript"></script>
+    <script src="js/route_map.js" type="text/javascript"></script>
 </body>
 
 </html>
