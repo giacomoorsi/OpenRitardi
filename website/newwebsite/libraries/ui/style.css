@@ -42,4 +42,21 @@ body {
     background: #ededed;
 }
   
-  
+
+
+.ot-ranking-table .ot-train-logo-ic {
+    height: 20px;
+}
+
+.ot-ranking-table .ot-train-logo-fr {
+    height: 14px;
+}
+
+.ot-ranking-table .ot-train-logo-re {
+    height: 18px;
+}
+
+.ot-ranking-table tbody tr {
+    cursor: pointer;
+}
+

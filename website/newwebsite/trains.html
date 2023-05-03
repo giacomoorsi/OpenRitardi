@@ -63,7 +63,100 @@
 
     <!-- CONTENT -->
     <!-- Add image trains_mockup.jpg fullscreen -->
-    <div>
+    <div class="uk-container uk-container-center uk-container-large uk-margin-large">
+        <div uk-grid class="uk-grid-match uk-child-width-1-2@m">
+            <!-- Worst trains -->
+            <div>
+                <div class="uk-card uk-card-default">
+                    <div class="uk-card-header">
+                        <h3 class="uk-card-title uk-text-danger">Worst trains 2023</h3>
+                    </div>
+                    <div class="uk-card-body">
+                        <div class="uk-overflow-auto">
+                            <table class="uk-table uk-table-divider uk-table-hover ot-ranking-table">
+                                <thead>
+                                    <tr>
+                                        <th>Train number</th>
+                                        <th>Direction</th>
+                                        <th
+                                            uk-tooltip="A train is considered delayed if it has a delay greater than 5'. This is the average percentage of delays at each stop.">
+                                            % delays</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><img src="media/intercity.svg" class="ot-train-logo ot-train-logo-ic"> IC
+                                            655</td>
+                                        <td>Ventimiglia <span uk-icon="arrow-right"></span> Milano Centrale</td>
+                                        <td>80%</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="media/frecciarossa.svg" class="ot-train-logo ot-train-logo-fr"> FR
+                                            17</td>
+                                        <td>Torino P.Nuova <span uk-icon="arrow-right"></span> Napoli Centrale</td>
+                                        <td>72%</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="media/RE.svg" class="ot-train-logo ot-train-logo-re"> RE 1128</td>
+                                        <td>Catania <span uk-icon="arrow-right"></span> Messina</td>
+                                        <td>60%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End worst trains -->
+            <!-- Best trains -->
+            <div uk-grid class="uk-grid-match uk-child-width-1-2@m">
+                <div>
+                    <div class="uk-card uk-card-default">
+                        <div class="uk-card-header">
+                            <h3 class="uk-card-title uk-text-success">Best trains 2023</h3>
+                        </div>
+                        <div class="uk-card-body">
+                            <div class="uk-overflow-auto">
+                                <table class="uk-table uk-table-divider uk-table-hover ot-ranking-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Train number</th>
+                                            <th>Direction</th>
+                                            <th
+                                                uk-tooltip="A train is considered delayed if it has a delay greater than 5'. This is the average percentage of delays at each stop.">
+                                                % delays</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><img src="media/re.svg" class="ot-train-logo ot-train-logo-re"> RE
+                                                14</td>
+                                            <td>Pisa <span uk-icon="arrow-right"></span> Firenze</td>
+                                            <td>2%</td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="media/frecciarossa.svg" class="ot-train-logo ot-train-logo-fr"> FR
+                                                1</td>
+                                            <td>Bologna <span uk-icon="arrow-right"></span> Milano Centrale</td>
+                                            <td>4%</td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="media/RE.svg" class="ot-train-logo ot-train-logo-re"> RE 111</td>
+                                            <td>Bari <span uk-icon="arrow-right"></span> Foggia</td>
+                                            <td>5%</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+
+
+    <div class="uk-margin-large">
         <img src="trains_mockup.jpg" alt="Trains Mockup" width="100%">
     </div>
 

@@ -8,7 +8,7 @@ const map = new mapboxgl.Map({
     container: 'map', 
     style: 'https://maps.geops.io/styles/base_bright_v2/style.json?key=5cc87b12d7c5370001c1d6552688c8395e0e4e94a4faf2368b9915dd', 
     center: [8, 42.5], 
-    zoom: 5
+    zoom: 5,
 });
 
 var container = map.getCanvasContainer();
@@ -136,6 +136,8 @@ function plotDots(data) {
 
 }
 
+var lastMove = 0;
+
 function render() {
     svg.selectAll("circle")
       .attr("cx", function (d) {
@@ -146,7 +148,17 @@ function render() {
       });
   }
 
+function renderMoveStart() {
+    lastMove = Date.now();
+  }
+
+  function renderMove() {
+    if (Date.now() - lastMove > 0) {
+      render();
+    }
+  }
 map.on("viewreset", render);
-map.on("move", render);
+map.on("movestart", renderMoveStart);
+map.on("move", renderMove);
 map.on("moveend", render);
 render(); // Call once to render
