@@ -47,7 +47,6 @@ Promise.all([data_stop]).then(results => {
 
 
 function plotDots(data) {
-    var svg = d3.select("svg");
 
     let min_count = d3.min(data, function(d) { return d.count_stops; });
     let max_count = d3.max(data, function(d) { return d.count_stops; });
