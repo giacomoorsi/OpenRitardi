@@ -156,60 +156,88 @@
                 </div>
             </div>
         </div>
-        <!-- End of ranking -->
-        <hr class="uk-divider uk-margin" />
+    </div>
+    <!-- End of ranking -->
+    <hr class="uk-divider uk-margin" />
 
-        <!-- Search your train -->
-        <div class="uk-container uk-container-large uk-margin-large">
-            <h1 class="uk-text-center">Search your train</h1>
-            <div class="uk-text-center">
-                <form class="uk-search uk-search-default uk-width-medium uk-margin-large ">
-                    <span uk-search-icon></span>
-                    <input class="uk-search-input" type="search" placeholder="Search...">
-                </form>
-            </div>
+    <!-- Search your train -->
+    <div class="uk-container uk-container-large uk-margin-large uk-section uk-section-muted">
+        <h1 class="uk-text-center">Search your train</h1>
+        <div class="uk-text-center">
+            <form class="uk-search uk-search-default uk-width-medium uk-margin-large ">
+                <span uk-search-icon></span>
+                <input class="uk-search-input" type="search" placeholder="Search...">
+            </form>
+        </div>
 
 
-            <div class="uk-child-width-1-2@m uk-flex uk-flex-middle" uk-grid>
-                <!-- START: Card for train info -->
-                <div class="ot-ranking-train-info">
-                    <div class="uk-card uk-card-default uk-card-body">
-                        <h2><img src="media/intercity.svg" class="ot-train-logo ot-train-logo-ic"> IC
-                            655</h2>
-                        <p class="uk-text-lead">Ventimiglia <span uk-icon="arrow-right"></span> Milano Centrale</p>
+        <div class="uk-child-width-1-2@m uk-flex uk-flex-middle" uk-grid>
+            <!-- START: Card for train info -->
+            <div class="ot-ranking-train-info">
+                <div class="uk-card uk-card-default uk-card-body">
+                    <h2><img src="media/intercity.svg" class="ot-train-logo ot-train-logo-ic"> IC
+                        655</h2>
+                    <p class="uk-text-lead">Ventimiglia <span uk-icon="arrow-right"></span> Milano Centrale</p>
 
-                        <div class="uk-child-width-1-2@s uk-grid-match uk-margin-large" uk-grid>
-                            <div>
-                                <div class="uk-text-center uk-card uk-card-default uk-card-body">
-                                    <span class="uk-h1 uk-margin-small uk-text-danger">5' 25''</span>
-                                    <div class="uk-h4 uk-margin-small">Average delay per stop</div>
-                                </div>
+                    <div class="uk-child-width-1-2@s uk-grid-match uk-margin-large" uk-grid>
+                        <div>
+                            <div class="uk-text-center uk-card uk-card-default uk-card-body">
+                                <span class="uk-h1 uk-margin-small uk-text-danger">5' 25''</span>
+                                <div class="uk-h4 uk-margin-small">Average delay per stop</div>
                             </div>
-                            <div>
-                                <div class="uk-text-center uk-card uk-card-default uk-card-body"
-                                    uk-tooltip="A train is considered delayed if it arrives with a delay higher than 5'">
-                                    <span class="uk-h1 uk-text-warning">18%</span>
-                                    <div class="uk-h4 uk-margin-small">% trains delayed at arrival</div>
-                                </div>
+                        </div>
+                        <div>
+                            <div class="uk-text-center uk-card uk-card-default uk-card-body"
+                                uk-tooltip="A train is considered delayed if it arrives with a delay higher than 5'">
+                                <span class="uk-h1 uk-text-warning">18%</span>
+                                <div class="uk-h4 uk-margin-small">% trains delayed at arrival</div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- END: Card for train info -->
-                <!-- START: Map for train -->
-                <div>
-                    <div class="uk-card uk-card-default uk-card-body">
-                        <div id="route-map"></div>
+            </div>
+            <!-- END: Card for train info -->
+            <!-- START: Map for train -->
+            <div>
+                <div class="uk-card uk-card-default uk-card-body">
+                    <div id="route-map"></div>
+                </div>
+            </div>
+            <!-- END: Map for train -->
+        </div>
+
+        <div class="uk-child-width-1-2@m uk-margin-large" uk-grid>
+            <div>
+                <div class="uk-card uk-card-default uk-card-body">
+                    <img src="media/demo/delays_per_stop.png" alt="Delays per stop" width="100%">
+                </div>
+            </div>
+            <div>
+                <div class="uk-h3 uk-grid-small uk-flex uk-flex-middle" uk-grid>
+                    <div>Statistics at</div>
+                    <div class="uk-width-expand">
+                        <select class="uk-select" style="display:inline-block">
+                            <option>Ventimiglia</option>
+                            <option>Sanremo</option>
+                            <option>Imperia</option>
+                            <option>Savona</option>
+                            <option>Genova Piazza Principe</option>
+                            <option>Pavia</option>
+                            <option selected>Milano Centrale</option>
+                        </select>
                     </div>
                 </div>
-                <!-- END: Map for train -->
-            </div>
-            <!-- End Search your train -->
-            <!-- Add image trains_mockup.jpg fullscreen -->
-            <div class=" uk-margin-large">
-                <img src="trains_mockup.jpg" alt="Trains Mockup" width="100%">
+                <div class="uk-margin uk-card uk-card-default uk-card-body">
+                    <img src="media/demo/stats_stop.png" alt="Delays per stop" width="100%">
+                </div>
             </div>
         </div>
+
+        <!-- End Search your train -->
+        <!-- Add image trains_mockup.jpg fullscreen -->
+        <!-- <div class=" uk-margin-large">
+                <img src="trains_mockup.jpg" alt="Trains Mockup" width="100%">
+            </div> -->
     </div>
 
     <script src="libraries/maps/legend.js" type="text/javascript"></script>
