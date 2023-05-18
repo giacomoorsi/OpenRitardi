@@ -1,0 +1,5 @@
+stop_name,train_class,day_of_week,avg_arrival_delay,median_arrival_delay,count_trains,count_stops,count_3m_delay,count_5m_delay,count_10m_delay
+ALESSANDRIA,NCL,Sat,61.0,61.0,1,1,1,1,1
+VILLA SELVA,NCL,Sat,-38.0,-38.0,1,1,0,0,0
+CASTELFRANCO D'EMILIA,NCL,Sat,-8.0,-8.0,1,1,0,0,0
+PIACENZA,NCL,Sat,46.0,46.0,1,1,1,1,1

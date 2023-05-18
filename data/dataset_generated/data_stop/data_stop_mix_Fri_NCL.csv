@@ -1,0 +1,12 @@
+stop_name,train_class,day_of_week,avg_arrival_delay,median_arrival_delay,count_trains,count_stops,count_3m_delay,count_5m_delay,count_10m_delay
+RIMINI,NCL,Fri,52.5,24.0,2,2,2,2,2
+CASERTA,NCL,Fri,83.0,83.0,1,1,1,1,1
+PADOVA CAMPO MARTE,NCL,Fri,92.0,92.0,1,1,1,1,1
+FAENZA,NCL,Fri,42.5,39.0,2,2,2,2,2
+FALCONARA MARITTIMA,NCL,Fri,-50.0,-50.0,1,1,0,0,0
+S.PIETRO IN CASALE,NCL,Fri,104.0,104.0,1,1,1,1,1
+VENEZIA MESTRE,NCL,Fri,-2.0,-2.0,1,1,0,0,0
+BARI PARCO NORD,NCL,Fri,57.0,57.0,1,1,1,1,1
+FANO,NCL,Fri,-38.0,-38.0,1,1,0,0,0
+FOGGIA,NCL,Fri,39.0,39.0,1,1,1,1,1
+SENIGALLIA,NCL,Fri,-58.0,-58.0,1,1,0,0,0

@@ -1,0 +1,9 @@
+stop_name,train_class,day_of_week,avg_arrival_delay,median_arrival_delay,count_trains,count_stops,count_3m_delay,count_5m_delay,count_10m_delay
+ALESSANDRIA,NCL,Sun,84.0,84.0,1,1,1,1,1
+CHIASSO,NCL,Sun,-2.6666666666666665,-4.0,4,12,4,4,3
+COMO S. GIOVANNI,NCL,Sun,0.25,-5.0,4,12,4,4,3
+PIACENZA,NCL,Sun,110.0,107.0,1,2,2,2,2
+SANTARCANGELO DI ROMAGNA,NCL,Sun,-13.0,-19.0,1,2,0,0,0
+CASTELFRANCO D'EMILIA,NCL,Sun,25.0,19.0,1,2,2,2,2
+NOVARA,NCL,Sun,-10.0,-10.0,1,1,0,0,0
+TRECATE,NCL,Sun,-15.0,-15.0,1,1,0,0,0

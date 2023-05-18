@@ -1,0 +1,5 @@
+stop_name,train_class,day_of_week,avg_arrival_delay,median_arrival_delay,count_trains,count_stops,count_3m_delay,count_5m_delay,count_10m_delay
+AMANTEA,NCL,Wed,-22.0,-22.0,1,1,0,0,0
+PAOLA,NCL,Wed,-65.0,-65.0,1,1,0,0,0
+CELLE BULGHERIA ROCCAGLORIOSA,NCL,Wed,18.0,18.0,1,1,1,1,1
+PIEDIMONTE-V.S.L.-AQUINO,NCL,Wed,91.0,91.0,1,1,1,1,1
