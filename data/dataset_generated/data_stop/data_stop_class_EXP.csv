@@ -1,4 +1,4 @@
-stop_name,train_class,avg_arrival_delay,median_arrival_delay,count_trains,count_stops,count_3m_delay,count_5m_delay,count_10m_delay
-MILANO LAMBRATE,EXP,20.75,20.0,1,4,4,3,3
-VERONA PORTA NUOVA,EXP,23.5,26.0,1,4,4,4,4
-VENEZIA SANTA LUCIA,EXP,4.25,4.0,1,4,3,1,0
+stop_name,train_class,avg_arrival_delay,median_arrival_delay,count_trains,count_stops,count_3m_delay,count_5m_delay,count_10m_delay,stop_lat,stop_lon
+MILANO LAMBRATE,EXP,20.75,20.0,1,4,4,3,3,45.484933,9.237333
+VERONA PORTA NUOVA,EXP,23.5,26.0,1,4,4,4,4,45.428603,10.982377
+VENEZIA SANTA LUCIA,EXP,4.25,4.0,1,4,3,1,0,45.441569,12.320882

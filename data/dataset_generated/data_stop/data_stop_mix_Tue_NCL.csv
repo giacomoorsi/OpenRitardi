@@ -1,9 +1,9 @@
-stop_name,train_class,day_of_week,avg_arrival_delay,median_arrival_delay,count_trains,count_stops,count_3m_delay,count_5m_delay,count_10m_delay
-AGROPOLI CASTELLABATE,NCL,Tue,-25.0,-25.0,1,1,0,0,0
-GROSSETO,NCL,Tue,58.25,57.0,4,4,4,4,4
-PAOLA,NCL,Tue,-28.0,-28.0,1,1,0,0,0
-PRAJA AJETA TORTORA,NCL,Tue,20.0,20.0,1,1,1,1,1
-CAMPIGLIA MARITTIMA,NCL,Tue,49.5,48.0,4,4,4,4,4
-PIEDIMONTE-V.S.L.-AQUINO,NCL,Tue,26.0,26.0,1,1,1,1,1
-CETRARO,NCL,Tue,4.0,4.0,1,1,1,0,0
-VERONA PORTA NUOVA,NCL,Tue,-43.0,-43.0,1,1,0,0,0
+stop_name,train_class,day_of_week,avg_arrival_delay,median_arrival_delay,count_trains,count_stops,count_3m_delay,count_5m_delay,count_10m_delay,stop_lat,stop_lon
+AGROPOLI CASTELLABATE,NCL,Tue,-25.0,-25.0,1,1,0,0,0,40.351521,15.002053
+GROSSETO,NCL,Tue,58.25,57.0,4,4,4,4,4,42.76728,11.1065
+PAOLA,NCL,Tue,-28.0,-28.0,1,1,0,0,0,39.359442,16.033093
+PRAJA AJETA TORTORA,NCL,Tue,20.0,20.0,1,1,1,1,1,39.900832,15.780628
+CAMPIGLIA MARITTIMA,NCL,Tue,49.5,48.0,4,4,4,4,4,43.017118,10.586558
+PIEDIMONTE-V.S.L.-AQUINO,NCL,Tue,26.0,26.0,1,1,1,1,1,,
+CETRARO,NCL,Tue,4.0,4.0,1,1,1,0,0,39.512553,15.939263
+VERONA PORTA NUOVA,NCL,Tue,-43.0,-43.0,1,1,0,0,0,45.428603,10.982377
