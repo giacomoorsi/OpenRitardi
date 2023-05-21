@@ -19,6 +19,8 @@
     <!-- D3.js -->
     <script src="https://d3js.org/d3.v7.min.js"></script>
 
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 
     <!-- Mapbox -->
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css" rel="stylesheet">
@@ -163,10 +165,29 @@
     <!-- Search your train -->
     <div class="uk-container uk-container-large uk-margin-large uk-section uk-section-muted">
         <h1 class="uk-text-center">Search your train</h1>
-        <div class="uk-text-center">
-            <form class="uk-search uk-search-default uk-width-medium uk-margin-large ">
+        <div class="uk-text-justify uk-container uk-container-small">
+            <p>Here you can search a train and obtain information on its historical delays. Type in the search box your
+                train number (i.e. IC 655)</p>
+        </div>
+        <div class="uk-text-center uk-margin">
+            <form class="uk-search uk-search-default uk-width-medium uk-margin-large">
                 <span uk-search-icon></span>
-                <input class="uk-search-input" type="search" placeholder="Search...">
+                <input class="uk-search-input" type="search" placeholder="Search..." style="background:#fff" id="train_search_input">
+                <div uk-dropdown="pos: bottom-center" id="search_options_dropdown">
+                    <ul class="uk-nav uk-dropdown-nav uk-width-large">
+                        <table class="uk-table uk-table-small uk-table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Train number</th>
+                                    <th>Departure</th>
+                                    <th>Destination</th>
+                                </tr>
+                            </thead>
+                            <tbody id="search_options_dropdown_content">
+                            </tbody>
+                        </table>
+                    </ul>
+                </div>
             </form>
         </div>
 
@@ -175,21 +196,21 @@
             <!-- START: Card for train info -->
             <div class="ot-ranking-train-info">
                 <div class="uk-card uk-card-default uk-card-body">
-                    <h2><img src="media/intercity.svg" class="ot-train-logo ot-train-logo-ic"> IC
-                        655</h2>
-                    <p class="uk-text-lead">Ventimiglia <span uk-icon="arrow-right"></span> Milano Centrale</p>
+                    <h2><!--<img src="media/intercity.svg" class="ot-train-logo ot-train-logo-ic"> --><span id="train_name_label">IC
+                        655</span></h2>
+                    <p class="uk-text-lead" id="train_description_label">Ventimiglia <span uk-icon="arrow-right"></span> Milano Centrale</p>
 
                     <div class="uk-child-width-1-2@s uk-grid-match uk-margin-large" uk-grid>
                         <div>
                             <div class="uk-text-center uk-card uk-card-default uk-card-body">
-                                <span class="uk-h1 uk-margin-small uk-text-danger">5' 25''</span>
+                                <span class="uk-h1 uk-margin-small uk-text-danger" id="train_avg_delay_label">5' 25''</span>
                                 <div class="uk-h4 uk-margin-small">Average delay per stop</div>
                             </div>
                         </div>
                         <div>
                             <div class="uk-text-center uk-card uk-card-default uk-card-body"
                                 uk-tooltip="A train is considered delayed if it arrives with a delay higher than 5'">
-                                <span class="uk-h1 uk-text-warning">18%</span>
+                                <span class="uk-h1 uk-text-warning" id="train_perc_delayed_label">18%</span>
                                 <div class="uk-h4 uk-margin-small">% trains delayed at arrival</div>
                             </div>
                         </div>
@@ -242,6 +263,8 @@
 
     <script src="libraries/maps/legend.js" type="text/javascript"></script>
     <script src="js/route_map.js" type="text/javascript"></script>
+    <script src="js/trains_search.js" type="text/javascript"></script>
+    <script src="js/train_stats_display.js" type="text/javascript"></script>
 </body>
 
 </html>
