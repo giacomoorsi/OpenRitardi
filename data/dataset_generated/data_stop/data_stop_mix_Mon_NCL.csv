@@ -1,5 +1,0 @@
-stop_name,train_class,day_of_week,avg_arrival_delay,median_arrival_delay,count_trains,count_stops,count_3m_delay,count_5m_delay,count_10m_delay,stop_lat,stop_lon
-GROSSETO,NCL,Mon,-49.0,-49.0,1,1,0,0,0,42.76728,11.1065
-SAN GIUSEPPE DI CAIRO,NCL,Mon,-1.3333333333333333,-4.0,2,3,1,1,1,44.370096,8.28864
-TRECATE,NCL,Mon,-16.5,-30.0,2,2,0,0,0,45.428589,8.739561
-NOVARA,NCL,Mon,-11.5,-17.0,2,2,0,0,0,45.451376,8.624895
