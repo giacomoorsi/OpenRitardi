@@ -30,6 +30,12 @@ jobs:
         uses: actions/checkout@v3
       - name: Setup Pages
         uses: actions/configure-pages@v3
+      - name: Unzip data from repository
+        run: |
+          mkdir -p website/data
+          for file in data/dataset_generated/*.zip; do
+            unzip -j "$file" -d website/data
+          done
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
