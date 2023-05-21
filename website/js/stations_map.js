@@ -38,7 +38,9 @@ function project(d) {
 var trainsMapping = {
   "Regional": "REG",
   "InterCity": "IC",
-  "High speed": "",
+  "InterCity Notte": "ICN",
+  "EuroCity": "EC",
+  "High speed": "AV",
 }
 
 function getFileName(day, trainType) {
