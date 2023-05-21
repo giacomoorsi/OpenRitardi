@@ -148,3 +148,6 @@ target/
 # not sure about those but most likely unuseful Jekyll stuff
 website/_site/
 website/Gemfile.lock
+
+# CSV files should now be ignored, as their content will be contained in .zip folders
+*.csv 
