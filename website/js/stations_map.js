@@ -90,7 +90,8 @@ d3.select("#form-horizontal-select-trainType").on("change", function(d) {
   })
 })
 
-d3.select("searchButton").on("click", function(d) {
+d3.select("search-station").on("submit", function(d) {
+  d3.event.preventDefault();
   var stationName = d3.select("#search-station").property("value")
   console.log(stationName)
   //only take data from the station the user is looking for
