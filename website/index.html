@@ -80,7 +80,7 @@
                         <span>Day of week</span>
                         <div class="uk-margin-small">
                             <div class="uk-form-controls">
-                                <select class="uk-select" id="form-horizontal-select">
+                                <select class="uk-select" id="form-horizontal-select-day">
                                     <option>All days</option>
                                     <option>Monday</option>
                                     <option>Tuesday</option>
@@ -98,7 +98,7 @@
                         <span>Train type</span>
                         <div class="uk-margin-small">
                             <div class="uk-form-controls">
-                                <select class="uk-select" id="form-horizontal-select">
+                                <select class="uk-select" id="form-horizontal-select-trainType">
                                     <option>All trains</option>
                                     <option>Regional</option>
                                     <option>InterCity</option>
@@ -112,10 +112,11 @@
                 </div>
                 <h5>Search a train station</h5>
                 <div>
-                    <form class="uk-search uk-search-default uk-width-medium uk-margin-large ">
-                        <span uk-search-icon></span>
-                        <input class="uk-search-input" type="search" placeholder="Search...">
+                    <form class="uk-search uk-search-default uk-width-medium uk-margin-large " id="search-station">
+                            <button class="uk-search-toggle" uk-search-icon id="searchButton"></button>
+                        <input class="uk-search-input" type="search" placeholder="Search..." id="searchBox">
                     </form>
+                    <ul id="autocompleteList"></ul>
                 </div>
             </div>
 
@@ -125,8 +126,10 @@
 
 
 
+
+    <script src="js/autocomplete.js" type="text/javascript"></script>
     <script src="libraries/maps/legend.js" type="text/javascript"></script>
-    <script src="js/stations_map.js" type="text/javascript"></script>
+    <script src="js/stations_map.js" type="text/javascript" ></script>
 
 </body>
 
