@@ -26,6 +26,22 @@ div.tooltip {
     opacity: 0;
   }
 
+  #autocompleteList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  #autocompleteList li {
+    cursor: pointer;
+    padding: 5px;
+  }
+  
+  #autocompleteList li:hover {
+    background-color: lightgray;
+  }
+  
+
 
 
 .map-legend {

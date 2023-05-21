@@ -33,16 +33,99 @@ function project(d) {
     return map.project(new mapboxgl.LngLat(d[0], d[1]));
   }
 
-  
-const data_stop = d3.csv("data/data_stop.csv", function(d) {
+
+
+var trainsMapping = {
+  "Regional": "REG",
+  "InterCity": "IC",
+  "High speed": "",
+}
+
+function getFileName(day, trainType) {
+  if (day == "All days"  && trainType == "All trains") {
+    return "data_stop.csv"
+  }
+  else if (day == "All days") {
+    return "data_stop_class_" + trainsMapping[trainType] + ".csv"
+  }
+  else if (trainType == "All trains") {
+    return "data_stop_" + day.substring(0, 3) + ".csv"
+  }
+  else {
+    return "data_stop_mix_" + day.substring(0, 3) + "_" + trainsMapping[trainType] + ".csv"
+
+  } 
+  }
+
+
+
+d3.select("#form-horizontal-select-day").on("change", function(d) {
+  var selectedOptionDay = d3.select(this).property("value")
+  var selectedOptionTrainType = d3.select("#form-horizontal-select-trainType").property("value")
+  var dataset = getFileName(selectedOptionDay, selectedOptionTrainType)
+  var data_stop = d3.csv("data/" + dataset, function(d) {
     return d;
   })
+  Promise.all([data_stop]).then(results => {
+    let station_data = results[0];
+    console.log(station_data)
+    d3.selectAll("circle").remove();
+    plotDots(station_data);
+  })
+})
+
+
+d3.select("#form-horizontal-select-trainType").on("change", function(d) {
+  var selectedOptionTrainType = d3.select(this).property("value")
+  var selectedOptionDay = d3.select("#form-horizontal-select-day").property("value")
+  var dataset = getFileName(selectedOptionDay, selectedOptionTrainType)
+  var data_stop = d3.csv("data/" + dataset, function(d) {
+    return d;
+  })
+  Promise.all([data_stop]).then(results => {
+    let station_data = results[0];
+    console.log(station_data)
+    d3.selectAll("circle").remove();
+    plotDots(station_data);
+  })
+})
+
+d3.select("searchButton").on("click", function(d) {
+  var stationName = d3.select("#search-station").property("value")
+  console.log(stationName)
+  //only take data from the station the user is looking for
+  var station_data = data_stop.filter(function(d) { return d.stop_name == stationName })
+  console.log(station_data)
+  
+  Promise.all([station_data]).then(results => {
+    let station_data = results[0];
+    console.log(station_data)
+    d3.selectAll("circle").remove();
+    plotDots(station_data);
+  })
+})
+
+
+//default dataset, before the user chooses anything
+var dayChosen = document.getElementById("form-horizontal-select-day").value
+var trainTypeChosen = document.getElementById("form-horizontal-select-trainType").value
+var dataset = getFileName(dayChosen, trainTypeChosen)
+
+var data_stop = d3.csv("data/" + dataset, function(d) {
+  return d;
+})
 
 Promise.all([data_stop]).then(results => {
   let station_data = results[0];
   console.log(station_data)
   plotDots(station_data);
 })
+
+
+
+
+
+
 
 
 
