@@ -32,9 +32,15 @@ jobs:
         uses: actions/configure-pages@v3
       - name: Unzip data from repository
         run: |
+          # unzip all zip files in "dataset_generated" folder
           mkdir -p website/data
           for file in data/dataset_generated/*.zip; do
             unzip -o -j "$file" -d website/data
+          done
+          # unzip all zip files in "dataset_generated/data_train_stat" folder
+          mkdir -p website/data/trains
+          for file in data/dataset_generated/data_train_stat/*.zip; do
+            unzip -o -j "$file" -d website/data/trains
           done
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
