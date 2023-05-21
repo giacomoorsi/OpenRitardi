@@ -34,7 +34,7 @@ jobs:
         run: |
           mkdir -p website/data
           for file in data/dataset_generated/*.zip; do
-            unzip -j "$file" -d website/data
+            unzip -o -j "$file" -d website/data
           done
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
