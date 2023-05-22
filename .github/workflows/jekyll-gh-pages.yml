@@ -42,6 +42,11 @@ jobs:
           for file in data/dataset_generated/data_train_stat/*.zip; do
             unzip -o -j "$file" -d website/data/trains
           done
+          # unzip all zip files in "dataset_generated/trains_shapes" folder
+          mkdir -p website/data/trains_shapes
+          for file in data/dataset_generated/trains_shapes/*.zip; do
+            unzip -o -j "$file" -d website/data/trains_shapes
+          done
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
