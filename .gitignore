@@ -142,6 +142,7 @@ target/
 
 # macOS
 .DS_Store
+._DS_Store
 
 
 
@@ -151,3 +152,7 @@ website/Gemfile.lock
 
 # CSV files should now be ignored, as their content will be contained in .zip folders
 *.csv 
+
+# exclude GTFS timetable
+*/gtfs/*
+*/gtfs-out/*
