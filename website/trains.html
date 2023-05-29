@@ -20,7 +20,8 @@
     <script src="https://d3js.org/d3.v7.min.js"></script>
 
     <!-- JQuery -->
-    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 
     <!-- Mapbox -->
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css" rel="stylesheet">
@@ -172,7 +173,8 @@
         <div class="uk-text-center uk-margin">
             <form class="uk-search uk-search-default uk-width-medium uk-margin-large">
                 <span uk-search-icon></span>
-                <input class="uk-search-input" type="search" placeholder="Search..." style="background:#fff" id="train_search_input">
+                <input class="uk-search-input" type="search" placeholder="Search..." style="background:#fff"
+                    id="train_search_input">
                 <div uk-dropdown="pos: bottom-center" id="search_options_dropdown">
                     <ul class="uk-nav uk-dropdown-nav uk-width-large">
                         <table class="uk-table uk-table-small uk-table-hover">
@@ -196,14 +198,17 @@
             <!-- START: Card for train info -->
             <div class="ot-ranking-train-info" id="searched_train_info_div">
                 <div class="uk-card uk-card-default uk-card-body">
-                    <h2><!--<img src="media/intercity.svg" class="ot-train-logo ot-train-logo-ic"> --><span id="train_name_label">IC
-                        655</span></h2>
-                    <p class="uk-text-lead" id="train_description_label">Ventimiglia <span uk-icon="arrow-right"></span> Milano Centrale</p>
+                    <h2><!--<img src="media/intercity.svg" class="ot-train-logo ot-train-logo-ic"> --><span
+                            id="train_name_label">IC
+                            655</span></h2>
+                    <p class="uk-text-lead" id="train_description_label">Ventimiglia <span uk-icon="arrow-right"></span>
+                        Milano Centrale</p>
 
                     <div class="uk-child-width-1-2@s uk-grid-match uk-margin-large" uk-grid>
                         <div>
                             <div class="uk-text-center uk-card uk-card-default uk-card-body">
-                                <span class="uk-h1 uk-margin-small uk-text-danger" id="train_avg_delay_label">5' 25''</span>
+                                <span class="uk-h1 uk-margin-small uk-text-danger" id="train_avg_delay_label">5'
+                                    25''</span>
                                 <div class="uk-h4 uk-margin-small">Average delay per stop</div>
                             </div>
                         </div>
@@ -229,27 +234,29 @@
 
         <div class="uk-child-width-1-2@m uk-margin-large" uk-grid>
             <div>
-                <div class="uk-card uk-card-default uk-card-body" id="delays_per_stop_container">
+                <div class="uk-card uk-card-default uk-card-body" id="histogram_container">
                     <!-- <img src="media/demo/delays_per_stop.png" alt="Delays per stop" width="100%"> -->
                 </div>
             </div>
             <div>
-                <div class="uk-h3 uk-grid-small uk-flex uk-flex-middle" uk-grid>
-                    <div>Statistics at</div>
-                    <div class="uk-width-expand">
-                        <select class="uk-select" style="display:inline-block">
-                            <option>Ventimiglia</option>
-                            <option>Sanremo</option>
-                            <option>Imperia</option>
-                            <option>Savona</option>
-                            <option>Genova Piazza Principe</option>
-                            <option>Pavia</option>
-                            <option selected>Milano Centrale</option>
-                        </select>
+                <div>
+                    <div class="uk-h3 uk-grid-small uk-flex uk-flex-middle" uk-grid>
+                        <div>Statistics at</div>
+                        <div class="uk-width-expand">
+                            <select class="uk-select" style="display:inline-block" id="dropdown_stop">
+                                <option>Ventimiglia</option>
+                                <option>Sanremo</option>
+                                <option>Imperia</option>
+                                <option>Savona</option>
+                                <option>Genova Piazza Principe</option>
+                                <option>Pavia</option>
+                                <option selected>Milano Centrale</option>
+                            </select>
+                        </div>
                     </div>
-                </div>
-                <div class="uk-margin uk-card uk-card-default uk-card-body">
-                    <img src="media/demo/stats_stop.png" alt="Delays per stop" width="100%">
+                    <div id="stop_statistics_container">
+
+                    </div>
                 </div>
             </div>
         </div>

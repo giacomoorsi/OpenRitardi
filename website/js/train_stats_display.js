@@ -9,8 +9,14 @@ let colormap = d3.scaleLinear()
 function generateDelayString(delay) {
     let minutes = Math.floor(delay);
     let seconds = Math.round((delay - minutes) * 60);
-    return minutes + "' " + seconds + "''";
+    if (seconds == 0) {
+        return minutes + "'";
+    } else {
+        return minutes + "' " + seconds + "''";
+    }
 }
+
+var train_data = []
 
 function displayTrainInformation(trainID) {
     /**
@@ -73,9 +79,10 @@ function displayTrainInformation(trainID) {
 
     // when ready
     train_dataset.then(function (data) {
-
+        train_data = data;
         console.log(data)
-        showStopsStatistics(data);
+        showStopsStatisticsHistogram(data);
+        showStopsStatisticsDropdown(data);
 
     });
 
@@ -99,12 +106,12 @@ function displayTrainInformation(trainID) {
  * Shows an histogram with the delays at each stop
  * using d3.js
  */
-function showStopsStatistics(train_data) {
+function showStopsStatisticsHistogram(train_data) {
     console.log(train_data)
 
-    let container = document.getElementById('delays_per_stop_container');
+    let container = document.getElementById('histogram_container');
 
-    d3.select("#delays_per_stop_container svg").remove();
+    d3.select("#histogram_container svg").remove();
 
     // set the dimensions and margins of the graph
     let margin = { top: 30, right: 30, bottom: 130, left: 60 },
@@ -113,7 +120,7 @@ function showStopsStatistics(train_data) {
 
 
     // append the svg object to the body of the page
-    let svg = d3.select("#delays_per_stop_container")
+    let svg = d3.select("#histogram_container")
         .append("svg")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
@@ -179,4 +186,89 @@ function showStopsStatistics(train_data) {
     svg.selectAll("text")
         .style("font-size", "12px");
 
+}
+
+
+/**
+ * Shows a dropdown with statistics at each stop
+ */
+function showStopsStatisticsDropdown(train_data) {
+
+    let dropdown = document.getElementById('dropdown_stop');
+
+    // remove all entries from dropdown
+    dropdown.innerHTML = '';
+    // add one entry per stop, if selected show statistics
+    for (let i = 0; i < train_data.length; i++) {
+        let option = document.createElement('option');
+        option.value = i;
+        option.innerHTML = train_data[i]['stop_name'];
+        dropdown.appendChild(option);
+    }
+
+    // when a stop is selected
+    dropdown.onchange = function () {
+        updateDropdown(dropdown.value);
+    }
+
+    // select first stop
+    dropdown.value = 0;
+    updateDropdown(0);
+
+}
+
+function updateDropdown(index) {
+    let stop_data = train_data[index];
+
+    let stop_statistics_div = document.getElementById('stop_statistics_container');
+
+    let perc_3m_delay = Math.round(stop_data['count_3m_delay'] / stop_data['count_dates_stop'] * 100);
+    let perc_5m_delay = Math.round(stop_data['count_5m_delay'] / stop_data['count_dates_stop'] * 100);
+    let perc_10m_delay = Math.round(stop_data['count_10m_delay'] / stop_data['count_dates_stop'] * 100);
+
+    content = `
+    <div class="uk-card uk-card-default uk-card-body">
+    <div class="uk-child-width-1-3@s uk-grid-match uk-margin-large uk-grid-small" uk-grid>
+        <div>
+            <div class="uk-text-center uk-card uk-card-default uk-card-body"
+                >
+                <span class="uk-h1 uk-margin-small" style="color: ${colormap(stop_data["avg_arrival_delay"])}">${generateDelayString(stop_data["avg_arrival_delay"])}</span>
+                <div class="uk-h4 uk-margin-small">Average delay</div>
+            </div>
+        </div>
+
+        <div>
+            <div class="uk-text-center uk-card uk-card-default uk-card-body"
+                uk-tooltip="Half of the trains arrive with a lower delay than this">
+                <span class="uk-h1 uk-margin-small" style="color: ${colormap(stop_data["median_arrival_delay"])}">${generateDelayString(stop_data["median_arrival_delay"])}</span>
+                <div class="uk-h4 uk-margin-small">Median delay</div>
+            </div>
+        </div>
+
+        <div>
+            <div class="uk-text-center uk-card uk-card-default uk-card-body"
+                uk-tooltip="Percentage of trains delayed more than 3' at this stop">
+                <span class="uk-h1 uk-margin-small">${perc_3m_delay}%</span>
+                <div class="uk-h4 uk-margin-small">< 3' delay</div>
+            </div>
+        </div>
+        <div>
+            <div class="uk-text-center uk-card uk-card-default uk-card-body"
+                uk-tooltip="Percentage of trains delayed more than 5' at this stop">
+                <span class="uk-h1">${perc_5m_delay}%</span>
+                <div class="uk-h4 uk-margin-small">< 5' delay</div>
+            </div>
+        </div>
+        <div>
+            <div class="uk-text-center uk-card uk-card-default uk-card-body"
+                uk-tooltip="Percentage of trains delayed more than 10' at this stop">
+                <span class="uk-h1">${perc_10m_delay}%</span>
+                <div class="uk-h4 uk-margin-small">< 10' delay</div>
+            </div>
+        </div>
+    </div>
+</div>
+    `;
+
+    stop_statistics_div.innerHTML = content;
 }

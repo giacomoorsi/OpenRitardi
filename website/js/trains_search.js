@@ -53,11 +53,14 @@ dataset_dropdown = d3.csv('data/data_train_index.csv').then(function (data) {
             'train_departure_stop_name': pascalize(train['train_departure_stop_name']),
             'train_arrival_stop_name': pascalize(train['train_arrival_stop_name']),
             'avg_arrival_delay': round(train['avg_arrival_delay'], 2),
-            'perc_5m_delay': round(Number(train['perc_5m_delay'])*100, 2),
+            'perc_5m_delay': round(Number(train['perc_5m_delay']) * 100, 2),
         };
     });
 
     populate_dropdown_from_dataset(dataset_dropdown);
+
+     // show a demo train on load: IC655
+     displayTrainInformation("790273982487");
 });
 
 // populate the dropdown with data from the sample
@@ -90,22 +93,22 @@ train_search_input.addEventListener('input', function () {
     }
 
     let search_query = train_search_input.value;
-    
+
     // searched number: removed all non-digit characters
     search_query_number = search_query.replace(/\D/g, '');
 
     // searched name: removed all digit
     search_query_name = search_query.replace(/\d/g, '').toLowerCase();
 
-    
+
 
 
     // the digits of the search query should be kept in the same order, when searching for train numbers
     let filtered_dataset = dataset_dropdown.filter(function (train) {
         let train_number = train['train_number'];
-        
+
         // check if the search query is included, in the same order, in the train number as substring
-        
+
         return train_number.includes(search_query_number);
 
     });
@@ -115,7 +118,7 @@ train_search_input.addEventListener('input', function () {
         // filtered_dataset_with_matches = filtered_dataset.map(function (train) {
         //     let train_class = train['train_class'];
         //     // augment dataset
-            
+
         //     train_class = train_class_names[train_class] ? train_class_names[train_class] : train_class;
         //     train_destination = train['train_arrival_stop_name'];
         //     train_departure = train['train_departure_stop_name'];
@@ -127,7 +130,7 @@ train_search_input.addEventListener('input', function () {
         //     query_tokens.forEach(function (token) {
         //         matches += train_class.toLowerCase().includes(token) + train_destination.toLowerCase().includes(token) + train_departure.toLowerCase().includes(token);
         //     });
-            
+
         //     train 
         // }
 
@@ -148,7 +151,7 @@ train_search_input.addEventListener('input', function () {
         filtered_dataset = filtered_dataset.filter(function (train) {
             let train_class = train['train_class'];
             // augment dataset
-            
+
             train_class = train_class_names[train_class] ? train_class_names[train_class] : train_class;
             train_destination = train['train_arrival_stop_name'];
             train_departure = train['train_departure_stop_name'];
@@ -170,5 +173,8 @@ train_search_input.addEventListener('input', function () {
     });
 
     populate_dropdown_from_dataset(filtered_dataset);
+
 });
+
+
 
