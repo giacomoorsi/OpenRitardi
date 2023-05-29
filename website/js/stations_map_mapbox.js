@@ -116,10 +116,23 @@ var data_stop = d3.csv("data/" + dataset, function (d) {
   return d;
 })
 
+var station_data = []
+
 Promise.all([data_stop]).then(results => {
-  let station_data = results[0];
+  station_data = results[0];
+
+  // augment the dataset with an ID
+  // we need an ID for each stop in order to be able to remove the popup when the user hovers out
+  let id = 0
+  station_data = station_data.map(d => {
+    d.id = id
+    id += 1
+    return d
+  });
+
   console.log(station_data)
   plotDots(station_data);
+  populate_dropdown_from_dataset(station_data);
 })
 
 /**
@@ -206,14 +219,7 @@ function plotDots(data) {
     map.removeSource('circles-source')
   }
 
-  // augment the dataset with an ID
-  // we need an ID for each stop in order to be able to remove the popup when the user hovers out
-  let id = 0
-  data = data.map(d => {
-    d.id = id
-    id += 1
-    return d
-  });
+
 
 
   map.addSource('circles-source', {
@@ -229,7 +235,6 @@ function plotDots(data) {
             coordinates: [d.stop_lon, d.stop_lat]
           },
           properties: {
-            id: d.stop_name,
             name: d.stop_name,
             count: d.count_stops,
             delay: d.avg_arrival_delay,
@@ -283,7 +288,7 @@ function plotDots(data) {
 
 
   // Create a popup, but don't add it to the map yet.
-  const popup = new mapboxgl.Popup({
+  var popup = new mapboxgl.Popup({
     closeButton: false,
     closeOnClick: false
   });
@@ -295,8 +300,9 @@ function plotDots(data) {
     // Change the cursor style as a UI indicator.
     map.getCanvas().style.cursor = 'pointer';
 
-    
-    hoverStationId = e.features[0].id
+    console.log(e)
+
+    hoverStationId = e.features[0].id;
 
     // set hover state, the new radius is handled by the paint property
     map.setFeatureState(

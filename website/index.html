@@ -116,7 +116,22 @@
                             <button class="uk-search-toggle" uk-search-icon id="searchButton"></button>
                         <input class="uk-search-input" type="search" placeholder="Search..." id="searchBox">
                     </form>
-                    <ul id="autocompleteList"></ul>
+                    <!-- <ul id="autocompleteList"></ul> -->
+                    <div uk-dropdown="pos: bottom-center" id="stations_dropdown">
+                        <ul class="uk-nav uk-dropdown-nav uk-width-large">
+                            <table class="uk-table uk-table-small uk-table-hover">
+                                <!-- <thead>
+                                    <tr>
+                                        <th>Train number</th>
+                                        <th>Departure</th>
+                                        <th>Destination</th>
+                                    </tr>
+                                </thead> -->
+                                <tbody id="stations_dropdown_content">
+                                </tbody>
+                            </table>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
