@@ -66,43 +66,43 @@
     <div id="map">
 
         <!-- Create an overlay on the map that is 200px width and 80% height -->
-        <div class="uk-position-center-left" style="z-index:1000000; margin-left: 15%">
-            <div class="uk-card uk-card-default uk-card-body" style="width:400px">
-                <h1 class="uk-card-title">Train delays</h1>
-                <p>This map shows the average delay of trains at each Italian station.<br>
+        <div class="uk-position-center-left" style="z-index:1000000; margin-left: 0%">
+            <div class="uk-card uk-card-default uk-card-body" style="width:450px; height: 100%">
+                <h1 class="uk-card-title" style="font-size: 220%;">Train delays</h1>
+                <p style="font-size: 120%;">This map shows the average delay of trains at each Italian station.<br>
                     The size of the dot reflects the number of trains that go through each station every day, and the
                     color gives an instant idea on the performance of each station. You can interact with the map to
                     collect insights on specific stops and use the filters below to refine your search.</p>
 
-                <h4>Filters</h4>
+                <h3 class="uk-card-title">Filters</h3>
                 <div uk-grid class="uk-grid-divider">
                     <div>
-                        <span>Day of week</span>
+                        <span style="font-size: 120%;">Day of week</span>
                         <div class="uk-margin-small">
                             <div class="uk-form-controls">
-                                <select class="uk-select" id="form-horizontal-select-day" style="background: #f9f9f9">
-                                    <option>All days</option>
-                                    <option>Monday</option>
-                                    <option>Tuesday</option>
-                                    <option>Wednesday</option>
-                                    <option>Thursday</option>
-                                    <option>Friday</option>
-                                    <option>Saturday</option>
-                                    <option>Sunday</option>
+                                <select class="uk-select" id="form-horizontal-select-day" style="font-size: 110%; background: #f9f9f9">
+                                    <option style="font-size: 120%;">All days</option>
+                                    <option style="font-size: 120%;">Monday</option>
+                                    <option style="font-size: 120%;">Tuesday</option>
+                                    <option style="font-size: 120%;">Wednesday</option>
+                                    <option style="font-size: 120%;">Thursday</option>
+                                    <option style="font-size: 120%;">Friday</option>
+                                    <option style="font-size: 120%;">Saturday</option>
+                                    <option style="font-size: 120%;">Sunday</option>
                                 </select>
                             </div>
                         </div>
                     </div>
 
                     <div>
-                        <span>Train type</span>
+                        <span style="font-size: 120%;">Train type</span>
                         <div class="uk-margin-small">
                             <div class="uk-form-controls">
-                                <select class="uk-select" id="form-horizontal-select-trainType"  style="background: #f9f9f9">
-                                    <option>All trains</option>
-                                    <option>Regional</option>
-                                    <option>InterCity</option>
-                                    <option>High speed</option>
+                                <select class="uk-select" id="form-horizontal-select-trainType"  style="font-size: 110%; background: #f9f9f9">
+                                    <option style="font-size: 120%;">All trains</option>
+                                    <option style="font-size: 120%;">Regional</option>
+                                    <option style="font-size: 120%;">InterCity</option>
+                                    <option style="font-size: 120%;">High speed</option>
                                 </select>
                             </div>
                         </div>
@@ -110,11 +110,11 @@
 
 
                 </div>
-                <h5>Search a train station</h5>
+                <h4>Search a train station</h4>
                 <div>
                     <form class="uk-search uk-search-default uk-width-medium uk-margin-large " id="search-station"  style="background: #f9f9f9">
                             <button class="uk-search-toggle" uk-search-icon id="searchButton"></button>
-                        <input class="uk-search-input" type="search" placeholder="Search..." id="searchBox">
+                        <input class="uk-search-input" type="search" placeholder="Search..." id="searchBox" style="font-size: 120%;">
                     </form>
                     <!-- <ul id="autocompleteList"></ul> -->
                     <div uk-dropdown="pos: bottom-center" id="stations_dropdown">
@@ -136,8 +136,13 @@
             </div>
 
         </div>
-    </div>
 
+        <!-- Create a transparent overlap on the map for the legend, on the right -->
+        <div id="legend" class="uk-position-center-right" style="z-index:1000000; margin-right: 1%">
+            <!-- Possibly, add a white card in the background. -->
+            <!-- <div id="legend" class="uk-card uk-card-default uk-card-body" style="width:170px; height:55"> -->
+            </div>
+        </div>
 
 
 
