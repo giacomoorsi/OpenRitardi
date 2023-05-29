@@ -107,6 +107,12 @@ function displayStation(id) {
     chosenStationPopup.remove();
   }
 
+  // close dropdown
+  UIkit.dropdown(search_options_dropdown_id).hide(animation = false);
+
+  // add in text field the station stop
+  searchBox.value = station['stop_name'];
+
   chosenStationPopup = new mapboxgl.Popup()
     .setLngLat(coordinates)
     .setHTML(generatePopupHTML(station))

@@ -90,23 +90,6 @@ d3.select("#form-horizontal-select-trainType").on("change", function (d) {
   })
 })
 
-d3.select("search-station").on("submit", function (d) {
-  d3.event.preventDefault();
-  var stationName = d3.select("#search-station").property("value")
-  console.log(stationName)
-  //only take data from the station the user is looking for
-  var station_data = data_stop.filter(function (d) { return d.stop_name == stationName })
-  console.log(station_data)
-
-  Promise.all([station_data]).then(results => {
-    let station_data = results[0];
-    console.log(station_data)
-    d3.selectAll("circle").remove();
-    plotDots(station_data);
-  })
-})
-
-
 //default dataset, before the user chooses anything
 var dayChosen = document.getElementById("form-horizontal-select-day").value
 var trainTypeChosen = document.getElementById("form-horizontal-select-trainType").value
@@ -120,6 +103,9 @@ var station_data = []
 
 Promise.all([data_stop]).then(results => {
   station_data = results[0];
+  // filter out stations without coordinates
+  station_data = station_data.filter(d => d.stop_lat != "" && d.stop_lon != "")
+
 
   // augment the dataset with an ID
   // we need an ID for each stop in order to be able to remove the popup when the user hovers out
