@@ -102,6 +102,8 @@ Promise.all([data_stop]).then(results => {
   // filter out stations without coordinates
   station_data = station_data.filter(d => d.stop_lat != "" && d.stop_lon != "")
 
+  // sort stations on count_trains
+  station_data = station_data.sort((a, b) => b.count_stops - a.count_stops)
 
   // augment the dataset with an ID
   // we need an ID for each stop in order to be able to remove the popup when the user hovers out
