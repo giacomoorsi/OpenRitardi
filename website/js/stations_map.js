@@ -40,7 +40,9 @@ var trainsMapping = {
   "InterCity": "IC",
   "InterCity Notte": "ICN",
   "EuroCity": "EC",
-  "High speed": "AV",
+  "FrecciaRossa": "FR",
+  "FrecciaBianca": "FB",
+  "FrecciaArgento": "FA"
 }
 
 function getFileName(day, trainType) {
