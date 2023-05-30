@@ -316,6 +316,12 @@ function plotDots(data) {
     popup.remove();
   });
 
+  map.on('click', 'circles', (e) => {
+    clickStationId = e.features[0].id;
+    displayStation(clickStationId)
+  });
+
+
   // add color legend, without showing the negative values for the colormap
   let legend = Legend(colormap.range(colormap.range().slice(1))
                               .domain(colormap.domain().slice(1)), {
