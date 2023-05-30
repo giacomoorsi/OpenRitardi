@@ -227,8 +227,7 @@ function updateDropdown(index) {
     let perc_10m_delay = Math.round(stop_data['count_10m_delay'] / stop_data['count_dates_stop'] * 100);
 
     content = `
-    <div class="uk-card uk-card-default uk-card-body">
-    <div class="uk-child-width-1-3@s uk-grid-match uk-margin-large uk-grid-small" uk-grid>
+    <div class="uk-child-width-1-2@s uk-grid-match uk-margin-small uk-grid-small" uk-grid>
         <div>
             <div class="uk-text-center uk-card uk-card-default uk-card-body"
                 >
@@ -244,30 +243,31 @@ function updateDropdown(index) {
                 <div class="uk-h4 uk-margin-small">Median delay</div>
             </div>
         </div>
+    </div>
+    <div class="uk-child-width-1-3@s uk-grid-match uk-margin-small uk-grid-small" uk-grid>
 
         <div>
             <div class="uk-text-center uk-card uk-card-default uk-card-body"
                 uk-tooltip="Percentage of trains delayed more than 3' at this stop">
                 <span class="uk-h1 uk-margin-small">${perc_3m_delay}%</span>
-                <div class="uk-h4 uk-margin-small">< 3' delay</div>
+                <div class="uk-h4 uk-margin-small">> 3' delay</div>
             </div>
         </div>
         <div>
             <div class="uk-text-center uk-card uk-card-default uk-card-body"
                 uk-tooltip="Percentage of trains delayed more than 5' at this stop">
                 <span class="uk-h1">${perc_5m_delay}%</span>
-                <div class="uk-h4 uk-margin-small">< 5' delay</div>
+                <div class="uk-h4 uk-margin-small">> 5' delay</div>
             </div>
         </div>
         <div>
             <div class="uk-text-center uk-card uk-card-default uk-card-body"
                 uk-tooltip="Percentage of trains delayed more than 10' at this stop">
                 <span class="uk-h1">${perc_10m_delay}%</span>
-                <div class="uk-h4 uk-margin-small">< 10' delay</div>
+                <div class="uk-h4 uk-margin-small">> 10' delay</div>
             </div>
         </div>
     </div>
-</div>
     `;
 
     stop_statistics_div.innerHTML = content;
