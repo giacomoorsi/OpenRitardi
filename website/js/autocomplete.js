@@ -23,7 +23,7 @@ UIkit.util.on(search_options_dropdown_id, 'hide', function () {
 });
 
 
-var autocompleteData = [];
+//var autocompleteData = [];
 
 
 function pascalize(str) {
@@ -55,8 +55,9 @@ searchBox.addEventListener("input", function () {
   let input = searchBox.value.toLowerCase();
   console.log(input)
 
-  let autocompleteSuggestions = station_data.filter(function (item) {
-    return item["stop_name"].toLowerCase().startsWith(input);
+
+  let autocompleteSuggestions = station_data.filter(function (item) { 
+       return item["stop_name"].toLowerCase().startsWith(input);
   });
 
   populate_dropdown_from_dataset(autocompleteSuggestions);
@@ -74,6 +75,9 @@ searchBox.addEventListener("input", function () {
 //     autocompleteList.appendChild(li);
 //   });
 // }
+
+
+
 
 
 
@@ -101,7 +105,7 @@ function displayStation(id) {
   // need to retrieve the circle corresponding to this station id in the mapbox map
   station = station_data[id];
   coordinates = [station['stop_lon'], station['stop_lat']];
-  description = "bubu"
+  description = "Station"
 
   if (chosenStationPopup !== null) {
     chosenStationPopup.remove();

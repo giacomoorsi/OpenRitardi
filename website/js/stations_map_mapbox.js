@@ -102,6 +102,8 @@ Promise.all([data_stop]).then(results => {
   // filter out stations without coordinates
   station_data = station_data.filter(d => d.stop_lat != "" && d.stop_lon != "")
 
+  // order station_stata based on count_trains
+  station_data = station_data.sort((a, b) => b.count_stops - a.count_stops)
 
   // augment the dataset with an ID
   // we need an ID for each stop in order to be able to remove the popup when the user hovers out
@@ -111,6 +113,8 @@ Promise.all([data_stop]).then(results => {
     id += 1
     return d
   });
+
+
 
   console.log(station_data)
   plotDots(station_data);
@@ -324,7 +328,7 @@ function plotDots(data) {
 
   // add color legend, without showing the negative values for the colormap
   let legend = Legend(colormap.range(colormap.range().slice(1))
-                              .domain(colormap.domain().slice(1)), {
+    .domain(colormap.domain().slice(1)), {
     title: "Average delay",
   })
 
@@ -334,50 +338,50 @@ function plotDots(data) {
     .attr("height", "100%")
     .html(legend.outerHTML)
 
-// append the svg object to the body of the page
-const width = 150
-const height = 80
-const svg = d3.select("#legend")
-  .append("svg")
+  // append the svg object to the body of the page
+  const width = 150
+  const height = 80
+  const svg = d3.select("#legend")
+    .append("svg")
     .attr("width", width)
     .attr("height", height)
     .attr("z-index", 100000)
 
-// Add legend: circles
-const valuesToShow = [1000, 5000, 10_000]
-const xCircle = 75
-const yCircle = 65
-const xLabel = 110
-svg
-  .selectAll("legend-size")
-  .data(valuesToShow)
-  .join("circle")
+  // Add legend: circles
+  const valuesToShow = [1000, 5000, 10_000]
+  const xCircle = 75
+  const yCircle = 65
+  const xLabel = 110
+  svg
+    .selectAll("legend-size")
+    .data(valuesToShow)
+    .join("circle")
     .attr("cx", xCircle)
     .attr("cy", d => yCircle - scale3(d))
     .attr("r", d => scale3(d))
     .style("fill", "none")
     .attr("stroke", "black")
 
-// Add legend: segments
-svg
-  .selectAll("legendlegend-size")
-  .data(valuesToShow)
-  .join("line")
+  // Add legend: segments
+  svg
+    .selectAll("legendlegend-size")
+    .data(valuesToShow)
+    .join("line")
     .attr('x1', d => xCircle)
     .attr('x2', xLabel)
-    .attr('y1', d => yCircle - 2*scale3(d))
-    .attr('y2', d => yCircle - 2*scale3(d))
+    .attr('y1', d => yCircle - 2 * scale3(d))
+    .attr('y2', d => yCircle - 2 * scale3(d))
     .attr('stroke', 'black')
     .style('stroke-dasharray', ('2,2'))
 
-// Add legend: labels
-svg
-  .selectAll("legend-size") 
-  .data(valuesToShow)
-  .join("text")
+  // Add legend: labels
+  svg
+    .selectAll("legend-size")
+    .data(valuesToShow)
+    .join("text")
     .attr('x', xLabel)
-    .attr('y', d => yCircle - 2*scale3(d))
-    .text( d => d)
+    .attr('y', d => yCircle - 2 * scale3(d))
+    .text(d => d)
     .style("font-size", 10)
     .attr('alignment-baseline', 'middle')
 
