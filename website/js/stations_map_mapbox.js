@@ -138,6 +138,34 @@ function generatePopupHTML(d) {
   return output
 }
 
+
+
+// scales the color linearly
+let colormap = d3.scaleLinear()
+  .domain([-10, 0, 3, 7, 100])
+  .range(['#10ad0a', '#10ad0a', '#f7f414', '#e81710', '#e81710']);
+
+const valuesToShow = [1000, 5000, 10_000]
+
+// add color legend, without showing the negative values for the colormap
+let legend = Legend(colormap.range(colormap.range().slice(1))
+.domain(colormap.domain().slice(1)), {
+  title: "Average delay",
+})
+
+d3.select("#legend")
+.append("div")
+.attr("width", "100%")
+.attr("height", "100%")
+.html(legend.outerHTML)
+
+const svg_size_legend = d3.select("#legend")
+  .append("svg")
+    .attr("width", 150)
+    .attr("height", 80)
+    .attr("z-index", 100000)
+
+
 // variable to check if the map was already fully loaded
 // if it is not fully loaded, plotDots will wait 200ms and then try again
 let mapHasLoaded = false;
@@ -186,11 +214,6 @@ function plotDots(data) {
     return scale3(d)
   }
 
-  // scales the color linearly
-  let colormap = d3.scaleLinear()
-    .domain([-10, 0, 3, 7, 100])
-    .range(['#10ad0a', '#10ad0a', '#f7f414', '#e81710', '#e81710']);
-
   if (map.getLayer('circles')) {
     map.removeLayer('circles')
   }
@@ -199,8 +222,6 @@ function plotDots(data) {
   if (map.getSource('circles-source')) {
     map.removeSource('circles-source')
   }
-
-
 
 
   map.addSource('circles-source', {
@@ -322,36 +343,15 @@ function plotDots(data) {
   });
 
 
-  // add color legend, without showing the negative values for the colormap
-  let legend = Legend(colormap.range(colormap.range().slice(1))
-                              .domain(colormap.domain().slice(1)), {
-    title: "Average delay",
-  })
-
-  d3.select("#legend")
-    .append("div")
-    .attr("width", "100%")
-    .attr("height", "100%")
-    .html(legend.outerHTML)
-
-// append the svg object to the body of the page
-const width = 150
-const height = 80
-const svg = d3.select("#legend")
-  .append("svg")
-    .attr("width", width)
-    .attr("height", height)
-    .attr("z-index", 100000)
-
 // Add legend: circles
-const valuesToShow = [1000, 5000, 10_000]
 const xCircle = 75
 const yCircle = 65
 const xLabel = 110
-svg
-  .selectAll("legend-size")
+svg_size_legend
+  .selectAll("circle")
   .data(valuesToShow)
-  .join("circle")
+  .enter()
+  .append("circle")
     .attr("cx", xCircle)
     .attr("cy", d => yCircle - scale3(d))
     .attr("r", d => scale3(d))
@@ -359,10 +359,11 @@ svg
     .attr("stroke", "black")
 
 // Add legend: segments
-svg
-  .selectAll("legendlegend-size")
+svg_size_legend
+  .selectAll("line")
   .data(valuesToShow)
-  .join("line")
+  .enter()
+  .append("line")
     .attr('x1', d => xCircle)
     .attr('x2', xLabel)
     .attr('y1', d => yCircle - 2*scale3(d))
@@ -371,10 +372,11 @@ svg
     .style('stroke-dasharray', ('2,2'))
 
 // Add legend: labels
-svg
-  .selectAll("legend-size") 
+svg_size_legend
+  .selectAll("text") 
   .data(valuesToShow)
-  .join("text")
+  .enter()
+  .append("text")
     .attr('x', xLabel)
     .attr('y', d => yCircle - 2*scale3(d))
     .text( d => d)
