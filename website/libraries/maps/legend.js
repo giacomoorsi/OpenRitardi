@@ -4,7 +4,7 @@
 function Legend(color, {
     title,
     tickSize = 6,
-    width = 320, 
+    width = 150, 
     height = 44 + tickSize,
     marginTop = 18,
     marginRight = 0,
@@ -133,7 +133,7 @@ function Legend(color, {
           .ticks(ticks, typeof tickFormat === "string" ? tickFormat : undefined)
           .tickFormat(typeof tickFormat === "function" ? tickFormat : undefined)
           .tickSize(tickSize)
-          .tickValues(tickValues))
+          .tickValues([0, 3, 5, 10, 100]))
         .call(tickAdjust)
         .call(g => g.select(".domain").remove())
         .call(g => g.append("text")

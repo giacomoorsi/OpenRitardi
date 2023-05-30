@@ -13,13 +13,7 @@ var container = map.getCanvasContainer();
 var width = document.getElementById("map").offsetWidth;
 var height = document.getElementById("map").offsetHeight;
 
-var svg = d3
-  .select(container)
-  .append("svg")
-  .attr("width", width)
-  .attr("height", height)
-  .style("position", "absolute")
-  .style("z-index", 1000);
+
 
 /**
  * Function to project coordinates to the exact position on the canvas given by Mapbox
@@ -321,11 +315,15 @@ function plotDots(data) {
     popup.remove();
   });
 
-  let legend = Legend(colormap, {
-    title: "avg arrival delay",
+  // add legend, without showing the negative values for the colormap
+  let legend = Legend(colormap.range(colormap.range().slice(1))
+                              .domain(colormap.domain().slice(1)), {
+    title: "Average delay",
   })
-  // extract content from legend and add it to the main svg
-  // legend is a DOM element, we need to extract the content and put it in the main svg
-  // we use insertAdjacentHTML to do that
-  svg.node().insertAdjacentHTML("beforeend", '<g class="map-legend">' + legend.innerHTML + '</g>');
+
+  d3.select("#legend")
+    .append("div")
+    .attr("width", "100%")
+    .attr("height", "100%")
+    .html(legend.outerHTML)
 }
