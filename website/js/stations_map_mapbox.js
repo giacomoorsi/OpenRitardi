@@ -300,7 +300,12 @@ function plotDots(data) {
   /**
    * Adds a popup when the user hovers on a station
    */
-  map.on('mouseenter', 'circles', (e) => {
+  map.on('mousemove', 'circles', (e) => {
+    
+    if (e.features.length === 0) {
+      return;
+    }
+
     // Change the cursor style as a UI indicator.
     map.getCanvas().style.cursor = 'pointer';
 

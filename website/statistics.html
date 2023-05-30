@@ -34,8 +34,8 @@
         uk-sticky="media: 960; "">
         <div class=" uk-container uk-container-medium">
         <nav class="uk-navbar" uk-navbar="" style="max-width: 1500px; margin:0 auto">
-            <div class="uk-navbar-left"><a class="uk-navbar-item uk-logo" href="index.html" aria-label="Back to Home"><img
-                        src="media/logo/logo.png" class="uk-margin-small-right" alt="UIkit"
+            <div class="uk-navbar-left"><a class="uk-navbar-item uk-logo" href="index.html"
+                    aria-label="Back to Home"><img src="media/logo/logo.png" class="uk-margin-small-right" alt="UIkit"
                         style="height:90px; margin-bottom:10px">
                 </a></div>
             <div class="uk-navbar-right">
@@ -68,11 +68,226 @@
     <!-- END OF HEADER-->
 
     <!-- CONTENT -->
-    <div class="uk-container uk-container-small uk-margin-large uk-text-lead uk-text-justify ot-about-page">
+    <div class="uk-container uk-container-large uk-margin-large uk-text-lead uk-text-justify ot-about-page">
         <h1>Statistics</h1>
         <!-- Lorem ipsum -->
-        <p></p>
+        <div uk-grid class="uk-grid-match uk-child-width-1-2@m">
+            <!-- Worst trains -->
+            <div>
+                <div class="uk-card uk-card-default">
+                    <div class="uk-card-header">
+                        <h3 class="uk-card-title uk-text-danger">Worst trains 2023</h3>
+                    </div>
+                    <div class="uk-card-body">
+                        <div class="uk-overflow-auto">
+                            <table class="uk-table uk-table-divider uk-table-hover ot-ranking-table">
+                                <thead>
+                                    <tr>
+                                        <th>Train number</th>
+                                        <th>Direction</th>
+                                        <th
+                                            uk-tooltip="A train is considered delayed if it has a delay greater than 5'. This is the average percentage of delays at each stop.">
+                                            % delays</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><img src="media/intercity.svg" class="ot-train-logo ot-train-logo-ic"> IC
+                                            655</td>
+                                        <td>Ventimiglia <span uk-icon="arrow-right"></span> Milano Centrale</td>
+                                        <td>80%</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="media/frecciarossa.svg" class="ot-train-logo ot-train-logo-fr"> FR
+                                            17</td>
+                                        <td>Torino P.Nuova <span uk-icon="arrow-right"></span> Napoli Centrale</td>
+                                        <td>72%</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="media/RE.svg" class="ot-train-logo ot-train-logo-re"> RE 1128</td>
+                                        <td>Catania <span uk-icon="arrow-right"></span> Messina</td>
+                                        <td>60%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End worst trains -->
+            <!-- Best trains -->
+            <div uk-grid class="uk-grid-match uk-child-width-1-2@m">
+                <div>
+                    <div class="uk-card uk-card-default">
+                        <div class="uk-card-header">
+                            <h3 class="uk-card-title uk-text-success">Best trains 2023</h3>
+                        </div>
+                        <div class="uk-card-body">
+                            <div class="uk-overflow-auto">
+                                <table class="uk-table uk-table-divider uk-table-hover ot-ranking-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Train number</th>
+                                            <th>Direction</th>
+                                            <th
+                                                uk-tooltip="A train is considered delayed if it has a delay greater than 5'. This is the average percentage of delays at each stop.">
+                                                % delays</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><img src="media/RE.svg" class="ot-train-logo ot-train-logo-re"> RE
+                                                14</td>
+                                            <td>Pisa <span uk-icon="arrow-right"></span> Firenze</td>
+                                            <td>2%</td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="media/frecciarossa.svg"
+                                                    class="ot-train-logo ot-train-logo-fr"> FR
+                                                1</td>
+                                            <td>Bologna <span uk-icon="arrow-right"></span> Milano Centrale</td>
+                                            <td>4%</td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="media/RE.svg" class="ot-train-logo ot-train-logo-re"> RE 111
+                                            </td>
+                                            <td>Bari <span uk-icon="arrow-right"></span> Foggia</td>
+                                            <td>5%</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End of section Best/Worst Trains -->
+        <!-- Best/Worst Stations -->
+        <div uk-grid class="uk-grid-match uk-child-width-1-2@m">
+            <!-- Worst stations -->
+            <div>
+                <div class="uk-card uk-card-default">
+                    <div class="uk-card-header">
+                        <h3 class="uk-card-title uk-text-danger">Worst stations 2023</h3>
+                    </div>
+                    <div class="uk-card-body">
+                        <div class="uk-overflow-auto">
+                            <table class="uk-table uk-table-divider uk-table-hover ot-ranking-table">
+                                <thead>
+                                    <tr>
+                                        <th>Train number</th>
+                                        <th>Direction</th>
+                                        <th
+                                            uk-tooltip="A train is considered delayed if it has a delay greater than 5'. This is the average percentage of delays at each stop.">
+                                            % delays</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><img src="media/intercity.svg" class="ot-train-logo ot-train-logo-ic"> IC
+                                            655</td>
+                                        <td>Ventimiglia <span uk-icon="arrow-right"></span> Milano Centrale</td>
+                                        <td>80%</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="media/frecciarossa.svg" class="ot-train-logo ot-train-logo-fr"> FR
+                                            17</td>
+                                        <td>Torino P.Nuova <span uk-icon="arrow-right"></span> Napoli Centrale</td>
+                                        <td>72%</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="media/RE.svg" class="ot-train-logo ot-train-logo-re"> RE 1128</td>
+                                        <td>Catania <span uk-icon="arrow-right"></span> Messina</td>
+                                        <td>60%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End worst stations -->
+            <!-- Best stations -->
+            <div uk-grid class="uk-grid-match uk-child-width-1-2@m">
+                <div>
+                    <div class="uk-card uk-card-default">
+                        <div class="uk-card-header">
+                            <h3 class="uk-card-title uk-text-success">Best stations 2023</h3>
+                        </div>
+                        <div class="uk-card-body">
+                            <div class="uk-overflow-auto">
+                                <table class="uk-table uk-table-divider uk-table-hover ot-ranking-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Train number</th>
+                                            <th>Direction</th>
+                                            <th
+                                                uk-tooltip="A train is considered delayed if it has a delay greater than 5'. This is the average percentage of delays at each stop.">
+                                                % delays</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><img src="media/RE.svg" class="ot-train-logo ot-train-logo-re"> RE
+                                                14</td>
+                                            <td>Pisa <span uk-icon="arrow-right"></span> Firenze</td>
+                                            <td>2%</td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="media/frecciarossa.svg"
+                                                    class="ot-train-logo ot-train-logo-fr"> FR
+                                                1</td>
+                                            <td>Bologna <span uk-icon="arrow-right"></span> Milano Centrale</td>
+                                            <td>4%</td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="media/RE.svg" class="ot-train-logo ot-train-logo-re"> RE 111
+                                            </td>
+                                            <td>Bari <span uk-icon="arrow-right"></span> Foggia</td>
+                                            <td>5%</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="uk-margin">
+            <div class="uk-card uk-card-default uk-card-body uk-width-1-1">
+                <div uk-grid class="uk-child-width-1-2">
+                    <div>
+                        <h2>Regional differences</h2>
+
+                        <div>
+                            <span style="font-size: 120%;">Train type</span>
+                            <div class="uk-margin-small">
+                                <div class="uk-form-controls">
+                                    <select class="uk-select" id="form-horizontal-select-trainType"
+                                        style="font-size: 110%; background: #f9f9f9">
+                                        <option style="font-size: 120%;">All trains</option>
+                                        <option style="font-size: 120%;">Regional</option>
+                                        <option style="font-size: 120%;">EuroCity</option>
+                                        <option style="font-size: 120%;">InterCity</option>
+                                        <option style="font-size: 120%;">FrecciaRossa</option>
+                                        <option style="font-size: 120%;">FrecciaBianca</option>
+                                        <option style="font-size: 120%;">FrecciaArgento</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div id="regional-differences-map"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <script src="js/regional-differences.js"></script>
 
 </body>
 

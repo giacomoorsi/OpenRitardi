@@ -81,12 +81,18 @@ body {
 
 #route-map {
     width: 100%;
-    /* compute height 100% - 100px */
     height: 500px;
 }
+
+
 
 .ot-about-page {
     line-height: 25pt;
     font-size: 14pt;
     font-weight: 400;
+}
+
+#regional-differences-map {
+    width: 100%;
+    height: 500px;
 }
