@@ -5,8 +5,8 @@ mapboxgl.accessToken = mapBoxAccessToken;
 const map = new mapboxgl.Map({
     container: 'regional-differences-map',
     style: 'https://maps.geops.io/styles/base_bright_v2/style.json?key=5cc87b12d7c5370001c1d6552688c8395e0e4e94a4faf2368b9915dd',
-    center: [8, 42.5],
-    zoom: 5,
+    center: [12, 42],
+    zoom: 4.6,
 });
 
 var container = map.getCanvasContainer();
@@ -221,6 +221,21 @@ function plotRegions(data, geojson) {
         'data': plotdata
     });
 
+
+
+
+    const layers = map.getStyle().layers;
+    // Find the last symbol that contains streets. We put the shapes for the regions over this one, in order to have 
+    // map labels over the shapes
+    let lastSymbolId;
+    for (let i = 0; i < layers.length; i++) {
+        if (layers[i].id === 'streetName_path') {
+            lastSymbolId = layers[i].id;
+            console.log(layers[i])
+        }
+    }
+    console.log(lastSymbolId)
+
     // The feature-state dependent fill-opacity expression will render the hover effect
     // when a feature's hover state is set to true.
     map.addLayer({
@@ -237,7 +252,7 @@ function plotRegions(data, geojson) {
                 0.5
             ]
         }
-    });
+    }, lastSymbolId);
 
     map.addLayer({
         'id': 'regional-borders',
@@ -245,10 +260,10 @@ function plotRegions(data, geojson) {
         'source': 'regions',
         'layout': {},
         'paint': {
-            'line-color': '#000',
+            'line-color': '#223046',
             'line-width': 1
         }
-    });
+    }, lastSymbolId);
 
 
     // Create a popup, but don't add it to the map yet.
@@ -262,17 +277,32 @@ function plotRegions(data, geojson) {
      */
     map.on('mousemove', 'regional-fills', (e) => {
         // Change the cursor style as a UI indicator.
-        map.getCanvas().style.cursor = 'pointer';
+
+        if (hoverStationId !== null) {
+            map.setFeatureState(
+                { source: 'regions', id: hoverStationId },
+                { hover: false }
+            );
+        }
 
         hoverStationId = e.features[0].id;
+
+        
+
+        const html = e.features[0].properties.description;
+
+        if (html == undefined) {
+            return
+        }
+
+        map.getCanvas().style.cursor = 'pointer';
+
 
         // set hover state, the new radius is handled by the paint property
         map.setFeatureState(
             { source: 'regions', id: hoverStationId },
             { hover: true }
         );
-
-        const html = e.features[0].properties.description;
 
         const coordinates = e.lngLat;
 

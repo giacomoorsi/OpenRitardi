@@ -151,21 +151,21 @@ const valuesToShow = [1000, 5000, 10_000]
 
 // add color legend, without showing the negative values for the colormap
 let legend = Legend(colormap.range(colormap.range().slice(1))
-.domain(colormap.domain().slice(1)), {
+  .domain(colormap.domain().slice(1)), {
   title: "Average delay",
 })
 
 d3.select("#legend")
-.append("div")
-.attr("width", "100%")
-.attr("height", "100%")
-.html(legend.outerHTML)
+  .append("div")
+  .attr("width", "100%")
+  .attr("height", "100%")
+  .html(legend.outerHTML)
 
 const svg_size_legend = d3.select("#legend")
   .append("svg")
-    .attr("width", 150)
-    .attr("height", 80)
-    .attr("z-index", 100000)
+  .attr("width", 150)
+  .attr("height", 80)
+  .attr("z-index", 100000)
 
 
 // variable to check if the map was already fully loaded
@@ -301,7 +301,7 @@ function plotDots(data) {
    * Adds a popup when the user hovers on a station
    */
   map.on('mousemove', 'circles', (e) => {
-    
+
     if (e.features.length === 0) {
       return;
     }
@@ -310,6 +310,13 @@ function plotDots(data) {
     map.getCanvas().style.cursor = 'pointer';
 
     console.log(e)
+
+    if (hoverStationId !== null) {
+      map.setFeatureState(
+        { source: 'circles-source', id: hoverStationId },
+        { hover: false }
+      );
+    }
 
     hoverStationId = e.features[0].id;
 
@@ -331,7 +338,9 @@ function plotDots(data) {
       coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
     }
 
-    popup.setLngLat(coordinates).setHTML(html).addTo(map);
+    // get mouse coordinates
+    const newcoordinates = e.lngLat
+    popup.setLngLat(newcoordinates).setHTML(html).addTo(map);
   });
 
   map.on('mouseleave', 'circles', (e) => {
@@ -350,43 +359,43 @@ function plotDots(data) {
   });
 
 
-// Add legend: circles
-const xCircle = 75
-const yCircle = 65
-const xLabel = 110
-svg_size_legend
-  .selectAll("circle")
-  .data(valuesToShow)
-  .enter()
-  .append("circle")
+  // Add legend: circles
+  const xCircle = 75
+  const yCircle = 65
+  const xLabel = 110
+  svg_size_legend
+    .selectAll("circle")
+    .data(valuesToShow)
+    .enter()
+    .append("circle")
     .attr("cx", xCircle)
     .attr("cy", d => yCircle - scale3(d))
     .attr("r", d => scale3(d))
     .style("fill", "none")
     .attr("stroke", "black")
 
-// Add legend: segments
-svg_size_legend
-  .selectAll("line")
-  .data(valuesToShow)
-  .enter()
-  .append("line")
+  // Add legend: segments
+  svg_size_legend
+    .selectAll("line")
+    .data(valuesToShow)
+    .enter()
+    .append("line")
     .attr('x1', d => xCircle)
     .attr('x2', xLabel)
-    .attr('y1', d => yCircle - 2*scale3(d))
-    .attr('y2', d => yCircle - 2*scale3(d))
+    .attr('y1', d => yCircle - 2 * scale3(d))
+    .attr('y2', d => yCircle - 2 * scale3(d))
     .attr('stroke', 'black')
     .style('stroke-dasharray', ('2,2'))
 
-// Add legend: labels
-svg_size_legend
-  .selectAll("text") 
-  .data(valuesToShow)
-  .enter()
-  .append("text")
+  // Add legend: labels
+  svg_size_legend
+    .selectAll("text")
+    .data(valuesToShow)
+    .enter()
+    .append("text")
     .attr('x', xLabel)
-    .attr('y', d => yCircle - 2*scale3(d))
-    .text( d => d)
+    .attr('y', d => yCircle - 2 * scale3(d))
+    .text(d => d)
     .style("font-size", 10)
     .attr('alignment-baseline', 'middle')
 
