@@ -108,7 +108,7 @@ d3.select("#form-horizontal-select-trainType").on("change", function (d) {
 // var trainTypeChosen = document.getElementById("form-horizontal-select-trainType").value
 // var dataset = getFileName(dayChosen, trainTypeChosen)
 
-const data_stop = d3.csv("data/data_stop_region.csv", function (d) {
+const data_stop = d3.csv("data/data_stop_region_class_IC.csv", function (d) {
     return d;
 })
 

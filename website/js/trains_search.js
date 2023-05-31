@@ -66,7 +66,13 @@ dataset_dropdown = d3.csv('data/data_train_index.csv').then(function (data) {
         
         displayTrainInformation(train_id);
     } else {
-        let train_id = 790273982487;
+        let train_class_default = "IC";
+        let train_number_default = "655";
+
+        let train_id = dataset_dropdown.filter(function (train) {
+            return train['train_class'] === train_class_default && train['train_number'] === train_number_default;
+        })[0]['train_id'];
+
         displayTrainInformation(train_id);
     }
 });
