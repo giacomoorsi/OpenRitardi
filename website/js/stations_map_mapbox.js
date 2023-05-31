@@ -117,6 +117,15 @@ Promise.all([data_stop]).then(results => {
   console.log(station_data)
   plotDots(station_data);
   populate_dropdown_from_dataset(station_data);
+
+  // if there's a stop_name specified in the url, open the popup
+  let urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.has('stop_name')) {
+    let stop_name = urlParams.get('stop_name');
+    let stop = station_data.filter(d => d.stop_name == stop_name)[0];
+    let id = stop.id;
+    displayStation(id)
+  }
 })
 
 /**
@@ -144,8 +153,8 @@ function generatePopupHTML(d) {
 
 // scales the color linearly
 let colormap = d3.scaleLinear()
-    .domain([-10, 0, 3, 7, 10])
-    .range(['#10ad0a', '#10ad0a', '#f7f414', '#e81710', '#e81710']);
+  .domain([-10, 0, 3, 7, 10])
+  .range(['#10ad0a', '#10ad0a', '#f7f414', '#e81710', '#e81710']);
 
 const valuesToShow = [1000, 5000, 10_000]
 

@@ -59,8 +59,16 @@ dataset_dropdown = d3.csv('data/data_train_index.csv').then(function (data) {
 
     populate_dropdown_from_dataset(dataset_dropdown);
 
-     // show a demo train on load: IC655
-     displayTrainInformation("790273982487");
+    // check if there's URL parameter train_id
+    let urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has('train_id')) {
+        let train_id = urlParams.get('train_id');
+        
+        displayTrainInformation(train_id);
+    } else {
+        let train_id = 790273982487;
+        displayTrainInformation(train_id);
+    }
 });
 
 // populate the dropdown with data from the sample

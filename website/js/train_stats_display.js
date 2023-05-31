@@ -115,7 +115,7 @@ function showStopsStatisticsHistogram(train_data) {
 
     // set the dimensions and margins of the graph
     let margin = { top: 30, right: 30, bottom: 130, left: 60 },
-        width = 460 - margin.left - margin.right,
+        width = 500 - margin.left - margin.right,
         height = 450 - margin.top - margin.bottom;
 
 
@@ -143,12 +143,15 @@ function showStopsStatisticsHistogram(train_data) {
 
     // Add Y axis
 
-    max_delay = d3.max(train_data, function (d) { return d.avg_arrival_delay; })
-    min_delay = d3.min(train_data, function (d) { return d.avg_arrival_delay; })
+    max_delay = d3.max(train_data, function (d) { return Number(d.avg_arrival_delay); })
+    min_delay = d3.min(train_data, function (d) { return Number(d.avg_arrival_delay); })
     min_delay = Math.min(min_delay, 0)
 
+    console.log("max delay: " + max_delay)
+    console.log("min delay: " + min_delay)
+
     let y = d3.scaleLinear()
-        .domain([min_delay, max_delay])
+        .domain([min_delay, max_delay + 1])
         .range([height, 0]);
     svg.append("g")
         .call(d3.axisLeft(y));
