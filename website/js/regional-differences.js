@@ -13,6 +13,32 @@ var container = map.getCanvasContainer();
 var width = document.getElementById("regional-differences-map").offsetWidth;
 var height = document.getElementById("regional-differences-map").offsetHeight;
 
+// scales the color linearly
+let colormap = d3.scaleLinear()
+    .domain([-10, 0, 3, 7, 10])
+    .range(['#10ad0a', '#10ad0a', '#f7f414', '#e81710', '#e81710']);
+
+// add color legend, without showing the negative values for the colormap
+const legend = Legend(colormap.range(colormap.range().slice(1))
+    .domain(colormap.domain().slice(1)), {
+    title: "Average delays",
+})
+
+// add style attribute to legend
+legend.style.display = "block"
+legend.style.margin = "auto"
+
+d3.select(".regional-legend")
+    .append("div")
+    .attr("width", "100%")
+    .attr("height", "100%")
+    .html(legend.outerHTML)
+
+// const svg_size_legend = d3.select(".regional-legend")
+//     .append("svg")
+//     .attr("width", 150)
+//     .attr("height", 80)
+//     .attr("z-index", 100000)
 
 
 /**
@@ -132,10 +158,7 @@ function generatePopupHTML(d) {
 
 
 
-// scales the color linearly
-let colormap = d3.scaleLinear()
-    .domain([-10, 0, 3, 7, 100])
-    .range(['#10ad0a', '#10ad0a', '#f7f414', '#e81710', '#e81710']);
+
 
 const valuesToShow = [1000, 5000, 10_000]
 
@@ -162,6 +185,8 @@ function plotRegions(data, geojson) {
         setTimeout(function () { plotRegions(data, geojson); }, 200);
         return;
     }
+
+
 
 
     /**
@@ -287,7 +312,7 @@ function plotRegions(data, geojson) {
 
         hoverStationId = e.features[0].id;
 
-        
+
 
         const html = e.features[0].properties.description;
 

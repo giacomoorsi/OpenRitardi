@@ -3,6 +3,38 @@
     /* compute height 100% - 100px */
     height: calc(100vh - 100px);
 }
+
+
+/* #home-overlay-container {
+    width: 100%;
+    height: calc(100vh - 100px);
+    position: absolute;
+    top: 100px;
+    left: 0;
+} */
+
+/**
+On larger devices than 1500px, add a margin to the left equal to the viewport width - 1500px/2
+**/
+/* #home-map-form-container {
+    margin-left: 0;
+}
+@media (min-width: 1280px) {
+    #home-map-form-container {
+        margin-left: calc((100vw - 1280px) / 2);
+    }
+} */
+
+.home-overlay-form-container {
+    margin-left: 0;
+}
+@media (min-width: 1280px) {
+    .home-overlay-form-container {
+        margin-left: calc((100vw - 1280px) / 2);
+    }
+}
+
+
 div.tooltip {
     position: absolute;
     text-align: center;
@@ -14,6 +46,7 @@ div.tooltip {
     pointer-events: none;
     font-size: .7rem;
 }
+
 .tooltip {
     position: absolute;
     z-index: 1001;
@@ -24,40 +57,41 @@ div.tooltip {
     padding: 5px;
     font-size: 14px;
     opacity: 0;
-  }
+}
 
-  #autocompleteList {
+#autocompleteList {
     list-style-type: none;
     padding: 0;
     margin: 0;
-  }
-  
-  #autocompleteList li {
+}
+
+#autocompleteList li {
     cursor: pointer;
     padding: 5px;
-  }
-  
-  #autocompleteList li:hover {
+}
+
+#autocompleteList li:hover {
     background-color: lightgray;
-  }
-  
+}
+
 
 
 
 .map-legend {
     background: #fff;
-    display:block;
+    display: block;
 }
+
 body {
     cursor: default;
-  }
+}
 
 
 
 .uk-navbar-container {
     background: #ededed;
 }
-  
+
 
 
 .ot-ranking-table .ot-train-logo-ic {
@@ -75,6 +109,7 @@ body {
 .ot-ranking-table tbody tr {
     cursor: pointer;
 }
+
 .ot-ranking-train-info .ot-train-logo-ic {
     height: 40px;
 }
@@ -95,4 +130,25 @@ body {
 #regional-differences-map {
     width: 100%;
     height: 500px;
+}
+
+
+/**
+Legend stuff
+**/
+.map-overlay {
+    /*font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;*/
+    /* position: absolute; */
+    width: 180px;
+    /* top: 0;
+    left: 0; */
+    padding: 10px;
+}
+
+.map-overlay .map-overlay-inner {
+    background-color: #fff;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    padding: 10px;
+    margin-bottom: 10px;
 }
