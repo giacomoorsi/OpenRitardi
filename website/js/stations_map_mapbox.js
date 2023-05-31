@@ -152,7 +152,7 @@ const valuesToShow = [1000, 5000, 10_000]
 // add color legend, without showing the negative values for the colormap
 let legend = Legend(colormap.range(colormap.range().slice(1))
   .domain(colormap.domain().slice(1)), {
-  title: "Average delay (minutes)",
+  title: "Average delay (min)",
 })
 
 d3.select("#legend")

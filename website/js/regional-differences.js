@@ -21,7 +21,7 @@ let colormap = d3.scaleLinear()
 // add color legend, without showing the negative values for the colormap
 const legend = Legend(colormap.range(colormap.range().slice(1))
     .domain(colormap.domain().slice(1)), {
-    title: "Average delays",
+    title: "Average delay (min)",
 })
 
 // add style attribute to legend
