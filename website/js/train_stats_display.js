@@ -18,6 +18,27 @@ function generateDelayString(delay) {
 
 var train_data = []
 
+
+function trainClassToImage(train_class) {
+    console.log(train_class);
+    if (train_class == "IC") {
+        image = "media/intercity.svg width='130px'";
+    } else if (train_class == "REG") {
+        image = "media/RE.svg width='60px'";
+    } else if (train_class == "FR") {
+        image = "media/frecciarossa.svg width='130px'";
+    } else if (train_class == "FB") {
+        image = "media/frecciabianca.svg width='130px'";
+    } else if (train_class == "FA") {
+        image = "media/frecciargento.svg width='130px'";
+    } else if (train_class == "ICN") {
+        image = "media/intercity_notte.svg width='130px'";
+    }
+    else image = "media/logo/favicon.png";
+    return image;
+}
+
+
 function displayTrainInformation(trainID) {
     /**
      * The function is called when the user clicks on a train in the dropdown menu.
@@ -38,7 +59,7 @@ function displayTrainInformation(trainID) {
     // compute the average delay at each stop
 
     content = `<div class="uk-card uk-card-default uk-card-body">
-        <h2><!--<img src="media/intercity.svg" class="ot-train-logo ot-train-logo-ic"> --><span id="train_name_label">${train_summary['train_class'] + ' ' + train_summary['train_number']}</span></h2>
+        <h2><span id="train_name_label"><img src=${trainClassToImage(train_summary["train_class"])}>${' ' + train_summary['train_number']}</span></h2>
         <p class="uk-text-lead" id="train_description_label">${train_summary['train_departure_stop_name']} <span uk-icon="arrow-right"></span> ${train_summary['train_arrival_stop_name']}</p>
 
         <div class="uk-child-width-1-2@s uk-grid-match uk-margin-large" uk-grid>

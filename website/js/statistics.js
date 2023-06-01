@@ -42,11 +42,31 @@ function trainClicked(train_id) {
 }
 
 
+function trainClassToImage(train_class) {
+    console.log(train_class);
+    if (train_class == "IC") {
+        image = "media/intercity.svg width='80px'";
+    } else if (train_class == "REG") {
+        image = "media/RE.svg";
+    } else if (train_class == "FR") {
+        image = "media/frecciarossa.svg width='80px'";
+    } else if (train_class == "FB") {
+        image = "media/frecciabianca.svg width='80px'";
+    } else if (train_class == "FA") {
+        image = "media/frecciargento.svg width='80px'";
+    } else if (train_class == "ICN") {
+        image = "media/intercity_notte.svg width='80px'";
+    }
+    else image = "media/logo/favicon.png";
+    return image;
+}
+
+
 function generateTrainHTML(trains) {
     html = '';
     trains.forEach(function (train) {
         html += `<tr onclick="trainClicked('${train["train_id"]}')">
-        <td><!--<img src="media/intercity.svg" class="ot-train-logo ot-train-logo-ic">--> ${train["train_class"]} ${train["train_number"]}</td>
+        <td><img src=${trainClassToImage(train["train_class"])} class="ot-train-logo ot-train-logo-ic vertical-center"> ${train["train_number"]}</td>
         <td>${pascalize(train["train_departure_stop_name"])} <span uk-icon="arrow-right"></span> ${pascalize(train["train_arrival_stop_name"])}</td>
         <td>${generateDelayString(train["avg_arrival_delay"])}</td>
         </tr>`
