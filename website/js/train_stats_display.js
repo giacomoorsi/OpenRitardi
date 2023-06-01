@@ -227,7 +227,7 @@ function showStopsStatisticsHistogram(train_data) {
         .on("mouseleave", mouseleave)
         .on("click", function (d) {
             document.getElementById('dropdown_stop').value=d.target.__data__.stop_number-1;
-            updateDropdown(d.target.__data__.stop_number);
+            updateDropdown(d.target.__data__.stop_number-1);
         });
 
 
