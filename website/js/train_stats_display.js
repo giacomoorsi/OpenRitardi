@@ -119,8 +119,6 @@ function displayTrainInformation(trainID) {
 
 
 
-
-
 /**
  * Shows an histogram with the delays at each stop
  * using d3.js
@@ -129,6 +127,7 @@ function showStopsStatisticsHistogram(train_data) {
     let container = document.getElementById('histogram_container');
 
     d3.select("#histogram_container svg").remove();
+    d3.select("#histogram_container div").remove();
 
     // set the dimensions and margins of the graph
     let margin = { top: 30, right: 30, bottom: 130, left: 60 },
@@ -141,6 +140,10 @@ function showStopsStatisticsHistogram(train_data) {
         .append("svg")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
+        // center
+        .style("margin-left", "auto")
+        .style("margin-right", "auto")
+        .style("display", "block")
         .append("g")
         .attr("transform",
             "translate(" + margin.left + "," + margin.top + ")");
@@ -156,7 +159,7 @@ function showStopsStatisticsHistogram(train_data) {
         .call(d3.axisBottom(x))
         .selectAll("text")
         .attr("transform", "translate(-10,0)rotate(-45)")
-        .style("text-anchor", "end");
+        .style("text-anchor", "end")
 
     // Add Y axis
 
@@ -170,6 +173,44 @@ function showStopsStatisticsHistogram(train_data) {
     svg.append("g")
         .call(d3.axisLeft(y));
 
+
+    var Tooltip = d3.select("#histogram_container")
+        .append("div")
+        .style("opacity", 0)
+        .attr("class", "tooltip")
+        .attr("z-index", "10000000000")
+        .style("background-color", "white")
+        .style("border", "solid")
+        .style("border-width", "2px")
+        .style("border-radius", "5px")
+        .style("padding", "5px")
+
+    var mouseover = function(d) {
+        Tooltip
+            .style("opacity", 1)
+        d3.select(this)
+            .style("stroke", "black")
+            .style("opacity", 1)
+    }
+    var mousemove = function(d) {
+        train = d.target.__data__
+        output = '<div class="uk-text-lead" style="width: 250px">'
+        output += '<span style="text-align:center"><b>' + train.stop_name 
+               +  "</b></span><br/>" + "Number of trains: " + train.count_dates_train 
+               + "<br/>" + "Avg Arrival Delay: <span style='color: " + colormap(train.avg_arrival_delay) + "'>" + Math.round(train.avg_arrival_delay * 10) / 10 + " min</span>"
+        output += "</div>"
+        Tooltip
+            .html(output)
+            .style("left", (d3.pointer(d, this)[0]+70) + "px")
+            .style("top", (d3.pointer(d, this)[1]) + "px")
+    }
+    var mouseleave = function(d) {
+        Tooltip
+            .style("opacity", 0)
+        d3.select(this)
+            .style("stroke", "none")
+            .style("opacity", 0.8)
+    }
     // Bars
     svg.selectAll("mybar")
         .data(train_data)
@@ -181,6 +222,14 @@ function showStopsStatisticsHistogram(train_data) {
         // no bar at the beginning thus:
         .attr("height", function (d) { return height - y(0); }) // always equal to 0
         .attr("y", function (d) { return y(0); })
+        .on("mouseover", mouseover)
+        .on("mousemove", mousemove)
+        .on("mouseleave", mouseleave)
+        .on("click", function (d) {
+            document.getElementById('dropdown_stop').value=d.target.__data__.stop_number-1;
+            updateDropdown(d.target.__data__.stop_number);
+        });
+
 
     // Animation
     svg.selectAll("rect")
