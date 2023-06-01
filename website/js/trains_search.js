@@ -11,13 +11,11 @@ search_options_dropdown = UIkit.dropdown(search_options_dropdown_id, {
 // Triggered when the dropdown is shown
 UIkit.util.on(search_options_dropdown_id, 'show', function () {
     $('#search_options_dropdown').addClass('active');
-    console.log('showed');
 });
 
 // Triggered when the dropdown is hidden
 UIkit.util.on(search_options_dropdown_id, 'hide', function () {
     //$('#search_options_dropdown').addClass('active');
-    console.log('hidden');
     //UIkit.dropdown(search_options_dropdown_id).show();
 });
 

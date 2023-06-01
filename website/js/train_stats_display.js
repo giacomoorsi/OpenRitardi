@@ -20,7 +20,6 @@ var train_data = []
 
 
 function trainClassToImage(train_class) {
-    console.log(train_class);
     if (train_class == "IC") {
         image = "media/intercity.svg width='130px'";
     } else if (train_class == "ICN") {
@@ -55,8 +54,6 @@ function displayTrainInformation(trainID) {
     })[0];
 
     let searched_train_info_div = document.getElementById('searched_train_info_div');
-
-    console.log(train_summary)
 
     // compute the average delay at each stop
 
@@ -103,7 +100,6 @@ function displayTrainInformation(trainID) {
     // when ready
     train_dataset.then(function (data) {
         train_data = data;
-        console.log(data)
         showStopsStatisticsHistogram(data);
         showStopsStatisticsDropdown(data);
 
@@ -130,8 +126,6 @@ function displayTrainInformation(trainID) {
  * using d3.js
  */
 function showStopsStatisticsHistogram(train_data) {
-    console.log(train_data)
-
     let container = document.getElementById('histogram_container');
 
     d3.select("#histogram_container svg").remove();
@@ -170,9 +164,6 @@ function showStopsStatisticsHistogram(train_data) {
     min_delay = d3.min(train_data, function (d) { return Number(d.avg_arrival_delay); })
     min_delay = Math.min(min_delay, 0)
 
-    console.log("max delay: " + max_delay)
-    console.log("min delay: " + min_delay)
-
     let y = d3.scaleLinear()
         .domain([min_delay, max_delay + 1])
         .range([height, 0]);
@@ -197,7 +188,7 @@ function showStopsStatisticsHistogram(train_data) {
         .duration(800)
         .attr("y", function (d) { return y(d.avg_arrival_delay); })
         .attr("height", function (d) { return height - y(d.avg_arrival_delay); })
-        .delay(function (d, i) { console.log(i); return (i * 100) })
+        .delay(function (d, i) { return (i * 100) })
 
     // label
     svg.append("text")

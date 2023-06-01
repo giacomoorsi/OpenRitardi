@@ -41,7 +41,6 @@ const data_route = d3.csv("data/trip_demo.txt", function (d) {
 
 Promise.all([data_route]).then(results => {
   let route_data = results[0];
-  //console.log(route_data)
   plotLines(route_data);
 })
 
@@ -51,8 +50,6 @@ function plotLines(data) {
   let coordinates = data.map(function (d) {
     return [d.shape_pt_lon, d.shape_pt_lat];
   });
-  console.log("COordinates: ")
-  console.log(coordinates)
 
   // check if the map is loaded
 
@@ -74,15 +71,8 @@ function plotLines(data) {
   for (let i = 0; i < layers.length; i++) {
     if (layers[i].id === 'streetName_path') {
       lastSymbolId = layers[i].id;
-      console.log(layers[i])
     }
   }
-  console.log("lastSymbolId: ")
-  console.log(lastSymbolId)
-
-
-  console.log("lastSymbolId: ")
-  console.log(lastSymbolId)
 
   map.addSource('route', {
     'type': 'geojson',
