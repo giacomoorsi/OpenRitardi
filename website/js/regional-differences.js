@@ -149,8 +149,16 @@ function generatePopupHTML(d) {
     /**
      * Returns the HTML code for a popup of a stop
      */
-    output = '<div class="uk-text-lead">'
-    output += '<span style="text-align:center"><b>' + d.stop_name_region + "</b></span><br/>" + "Number of trains: " + d.count_stops + "<br/>" + "Avg Arrival Delay: " + Math.round(d.avg_arrival_delay * 1000) / 1000 + " min"
+    // output = '<div class="uk-text-lead" >'
+    // output += '<span style="text-align:center"><b>' + d.stop_name 
+    //        +  "</b></span><br/>" + "Number of trains: " + d.count_stops 
+    //        + "<br/>" + "Avg Arrival Delay: <span style='color: " + colormap(d.avg_arrival_delay) + "'>" + Math.round(d.avg_arrival_delay * 10) / 10 + " min</span>"
+    // output += "</div>"
+
+    output = '<div class="uk-text-lead" style="width: 300px">'
+    output += '<span style="text-align:center"><b>' + d.stop_name_region
+           + "</b></span><br/>" + "Number of trains: " + d.count_stops 
+           + "<br/>" + "Avg Arrival Delay: <span style='color: " + colormap(d.avg_arrival_delay) + "'>" + Math.round(d.avg_arrival_delay * 10) / 10 + " min"
     output += "</div>"
 
     return output
