@@ -46,16 +46,18 @@ function trainClassToImage(train_class) {
     console.log(train_class);
     if (train_class == "IC") {
         image = "media/intercity.svg width='80px'";
+    } else if (train_class == "ICN") {
+        image = "media/intercity_notte.svg width='80px'";
     } else if (train_class == "REG") {
         image = "media/RE.svg";
+    } else if (train_class == "EC") {
+        image = "media/EC.svg";
     } else if (train_class == "FR") {
         image = "media/frecciarossa.svg width='80px'";
     } else if (train_class == "FB") {
         image = "media/frecciabianca.svg width='80px'";
     } else if (train_class == "FA") {
         image = "media/frecciargento.svg width='80px'";
-    } else if (train_class == "ICN") {
-        image = "media/intercity_notte.svg width='80px'";
     }
     else image = "media/logo/favicon.png";
     return image;
