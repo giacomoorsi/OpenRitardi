@@ -142,8 +142,10 @@ function generatePopupHTML(d) {
   /**
    * Returns the HTML code for a popup of a stop
    */
-  output = '<div class="uk-text-lead">'
-  output += '<span style="text-align:center"><b>' + d.stop_name + "</b></span><br/>" + "Number of trains: " + d.count_stops + "<br/>" + "Avg Arrival Delay: " + Math.round(d.avg_arrival_delay * 1000) / 1000 + " min"
+  output = '<div class="uk-text-lead" style="width: 260px">'
+  output += '<span style="text-align:center"><b>' + d.stop_name 
+         +  "</b></span><br/>" + "Number of trains: " + d.count_stops 
+         + "<br/>" + "Avg Arrival Delay: <span style='color: " + colormap(d.avg_arrival_delay) + "'>" + Math.round(d.avg_arrival_delay * 10) / 10 + " min</span>"
   output += "</div>"
 
   return output
@@ -318,7 +320,6 @@ function plotDots(data) {
     // Change the cursor style as a UI indicator.
     map.getCanvas().style.cursor = 'pointer';
 
-    console.log(e)
 
     if (hoverStationId !== null) {
       map.setFeatureState(
@@ -349,7 +350,7 @@ function plotDots(data) {
 
     // get mouse coordinates
     const newcoordinates = e.lngLat
-    popup.setLngLat(newcoordinates).setHTML(html).addTo(map);
+    popup.setLngLat(newcoordinates).setHTML(html).setMaxWidth("260px").addTo(map);
   });
 
   map.on('mouseleave', 'circles', (e) => {

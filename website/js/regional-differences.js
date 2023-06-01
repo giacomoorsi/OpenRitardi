@@ -155,7 +155,7 @@ function generatePopupHTML(d) {
     //        + "<br/>" + "Avg Arrival Delay: <span style='color: " + colormap(d.avg_arrival_delay) + "'>" + Math.round(d.avg_arrival_delay * 10) / 10 + " min</span>"
     // output += "</div>"
 
-    output = '<div class="uk-text-lead" style="width: 300px">'
+    output = '<div class="uk-text-lead" style="width: 250px">'
     output += '<span style="text-align:center"><b>' + d.stop_name_region
            + "</b></span><br/>" + "Number of trains: " + d.count_stops 
            + "<br/>" + "Avg Arrival Delay: <span style='color: " + colormap(d.avg_arrival_delay) + "'>" + Math.round(d.avg_arrival_delay * 10) / 10 + " min"
@@ -302,7 +302,7 @@ function plotRegions(data, geojson) {
     // Create a popup, but don't add it to the map yet.
     var popup = new mapboxgl.Popup({
         closeButton: false,
-        closeOnClick: false
+        closeOnClick: false,
     });
 
     /**
@@ -339,7 +339,7 @@ function plotRegions(data, geojson) {
 
         const coordinates = e.lngLat;
 
-        popup.setLngLat(coordinates).setHTML(html).addTo(map);
+        popup.setLngLat(coordinates).setHTML(html).setMaxWidth("260px").addTo(map);
     });
 
     map.on('mouseleave', 'regional-fills', (e) => {
