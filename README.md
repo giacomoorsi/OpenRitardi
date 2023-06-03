@@ -24,6 +24,13 @@ See our [report](milestone2/rail_runners_Milestone_2.pdf) and our initial [websi
 
 **80% of the final grade**
 
+Inside the <code>website</code> folder you can find the code for the final version of our website. There, you can also find the readme file with the technical setup and intended usage. The <code>milestone3</code> folder contains the Process Book. 
+
+The video presentation can be found [here]().
+
+The website is available at this [link](https://com-480-data-visualization.github.io/project-2023-rail-runners/).
+
+
 
 ## Late policy
 
