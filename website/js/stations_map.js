@@ -195,15 +195,6 @@ function plotDots(data) {
     });
 
 
-
-
-    // svg.call(d3.zoom()
-    // .extent([[0, 0], [width, height]])
-    // .scaleExtent([1, 2])
-    // .on('zoom', ({transform}) => {
-    //   g.attr('transform', transform);
-    // }));
-
     
 
 
@@ -211,9 +202,6 @@ function plotDots(data) {
       title: "avg arrival delay",
     })
 
-    // add to the inner html of the legend div the class "map-legend"
-
-    //legend
 
     // extract content from legend and add it to the main svg
     // legend is a DOM element, we need to extract the content and put it in the main svg

@@ -172,11 +172,7 @@ d3.select("#legend")
   .attr("height", "100%")
   .html(legend.outerHTML)
 
-// const svg_size_legend = d3.select("#legend")
-//   .append("svg")
-//   .attr("width", 150)
-//   .attr("height", 80)
-//   .attr("z-index", 100000)
+
 
 
 // variable to check if the map was already fully loaded
@@ -203,18 +199,7 @@ function plotDots(data) {
   }
 
 
-  /**
-   * Backup code
 
-  // let scale1 = d3.scalePow()
-  //   .exponent(0.6)
-  //   .domain([min_count, max_count]) // input
-  //   .range([7, 25]); // output
-
-  // let scale2 = d3.scaleLog()
-  //   .domain([min_count, max_count]) // input
-  //   .range([7, 25]); // output
-  */
 
   // scales the radius using quantiles
   let scale3 = d3.scaleQuantile()

@@ -15,8 +15,6 @@ UIkit.util.on(search_options_dropdown_id, 'show', function () {
 
 // Triggered when the dropdown is hidden
 UIkit.util.on(search_options_dropdown_id, 'hide', function () {
-    //$('#search_options_dropdown').addClass('active');
-    //UIkit.dropdown(search_options_dropdown_id).show();
 });
 
 
@@ -127,37 +125,6 @@ train_search_input.addEventListener('input', function () {
 
     if (search_query_name.length > 0) {
 
-        // filtered_dataset_with_matches = filtered_dataset.map(function (train) {
-        //     let train_class = train['train_class'];
-        //     // augment dataset
-
-        //     train_class = train_class_names[train_class] ? train_class_names[train_class] : train_class;
-        //     train_destination = train['train_arrival_stop_name'];
-        //     train_departure = train['train_departure_stop_name'];
-
-        //     let query_tokens = search_query_name.split(' ');
-
-        //     // check if one of the tokens is included in the train class, destination or departure
-        //     let matches = 0;
-        //     query_tokens.forEach(function (token) {
-        //         matches += train_class.toLowerCase().includes(token) + train_destination.toLowerCase().includes(token) + train_departure.toLowerCase().includes(token);
-        //     });
-
-        //     train 
-        // }
-
-        // );
-
-        // remove all trains that do not match any of the tokens
-        // filtered_dataset = filtered_dataset.filter(function (train, index) {
-        //     return matches[index] > 0;
-        // });
-
-
-        // // sort the dataset by the number of matches
-        // filtered_dataset = filtered_dataset.sort(function (a, b) {
-        //     return matches[dataset_dropdown.indexOf(b)] - matches[dataset_dropdown.indexOf(a)];
-        // });
 
 
         filtered_dataset = filtered_dataset.filter(function (train) {

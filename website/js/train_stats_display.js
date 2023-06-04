@@ -78,17 +78,7 @@ function displayTrainInformation(trainID) {
         </div>
     </div>`
 
-    // let train_name_label = document.getElementById('train_name_label');
-    // train_name_label.innerHTML = train_summary['train_class'] + ' ' + train_summary['train_number'];
 
-    // let train_avg_delay_label = document.getElementById('train_avg_delay_label');
-    // train_avg_delay_label.innerHTML = train_summary['avg_arrival_delay'];
-
-    // let train_perc_delayed_label = document.getElementById('train_perc_delayed_label');
-    // train_perc_delayed_label.innerHTML = train_summary['perc_5m_delay'];
-
-    // let train_description_label = document.getElementById('train_description_label');
-    // train_description_label.innerHTML = train_summary['train_departure_stop_name'] + ' <span uk-icon="arrow-right"></span> ' + train_summary['train_arrival_stop_name'];
 
     searched_train_info_div.innerHTML = content;
 

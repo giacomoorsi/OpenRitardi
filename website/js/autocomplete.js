@@ -10,37 +10,21 @@ search_options_dropdown = UIkit.dropdown(search_options_dropdown_id, {
 
 // Triggered when the dropdown is shown
 UIkit.util.on(search_options_dropdown_id, 'show', function () {
-  // $('#stations_dropdown').addClass('active');
   document.getElementById('stations_dropdown').classList.add('active');
   console.log('showed');
 });
 
 // Triggered when the dropdown is hidden
 UIkit.util.on(search_options_dropdown_id, 'hide', function () {
-  //$('#search_options_dropdown').addClass('active');
   console.log('hidden');
-  //UIkit.dropdown(search_options_dropdown_id).show();
 });
 
-
-//var autocompleteData = [];
 
 
 function pascalize(str) {
   return str.replace(/(\w)(\w*)/g, function (g0, g1, g2) { return g1.toUpperCase() + g2.toLowerCase(); });
 }
 
-// d3.csv("data/data_stop.csv", function (d) {
-//   return d;
-// }).then(function (data) {
-//   autocompleteData = data.map(function (d) {
-//     return {
-//       'stop_name': d.stop_name,
-//       'stop_id': d.stop_id,
-//     };
-//   });
-//   console.log(autocompleteData)
-// });
 
 let searchBox = document.getElementById("searchBox");
 
@@ -62,21 +46,6 @@ searchBox.addEventListener("input", function () {
 
   populate_dropdown_from_dataset(autocompleteSuggestions);
 });
-
-// function displayAutocompleteSuggestions(suggestions) {
-//   autocompleteList.innerHTML = "";
-//   suggestions.forEach(function (suggestion) {
-//     var li = document.createElement("li");
-//     li.textContent = suggestion;
-//     li.addEventListener("click", function () {
-//       searchBox.value = suggestion;
-//       autocompleteList.innerHTML = "";
-//     });
-//     autocompleteList.appendChild(li);
-//   });
-// }
-
-
 
 
 

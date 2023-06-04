@@ -34,11 +34,6 @@ d3.select(".regional-legend")
     .attr("height", "100%")
     .html(legend.outerHTML)
 
-// const svg_size_legend = d3.select(".regional-legend")
-//     .append("svg")
-//     .attr("width", 150)
-//     .attr("height", 80)
-//     .attr("z-index", 100000)
 
 
 /**
@@ -75,20 +70,7 @@ function getFileName(trainType) {
  * USER INTERACTION WITH FORM
  * 
  */
-// d3.select("#form-horizontal-select-day").on("change", function (d) {
-//   var selectedOptionDay = d3.select(this).property("value")
-//   var selectedOptionTrainType = d3.select("#form-horizontal-select-trainType").property("value")
-//   var dataset = getFileName(selectedOptionDay, selectedOptionTrainType)
-//   var data_stop = d3.csv("data/" + dataset, function (d) {
-//     return d;
-//   })
-//   Promise.all([data_stop]).then(results => {
-//     let station_data = results[0];
-//     console.log(station_data)
-//     d3.selectAll("circle").remove();
-//     plotDots(station_data);
-//   })
-// })
+
 
 d3.select("#form-horizontal-select-trainType").on("change", function (d) {
     var selectedOptionTrainType = d3.select(this).property("value")
@@ -103,10 +85,7 @@ d3.select("#form-horizontal-select-trainType").on("change", function (d) {
     })
 })
 
-// //default dataset, before the user chooses anything
-// var dayChosen = document.getElementById("form-horizontal-select-day").value
-// var trainTypeChosen = document.getElementById("form-horizontal-select-trainType").value
-// var dataset = getFileName(dayChosen, trainTypeChosen)
+
 
 const data_stop = d3.csv("data/data_stop_region_class_IC.csv", function (d) {
     return d;
@@ -149,11 +128,7 @@ function generatePopupHTML(d) {
     /**
      * Returns the HTML code for a popup of a stop
      */
-    // output = '<div class="uk-text-lead" >'
-    // output += '<span style="text-align:center"><b>' + d.stop_name 
-    //        +  "</b></span><br/>" + "Number of trains: " + d.count_stops 
-    //        + "<br/>" + "Avg Arrival Delay: <span style='color: " + colormap(d.avg_arrival_delay) + "'>" + Math.round(d.avg_arrival_delay * 10) / 10 + " min</span>"
-    // output += "</div>"
+
 
     output = '<div class="uk-text-lead" style="width: 250px">'
     output += '<span style="text-align:center"><b>' + d.stop_name_region
@@ -196,12 +171,6 @@ function plotRegions(data, geojson) {
 
 
 
-
-    /**
-     * Backup code
-  
-
-    */
 
     // scales the radius using quantiles
     let scale3 = d3.scaleQuantile()
