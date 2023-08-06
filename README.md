@@ -1,39 +1,5 @@
-# Project of Data Visualization (COM-480)
+# OpenRitardi
+The motivation for this project comes from the crucial lack of open data regarding public transportation in Italy: differently from what happens in other European countries, there is no public database curating these data nationally and releasing them in an aggregate form. Transportation is unfortunately not an exception, since Italy ranks 32nd in the global rankings of the [Open Data Index](http://index.okfn.org/place/), with major shortcomings in other key categories. A first effort in independently collecting a dataset of that kind has been carried on by [TrainStats](https://trainstats.altervista.org/), but the data is currently presented in a form very close to raw: the website only shows basic aggregate statistics and visualizations, and only at the level of a single day or a single train. In addition, the UI is very minimal, and it is not easy to navigate the website nor to quickly gain insights or general trends. In other words, these data are currently readable by engineers, who know how to approach and process them, but not by everyone else. The goal of this project is to fill this gap, by making them available to the general population in a simple and intuitive manner. On one side, this would be a service to the community, improving the information currently available and helping people in planning a more informed trip schedule. On the other, it would improve public accountability, pushing Trenitalia to improve its rail system to decrease delays and malfunctions.
 
-| Student's name | SCIPER |
-| -------------- | ------ |
-| Giacomo Orsi | 337360 |
-| Francesco Salvi | 338681 |
-| Roberto Ceraolo | 343261 |
-
-[Milestone 1](#milestone-1) • [Milestone 2](#milestone-2) • [Milestone 3](#milestone-3) • [Website](https://com-480-data-visualization.github.io/project-2023-rail-runners/)
-
-## Milestone 1 (23rd April, 5pm)
-
-**10% of the final grade**
-
-See our [project proposal](milestone1/README.md).
-
-## Milestone 2 (7th May, 5pm)
-
-**10% of the final grade**
-
-See our [report](milestone2/rail_runners_Milestone_2.pdf) and our initial [website](https://com-480-data-visualization.github.io/project-2023-rail-runners/).
-
-## Milestone 3 (4th June, 5pm)
-
-**80% of the final grade**
-
-Inside the <code>website</code> folder you can find the code for the final version of our website. There, you can also find the readme file with the technical setup and intended usage. The <code>milestone3</code> folder contains the Process Book. 
-
-Click [here](https://youtu.be/sXxDV_AkBGY) for the video presentation.
-
-The website is available at this [link](https://com-480-data-visualization.github.io/project-2023-rail-runners/).
-
-
-
-## Late policy
-
-- < 24h: 80% of the grade for the milestone
-- < 48h: 70% of the grade for the milestone
-
+# Website
+The website is available at [openritardi.it](openritardi.it)
