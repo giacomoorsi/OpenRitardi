@@ -92,6 +92,10 @@ body {
     background: #ededed;
 }
 
+.uk-offcanvas-bar {
+    z-index: 10000;
+}
+
 
 
 .ot-ranking-table .ot-train-logo-ic {

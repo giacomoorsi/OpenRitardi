@@ -61,9 +61,39 @@
                         </a>
                     </li>
                 </ul>
+                <a class="uk-navbar-toggle uk-hidden@m uk-icon uk-navbar-toggle-icon" uk-navbar-toggle-icon=""
+                    href="#offcanvas" uk-toggle="" aria-label="Open menu" role="button"></a>
             </div>
         </nav>
     </div>
+    </div>
+
+    <div id="offcanvas" uk-offcanvas="overlay: true" style="z-index: 10000;">
+        <div class="uk-offcanvas-bar uk-flex uk-flex-column">
+            <button class="uk-offcanvas-close" type="button" uk-close></button>
+            <ul class="uk-nav uk-nav-primary uk-nav-center uk-margin-auto-vertical">
+                <li class="uk-active">
+                    <a href="index.html">
+                        Stations
+                    </a>
+                </li>
+                <li>
+                    <a href="trains.html">
+                        Trains
+                    </a>
+                </li>
+                <li>
+                    <a href="statistics.html">
+                        Statistics
+                    </a>
+                </li>
+                <li>
+                    <a href="about.html">
+                        About
+                    </a>
+                </li>
+            </ul>
+        </div>
     </div>
     <!-- END OF HEADER-->
 
@@ -71,7 +101,7 @@
     <div id="map">
 
         <!-- Create an overlay on the map that is 200px width and 80% height -->
-        <div class="uk-position-center-left home-overlay-form-container" style="z-index:1000000">
+        <div class="uk-position-center-left home-overlay-form-container" style="z-index:5000">
             <div class="uk-card uk-card-default uk-card-body" style="width:450px; height: 100%">
                 <h1 class="uk-card-title" style="font-size: 220%;">Train delays</h1>
                 <p style="font-size: 120%;">This map shows the average delay of trains at each Italian station.<br>
@@ -142,7 +172,7 @@
         </div>
 
 
-        <div class="map-overlay uk-position-center-right" style="width: 150px; z-index:1000000; margin-right: 1%">
+        <div class="map-overlay uk-position-center-right" style="width: 150px; z-index:1000; margin-right: 1%">
             <div class="map-overlay-inner" id="legend"></div>
         </div>
     </div>

@@ -64,9 +64,38 @@
                         </a>
                     </li>
                 </ul>
+                <a class="uk-navbar-toggle uk-hidden@m uk-icon uk-navbar-toggle-icon" uk-navbar-toggle-icon=""
+                    href="#offcanvas" uk-toggle="" aria-label="Open menu" role="button"></a>
             </div>
         </nav>
     </div>
+    </div>
+    <div id="offcanvas" uk-offcanvas="overlay: true" style="z-index: 10000;">
+        <div class="uk-offcanvas-bar uk-flex uk-flex-column">
+            <button class="uk-offcanvas-close" type="button" uk-close></button>
+            <ul class="uk-nav uk-nav-primary uk-nav-center uk-margin-auto-vertical">
+                <li>
+                    <a href="index.html">
+                        Stations
+                    </a>
+                </li>
+                <li class="uk-active">
+                    <a href="trains.html">
+                        Trains
+                    </a>
+                </li>
+                <li>
+                    <a href="statistics.html">
+                        Statistics
+                    </a>
+                </li>
+                <li>
+                    <a href="about.html">
+                        About
+                    </a>
+                </li>
+            </ul>
+        </div>
     </div>
     <!-- END OF HEADER-->
     <!-- CONTENT -->
@@ -154,7 +183,7 @@
                             </select>
                         </div>
                     </div>
-                    <div id="stop_statistics_container">                        
+                    <div id="stop_statistics_container">
                     </div>
                 </div>
             </div>

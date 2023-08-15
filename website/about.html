@@ -34,8 +34,8 @@
         uk-sticky="media: 960; "">
         <div class=" uk-container uk-container-medium">
         <nav class="uk-navbar" uk-navbar="" style="max-width: 1500px; margin:0 auto">
-            <div class="uk-navbar-left"><a class="uk-navbar-item uk-logo" href="index.html" aria-label="Back to Home"><img
-                        src="media/logo/logo.png" class="uk-margin-small-right" alt="UIkit"
+            <div class="uk-navbar-left"><a class="uk-navbar-item uk-logo" href="index.html"
+                    aria-label="Back to Home"><img src="media/logo/logo.png" class="uk-margin-small-right" alt="UIkit"
                         style="height:90px; margin-bottom:10px">
                 </a></div>
             <div class="uk-navbar-right">
@@ -61,17 +61,61 @@
                         </a>
                     </li>
                 </ul>
+                <a class="uk-navbar-toggle uk-hidden@m uk-icon uk-navbar-toggle-icon" uk-navbar-toggle-icon=""
+                    href="#offcanvas" uk-toggle="" aria-label="Open menu" role="button"></a>
             </div>
         </nav>
     </div>
+    </div>
+    <div id="offcanvas" uk-offcanvas="overlay: true" style="z-index: 10000;">
+        <div class="uk-offcanvas-bar uk-flex uk-flex-column">
+            <button class="uk-offcanvas-close" type="button" uk-close></button>
+            <ul class="uk-nav uk-nav-primary uk-nav-center uk-margin-auto-vertical">
+                <li>
+                    <a href="index.html">
+                        Stations
+                    </a>
+                </li>
+                <li>
+                    <a href="trains.html">
+                        Trains
+                    </a>
+                </li>
+                <li>
+                    <a href="statistics.html">
+                        Statistics
+                    </a>
+                </li>
+                <li class="uk-active">
+                    <a href="about.html">
+                        About
+                    </a>
+                </li>
+            </ul>
+        </div>
     </div>
     <!-- END OF HEADER-->
 
     <!-- CONTENT -->
     <div class="uk-container uk-container-small uk-margin-large uk-text-lead uk-text-justify ot-about-page">
         <h1>About</h1>
-        <p>We are Francesco, Giacomo, and Roberto, 3 EPFL students in Computer Science and Data Science. We are all Italian, and we all love our country. This is why we would like to give our contribution to innovate.</p>
-        <p>The motivation for our project comes from the crucial lack of open data regarding public transportation in Italy: differently from what happens in other European countries, there is no public database curating these data nationally and releasing them in an aggregate form. Transportation is unfortunately not an exception, since Italy ranks 32nd in the global rankings of the <a href="http://index.okfn.org/place/">Open Data Index</a>, with major shortcomings in other key categories. A first effort in independently collecting a dataset of that kind has been carried on by <a href="https://trainstats.altervista.org/">TrainStats</a>, but the data is currently presented in a form very close to raw: the website only shows basic aggregate statistics and visualizations, and only at the level of a single day or a single train. In addition, the UI is very minimal, and it is not easy to navigate the website nor to quickly gain insights or general trends. In other words, these data are currently readable by engineers, who know how to approach and process them, but not by everyone else. The goal of this project is to fill this gap, by making them available to the general population in a simple and intuitive manner. On one side, this would be a service to the community, improving the information currently available and helping people in planning a more informed trip schedule. On the other, it would improve public accountability, pushing Trenitalia to improve its rail system to decrease delays and malfunctions.</p>
+        <p>We are Francesco, Giacomo, and Roberto, 3 EPFL students in Computer Science and Data Science. We are all
+            Italian, and we all love our country. This is why we would like to give our contribution to innovate.</p>
+        <p>The motivation for our project comes from the crucial lack of open data regarding public transportation in
+            Italy: differently from what happens in other European countries, there is no public database curating these
+            data nationally and releasing them in an aggregate form. Transportation is unfortunately not an exception,
+            since Italy ranks 32nd in the global rankings of the <a href="http://index.okfn.org/place/">Open Data
+                Index</a>, with major shortcomings in other key categories. A first effort in independently collecting a
+            dataset of that kind has been carried on by <a href="https://trainstats.altervista.org/">TrainStats</a>, but
+            the data is currently presented in a form very close to raw: the website only shows basic aggregate
+            statistics and visualizations, and only at the level of a single day or a single train. In addition, the UI
+            is very minimal, and it is not easy to navigate the website nor to quickly gain insights or general trends.
+            In other words, these data are currently readable by engineers, who know how to approach and process them,
+            but not by everyone else. The goal of this project is to fill this gap, by making them available to the
+            general population in a simple and intuitive manner. On one side, this would be a service to the community,
+            improving the information currently available and helping people in planning a more informed trip schedule.
+            On the other, it would improve public accountability, pushing Trenitalia to improve its rail system to
+            decrease delays and malfunctions.</p>
     </div>
 
 </body>
