@@ -1,0 +1,11 @@
+{
+  "name": "openritardi",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "dependencies": {
+    "@rollup/plugin-terser": "^0.4.4",
+    "rollup": "^4.0.2"
+  }
+}
