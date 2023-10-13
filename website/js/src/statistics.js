@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const filteredStopData = stopData.filter(stop => stop.count_stops > 1200);
     generateBestWorst(
         filteredStopData,
-        'avg_arrival_delay',
+        'median_arrival_delay',
         (items, id) => populateElement(items, id, stopTemplate, stopName => navigate('index.html', 'stop_name', stopName)),
         'best-stops',
         'worst-stops'
