@@ -8,5 +8,11 @@ The website is available at [openritardi.it](https://openritardi.it)
 # Contribution
 Contribution is welcome! Please use the [Roadmap](https://github.com/giacomoorsi/OpenRitardi/issues/1) to suggest new features, feel free to open new issues. 
 
+If you develop locally, you can clone the folder and run 
+```bash
+$ bash prepare_data.sh
+```
+to unzip all datasets locally.
+
 ### Pull requests
 Feel free to submit pull requests. Please document your code in English and write a PR description. **Test** your code before submitting a PR and after implementing PR comments!
