@@ -1,14 +1,3 @@
-module.exports = function(eleventyConfig) {
-    // Return your Object options:
-    return {
-      dir: {
-        input: "views",
-        output: "dist"
-      }
-    }
-  };
-
-  
 const i18n = require('eleventy-plugin-i18n');
 
 module.exports = function (eleventyConfig) {
@@ -23,4 +12,10 @@ module.exports = function (eleventyConfig) {
       '*': 'it-IT'
     }
   });
+
+  return {
+    dir: {
+      input: "views",
+      output: "dist"
+    }
 };
