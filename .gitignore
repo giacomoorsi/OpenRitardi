@@ -156,3 +156,6 @@ website/Gemfile.lock
 # exclude GTFS timetable
 */gtfs/*
 */gtfs-out/*
+
+# remove node stuff
+website/node_modules

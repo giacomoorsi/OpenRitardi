@@ -1,0 +1,12 @@
+{
+    "name": "openritardi",
+    "version": "1.0.0",
+    "scripts": {
+        "build": ""
+    },
+    "dependencies": {
+        "eleventy-plugin-i18n": "^0.1.3",
+        "express": "^4.18.2",
+        "handlebars": "^4.7.8"
+    }
+}
