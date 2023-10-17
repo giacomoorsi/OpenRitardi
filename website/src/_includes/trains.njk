@@ -1,0 +1,166 @@
+
+<body>
+<!-- HEADER -->
+<div class="uk-navbar-container tm-navbar-container uk-sticky uk-active uk-sticky-below uk-sticky-fixed"
+    uk-sticky="media: 960; "">
+    <div class=" uk-container uk-container-medium">
+    <nav class="uk-navbar" uk-navbar="" style="max-width: 1500px; margin:0 auto">
+        <div class="uk-navbar-left"><a class="uk-navbar-item uk-logo" href="index.html"
+                aria-label="Back to Home"><img src="/media/logo/logo.png" class="uk-margin-small-right" alt="UIkit"
+                    style="height:90px; margin-bottom:10px; margin-top:10px">
+            </a></div>
+        <div class="uk-navbar-right">
+            <ul class="uk-navbar-nav uk-visible@m">
+                <li>
+                    <a href="index.html">
+                        Stations
+                    </a>
+                </li>
+                <li class="uk-active">
+                    <a href="trains.html">
+                        Trains
+                    </a>
+                </li>
+                <li>
+                    <a href="statistics.html">
+                        Statistics
+                    </a>
+                </li>
+                <li>
+                    <a href="about.html">
+                        About
+                    </a>
+                </li>
+            </ul>
+            <a class="uk-navbar-toggle uk-hidden@m uk-icon uk-navbar-toggle-icon" uk-navbar-toggle-icon=""
+                href="#offcanvas" uk-toggle="" aria-label="Open menu" role="button"></a>
+        </div>
+    </nav>
+</div>
+</div>
+<div id="offcanvas" uk-offcanvas="overlay: true" style="z-index: 10000;">
+    <div class="uk-offcanvas-bar uk-flex uk-flex-column">
+        <button class="uk-offcanvas-close" type="button" uk-close></button>
+        <ul class="uk-nav uk-nav-primary uk-nav-center uk-margin-auto-vertical">
+            <li>
+                <a href="index.html">
+                    Stations
+                </a>
+            </li>
+            <li class="uk-active">
+                <a href="trains.html">
+                    Trains
+                </a>
+            </li>
+            <li>
+                <a href="statistics.html">
+                    Statistics
+                </a>
+            </li>
+            <li>
+                <a href="about.html">
+                    About
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- END OF HEADER-->
+<!-- CONTENT -->
+<!-- Search your train -->
+<div class="uk-container uk-container-large uk-section uk-section-muted">
+    <h1 class="uk-text-center">Search your train</h1>
+    <div class="uk-text-justify uk-container uk-container-small">
+        <p>Here you can search a train and obtain information on its historical delays. Type in the search box your
+            train number (i.e. IC 655)<br><b>Note: this project is still under development and data shown is from December 2022 to March 2023</b>.</p>
+    </div>
+    <div class="uk-text-center uk-margin">
+        <form class="uk-search uk-search-default uk-width-medium uk-margin-large">
+            <span uk-search-icon></span>
+            <input class="uk-search-input" type="search" placeholder="Search..." style="background:#fff"
+                id="train_search_input">
+            <div uk-dropdown="pos: bottom-center" id="search_options_dropdown">
+                <ul class="uk-nav uk-dropdown-nav uk-width-large">
+                    <table class="uk-table uk-table-small uk-table-hover">
+                        <thead>
+                            <tr>
+                                <th>Train number</th>
+                                <th>Departure</th>
+                                <th>Destination</th>
+                            </tr>
+                        </thead>
+                        <tbody id="search_options_dropdown_content">
+                        </tbody>
+                    </table>
+                </ul>
+            </div>
+        </form>
+    </div>
+
+
+    <div class="uk-child-width-1-2@m uk-flex uk-flex-middle" uk-grid>
+        <!-- START: Card for train info -->
+        <div class="ot-ranking-train-info" id="searched_train_info_div">
+            <div class="uk-card uk-card-default uk-card-body">
+                <h2><img width='130px' src="/media/intercity.svg" class="ot-train-logo ot-train-logo-ic "> <span
+                        id="train_name_label">
+                        655</span></h2>
+                <p class="uk-text-lead" id="train_description_label">Ventimiglia <span uk-icon="arrow-right"></span>
+                    Milano Centrale</p>
+
+                <div class="uk-child-width-1-2@s uk-grid-match uk-margin-large" uk-grid>
+                    <div>
+                        <div class="uk-text-center uk-card uk-card-default uk-card-body">
+                            <span class="uk-h1 uk-margin-small uk-text-warning" id="train_avg_delay_label">5'
+                                19''</span>
+                            <div class="uk-h4 uk-margin-small">Average delay per stop</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="uk-text-center uk-card uk-card-default uk-card-body"
+                            uk-tooltip="A train is considered delayed if it arrives with a delay higher than 5'">
+                            <span class="uk-h1" id="train_perc_delayed_label">39%</span>
+                            <div class="uk-h4 uk-margin-small">% trains delayed at arrival</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END: Card for train info -->
+        <!-- START: Map for train -->
+        <div>
+            <div class="uk-card uk-card-default uk-card-body">
+                <div id="route-map"></div>
+            </div>
+        </div>
+        <!-- END: Map for train -->
+    </div>
+
+    <div class="uk-child-width-1-2@m uk-margin-large uk-grid-match uk-flex uk-flex-middle" uk-grid>
+        <div>
+            <div class="uk-card uk-card-default uk-card-body" id="histogram_container" style="overflow:visible">
+            </div>
+        </div>
+        <div>
+            <div class="uk-card uk-card-default uk-card-body">
+                <div class="uk-h3 uk-grid-small uk-flex uk-flex-middle" uk-grid>
+                    <div>Statistics at</div>
+                    <div class="uk-width-expand">
+                        <select class="uk-select" style="display:inline-block" id="dropdown_stop">
+                            <option selected>VENTIMIGLIA</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="stop_statistics_container">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<script src="/libraries/maps/legend.js" type="text/javascript"></script>
+<script src="/js/route_map.js" type="text/javascript"></script>
+<script src="/js/trains_search.js" type="text/javascript"></script>
+<script src="/js/train_stats_display.js" type="text/javascript"></script>

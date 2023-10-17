@@ -133,8 +133,6 @@ dmypy.json
 .metals
 .scala-build
 
-# vscode
-.vscode/
 
 
 # sbt
@@ -159,3 +157,6 @@ website/Gemfile.lock
 
 # remove node stuff
 website/node_modules
+
+# remove output dir
+website/dist

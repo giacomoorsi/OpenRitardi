@@ -2,7 +2,7 @@
 
 # Technical setup
 
-In this folder, all the files needed to run the website are stored. The website is available at this [link](https://com-480-data-visualization.github.io/project-2023-rail-runners/). The data can be found in the <code>data</code> folder. They are stored in zip format, and get unzipped through a Github Action, in order for the website to access them. 
+In this folder, all the files needed to run the website are stored. The data can be found in the <code>data</code> folder. They are stored in zip format, and get unzipped through a Github Action, in order for the website to access them. 
 
 The website is built using HTML, CSS and JavaScript, and the libraries used are:
 [D3.js](https://d3js.org/), [UIkit](https://getuikit.com/),[mapBox](https://www.mapbox.com/).

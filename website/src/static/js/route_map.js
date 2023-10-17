@@ -31,11 +31,11 @@ function project(d) {
 }
 
 
-const data_stop = d3.csv("data/data_stop.csv", function (d) {
+const data_stop = d3.csv("/data/data_stop.csv", function (d) {
   return d;
 })
 
-const data_route = d3.csv("data/trip_demo.txt", function (d) {
+const data_route = d3.csv("/data/trip_demo.txt", function (d) {
   return d;
 })
 

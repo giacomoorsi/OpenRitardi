@@ -4,7 +4,6 @@ The motivation for this project comes from the crucial lack of open data regardi
 # Website
 The website is available at [openritardi.it](https://openritardi.it)
 
-
 # Contribution
 Contribution is welcome! Please use the [Roadmap](https://github.com/giacomoorsi/OpenRitardi/issues/1) to suggest new features, feel free to open new issues. 
 

@@ -60,7 +60,7 @@ d3.select("#form-horizontal-select-day").on("change", function (d) {
   var selectedOptionDay = d3.select(this).property("value")
   var selectedOptionTrainType = d3.select("#form-horizontal-select-trainType").property("value")
   var dataset = getFileName(selectedOptionDay, selectedOptionTrainType)
-  var data_stop = d3.csv("data/" + dataset, function (d) {
+  var data_stop = d3.csv("/data/" + dataset, function (d) {
     return d;
   })
   Promise.all([data_stop]).then(results => {
@@ -75,7 +75,7 @@ d3.select("#form-horizontal-select-trainType").on("change", function (d) {
   var selectedOptionTrainType = d3.select(this).property("value")
   var selectedOptionDay = d3.select("#form-horizontal-select-day").property("value")
   var dataset = getFileName(selectedOptionDay, selectedOptionTrainType)
-  var data_stop = d3.csv("data/" + dataset, function (d) {
+  var data_stop = d3.csv("/data/" + dataset, function (d) {
     return d;
   })
   Promise.all([data_stop]).then(results => {
@@ -91,7 +91,7 @@ var dayChosen = document.getElementById("form-horizontal-select-day").value
 var trainTypeChosen = document.getElementById("form-horizontal-select-trainType").value
 var dataset = getFileName(dayChosen, trainTypeChosen)
 
-var data_stop = d3.csv("data/" + dataset, function (d) {
+var data_stop = d3.csv("/data/" + dataset, function (d) {
   return d;
 })
 

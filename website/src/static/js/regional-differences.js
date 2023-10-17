@@ -75,8 +75,8 @@ function getFileName(trainType) {
 d3.select("#form-horizontal-select-trainType").on("change", function (d) {
     var selectedOptionTrainType = d3.select(this).property("value")
     var dataset = getFileName(selectedOptionTrainType)
-    console.log("Change dropdown, load", "data/" + dataset)
-    const data_stop = d3.csv("data/" + dataset, function (d) {
+    console.log("Change dropdown, load", "/data/" + dataset)
+    const data_stop = d3.csv("/data/" + dataset, function (d) {
         return d;
     })
     Promise.all([data_stop]).then(results => {
@@ -87,11 +87,11 @@ d3.select("#form-horizontal-select-trainType").on("change", function (d) {
 
 
 
-const data_stop = d3.csv("data/data_stop_region_class_IC.csv", function (d) {
+const data_stop = d3.csv("/data/data_stop_region_class_IC.csv", function (d) {
     return d;
 })
 
-const polygons_regions = d3.json("data/regions.geojson", function (d) {
+const polygons_regions = d3.json("/data/regions.geojson", function (d) {
     return d;
 })
 

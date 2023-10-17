@@ -1,0 +1,35 @@
+{
+    "homepage": {
+        "homepage_head_title": {
+            "en": "OpenRitardi - Italian trains delays",
+            "it": "OpenRitardi - puntualità dei treni italiani"
+        },
+        "menu_item": {
+            "en": "Stations",
+            "it": "Stazioni"
+        },
+        "box_title": {
+            "en": "Train delays",
+            "it": "Ritardi dei treni"
+        }
+    },
+    "about": {
+        "menu_item": {
+            "en": "About",
+            "it": "Il progetto"
+        }
+    },
+    "statistics": {
+        "menu_item": {
+            "en": "Statistics",
+            "it": "Statistiche"
+        }
+    },
+    "trains" : {
+        "menu_item": {
+            "en": "Trains",
+            "it": "Treni"
+        }
+    }
+  }
+  
