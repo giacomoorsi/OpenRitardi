@@ -1,3 +1,13 @@
+/**
+ * Website entry point
+ * 
+ * Compile with:
+ * ```
+ * npm install
+ * npm run build
+ * ```
+ */
+
 const i18n = require('eleventy-plugin-i18n');
 
 // load translation files
@@ -12,10 +22,6 @@ module.exports = function (eleventyConfig) {
   // unpack static files in the root folder of the website
   eleventyConfig.addPassthroughCopy({ "./src/static": "/" });
   eleventyConfig.addPassthroughCopy("data/regions.geojson");
-
-
-  // // unpack data
-  // eleventyConfig.addPassthroughCopy("data");
 
   // handle translations
   eleventyConfig.addPlugin(i18n, {
