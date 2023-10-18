@@ -14,7 +14,7 @@ const i18n = require('eleventy-plugin-i18n');
 const translations = require('./src/_data/i18n');
 
 // load custom filters
-const customFilters = require('./src/_data/customFilters.js')
+const customFilters = require('./src/_data/custom-filters.js')
 
 
 module.exports = function (eleventyConfig) {
