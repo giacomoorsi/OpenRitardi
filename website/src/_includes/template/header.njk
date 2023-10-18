@@ -19,6 +19,14 @@
         }
     ]
  %}
+{% set language = page.fileSlug.slice(-2) %}
+{%if language == "en" %}
+{% set lang = "IT" %}
+{% set lang_url = "/" %}
+{% else %}
+{% set lang = "EN" %}
+{% set lang_url = "/en/" %}
+{% endif %}
 
 <!-- HEADER -->
 <div class="uk-navbar-container tm-navbar-container uk-sticky uk-active uk-sticky-below uk-sticky-fixed"
@@ -38,6 +46,11 @@
                     </a>
                 </li>
                 {% endfor %}
+                <li>
+                    <a href="{{ lang_url }}" >
+                        <span class="uk-button uk-button-small uk-button-default">{{ lang }}</span>
+                    </a>
+                </li>
             </ul>
             <a class="uk-navbar-toggle uk-hidden@m uk-icon uk-navbar-toggle-icon" uk-navbar-toggle-icon=""
                 href="#offcanvas" uk-toggle="" aria-label="Open menu" role="button"></a>
@@ -56,6 +69,11 @@
                 </a>
             </li>
             {% endfor %}
+            <li>
+                <a href="{{ lang_url }}" >
+                    <span class="uk-button uk-button-small uk-button-default">{{ lang }}</span>
+                </a>
+            </li>
         </ul>
     </div>
 </div>
