@@ -38,7 +38,7 @@ function round(value, decimals) {
 
 
 
-dataset_dropdown = d3.csv('data/data_train_index.csv').then(function (data) {
+dataset_dropdown = d3.csv('/data/data_train_index.csv').then(function (data) {
     dataset = data
     // keep only some columns
     dataset_dropdown = dataset.map(function (train) {

@@ -47,8 +47,8 @@
                             <table class="uk-table uk-table-divider uk-table-hover uk-table-small ot-ranking-table">
                                 <thead>
                                     <tr>
-                                        <th width="35%">Train number</th>
-                                        <th>Direction</th>
+                                        <th width="35%">{{"global.train_number" | i18n }}</th>
+                                        <th>{{"global.destination" | i18n }}</th>
                                         <th uk-tooltip="{{ "statistics.tooltip_delay_train" | i18n }}">
                                             {{ "global.average_delay" | i18n }}</th>
                                     </tr>
@@ -82,7 +82,7 @@
                             <thead>
                                 <tr>
                                     <th>{{"global.station" | i18n }}</th>
-                                    <th uk-tooltip="{{ "tooltip_delay_station" | i18n }}">{{ "global.average_delay" | i18n }}
+                                    <th uk-tooltip="{{ "statistics.tooltip_delay_station" | i18n }}">{{ "global.average_delay" | i18n }}
                                     </th>
                                     <th
                                         uk-tooltip="{{ "statistics.tooltip_number_trains_station" | i18n }}">

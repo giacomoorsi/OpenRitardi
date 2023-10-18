@@ -17,16 +17,16 @@ function generateDelayString(delay) {
 
 function trainClassToImage(train_class) {
     const trainImages = {
-        "IC": "media/intercity.svg width='80px'",
-        "ICN": "media/intercity_notte.svg width='80px'",
-        "REG": "media/RE.svg",
-        "EC": "media/EC.svg",
-        "FR": "media/frecciarossa.svg width='80px'",
-        "FB": "media/frecciabianca.svg width='80px'",
-        "FA": "media/frecciargento.svg width='80px'"
+        "IC": "/media/intercity.svg width='80px'",
+        "ICN": "/media/intercity_notte.svg width='80px'",
+        "REG": "/media/RE.svg",
+        "EC": "/media/EC.svg",
+        "FR": "/media/frecciarossa.svg width='80px'",
+        "FB": "/media/frecciabianca.svg width='80px'",
+        "FA": "/media/frecciargento.svg width='80px'"
     };
 
-    return trainImages[train_class] || "media/logo/favicon.png";
+    return trainImages[train_class] || "/media/logo/favicon.png";
 }
 
 const trainClicked = (train_id) => window.location.href = "trains.html?train_id=" + train_id;

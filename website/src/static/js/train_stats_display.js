@@ -21,21 +21,21 @@ var train_data = []
 
 function trainClassToImage(train_class) {
     if (train_class == "IC") {
-        image = "media/intercity.svg width='130px'";
+        image = "/media/intercity.svg width='130px'";
     } else if (train_class == "ICN") {
-        image = "media/intercity_notte.svg width='130px'";
+        image = "/media/intercity_notte.svg width='130px'";
     } else if (train_class == "REG") {
-        image = "media/RE.svg width='60px'";
+        image = "/media/RE.svg width='60px'";
     } else if (train_class == "EC") {
-        image = "media/EC.svg width='60px'";
+        image = "/media/EC.svg width='60px'";
     } else if (train_class == "FR") {
-        image = "media/frecciarossa.svg width='130px'";
+        image = "/media/frecciarossa.svg width='130px'";
     } else if (train_class == "FB") {
-        image = "media/frecciabianca.svg width='130px'";
+        image = "/media/frecciabianca.svg width='130px'";
     } else if (train_class == "FA") {
-        image = "media/frecciargento.svg width='130px'";
+        image = "/media/frecciargento.svg width='130px'";
     }
-    else image = "media/logo/favicon.png";
+    else image = "/media/logo/favicon.png";
     return image;
 }
 
@@ -83,7 +83,7 @@ function displayTrainInformation(trainID) {
     searched_train_info_div.innerHTML = content;
 
     // get the dataset of the train
-    let train_dataset = d3.csv('data/trains/' + trainID + '.csv').then(function (data) {
+    let train_dataset = d3.csv('/data/trains/' + trainID + '.csv').then(function (data) {
         return data
     });
 
@@ -95,7 +95,7 @@ function displayTrainInformation(trainID) {
 
     });
 
-    let train_shapes = d3.csv('data/trains_shapes/' + trainID + '.csv').then(function (data) {
+    let train_shapes = d3.csv('/data/trains_shapes/' + trainID + '.csv').then(function (data) {
         return data
     });
 
