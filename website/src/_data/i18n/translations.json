@@ -1,4 +1,83 @@
 {
+    "global": {
+        "train_types": {
+            "all": {
+                "en": "All trains",
+                "it": "Tutti i treni"
+            },
+            "regional": {
+                "en": "Regional",
+                "it": "Regionali"
+            },
+            "eurocity": {
+                "it": "EuroCity"
+            },
+            "intercity": {
+                "it": "InterCity"
+            },
+            "frecciarossa": {
+                "it": "FrecciaRossa"
+            },
+            "frecciaargento": {
+                "it": "FrecciaArgento"
+            },
+            "frecciabianca": {
+                "it": "FrecciaBianca"
+            }
+        },
+        "weekdays": {
+            "en": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            "it": ["Lunedì", "Martedì", "Mercoledì",  "Giovedì", "Venerdì", "Sabato", "Domenica"]
+        },
+        "search_box": {
+            "en": "Search...",
+            "it": "Cerca..."
+        },
+        "train_number": {
+            "en": "Train number",
+            "it": "Numero treno"
+        },
+        "departure": {
+            "en": "Departure",
+            "it": "Partenza"
+        },
+        "destination": {
+            "en": "Destination",
+            "it": "Destinazione"
+        },
+        "train_type": {
+            "en": "Train type",
+            "it": "Tipo treno"
+        },
+        "average_delay": {
+            "en": "Average delay",
+            "it": "Ritardo medio"
+        },
+        "median_delay": {
+            "en": "Median delay",
+            "it": "Ritardo mediano"
+        },
+        "delays_tooltip": {
+            "en": "A train is considered delayed if it arrives with a delay higher than 5 minutes",
+            "it": "Un treno è considerato in ritardo se arriva con un ritardo superiore a 5 minuti"
+        },
+        "median_tooltip": {
+            "en": "Half of the trains arrive with a delay lower than this value",
+            "it": "Metà del treni arriva con un ritardo inferiore a questo valore"
+        },
+        "delay": {
+            "en": "Delay",
+            "it": "Ritardo"
+        },
+        "station": {
+            "en": "Station",
+            "it": "Stazione"
+        },
+        "number_of_trains": {
+            "en": "Number of trains",
+            "it": "Numero treni"
+        }
+    },
     "homepage": {
         "homepage_head_title": {
             "en": "OpenRitardi - Italian trains delays",
@@ -11,25 +90,120 @@
         "box_title": {
             "en": "Train delays",
             "it": "Ritardi dei treni"
-        }
-    },
-    "about": {
-        "menu_item": {
-            "en": "About",
-            "it": "Il progetto"
+        },
+        "box_content": {
+            "en": "This map shows the average delay of trains at each Italian station.<br> The size of the dot reflects the number of trains that go through each station every day, and the color gives an instant idea on the performance of each station. <br><b>Note: this project is still under development and data shown is from December 2022 to March 2023</b>.",
+            "it": "Questa mappa mostra il ritardo medio dei treni in ogni stazione italiana.<br>La dimensione del punto riflette il numero di treni che transitano in ogni stazione ogni giorno, mentre il colore mostrato è in base al ritardo di ogni stazione.<br><b>Nota: questo progetto è ancora in fase di sviluppo e i dati riportati si riferiscono al periodo compreso tra dicembre 2022 e marzo 2023.</b>"
+        },
+        "filters": {
+            "label": {
+                "en": "Filters",
+                "it": "Filtri"
+            },
+            "weekday": {
+                "en": "Day of the week",
+                "it": "Giorno della settimana"
+            },
+            "train_type": {
+                "en": "Train type",
+                "it": "Tipo treno"
+            },
+            "search_label": {
+                "en": "Search a train station",
+                "it": "Cerca una stazione"
+            }
         }
     },
     "statistics": {
         "menu_item": {
             "en": "Statistics",
             "it": "Statistiche"
+        },
+        "title": {
+            "en": "Statistics",
+            "it": "Statistiche"
+        },
+        "description": {
+            "en": "<b>Note: this project is still under development and data shown is from December 2022 to March 2023.</b>",
+            "it": "<b>Nota: questo progetto è ancora in fase di sviluppo e i dati riportati si riferiscono al periodo compreso tra dicembre 2022 e marzo 2023.</b>"
+        },
+        "worst_trains": {
+            "en": "Worst trains",
+            "it": "Peggiori treni"
+        },
+        "best_trains": {
+            "en": "Best trains",
+            "it": "Migliori treni"
+        },
+        "worst_stations": {
+            "en": "Worst stations",
+            "it": "Peggiori stazioni"
+        },
+        "best_stations": {
+            "en": "Best stations",
+            "it": "Migliori stazioni"
+        },
+        "regional_differences": {
+            "title": {
+                "en": "Regional differences",
+                "it": "Differenze regionali"
+            },
+            "description": {
+                "en": "The map shows that Italy faces strong regional differences in  the average delay of trains for <b>InterCity</b> trains. In particular, the quality of that service is very low in the South of Italy. Regional trains show a good performance in the entire country, while FrecciaRossa high-speed trains have a surprisingly bad performance in the entire country. <br><br>You can use the dropdown below to select the train type you want to see on the map. By hovering with the mouse on a region, you can see the average delay of trains in that region and the number of trains registered in considered period.",
+                "it": "La mappa mostra che in Italia ci sono forti differenze regionali nella puntualità dei treni <b>InterCity</b>. Il sud Italia presenta ritardi molto più significativi che il nord. I treni regionali hanno una buona puntualità in tutta Italia mentre i treni ad alta velocità FrecciaRossa hanno ritardi medi sorprendenti in tutto il Paese. <br><br>Puoi usare il menu a tendina qui sotto per scegliere il tipo did treno da mostrare sulla mappa. Muovi il mouse su una regione per visualizzare il ritardo medio dei treni in quella regione e il numero di treni registrati nel periodo considerato."
+            }
+        },
+        "tooltip_delay_train": {
+            "en": "Average delay of the train at each stop",
+            "it": "Ritardo medio del treno ad ogni fermata"
+        },
+        "tooltip_delay_station": {
+            "en": "Average train delay at this stop",
+            "it": "Ritardo medio dei treni a questa fermata"
+        },
+        "tooltip_number_trains_station": {
+            "en": "The number of trains that went through this stop during the period analyzed",
+            "it": "Numero di treni che hanno fermato a questa stazione nel periodo analizzato"
         }
     },
-    "trains" : {
+    "trains": {
         "menu_item": {
             "en": "Trains",
             "it": "Treni"
+        },
+        "title": {
+            "en": "Search a train",
+            "it": "Cerca un treno"
+        },
+        "description": {
+            "en": "Here you can search a train and obtain information on its historical delays. Type in the search box your train number (i.e. IC 655)<br><b>Note: this project is still under development and data shown is from December 2022 to March 2023.</b>",
+            "it": "Qui puoi cercare un treno e ottenere informazioni sui suoi ritardi passati. Digita il numero di un treno (es. IC 655)<br><b>Nota: questo progetto è ancora in fase di sviluppo e i dati riportati si riferiscono al periodo compreso tra dicembre 2022 e marzo 2023.</b>"
+        },
+        "avg_delay_per_stop": {
+            "en": "Average delay per stop",
+            "it": "Ritardo medio per stazione"
+        },
+        "perc_delayed_arrival": {
+            "en": "% trains delayed at arrival",
+            "it": "% treni in ritardo all'arrivo"
+        },
+        "delays_at": {
+            "en": "Delays at",
+            "it": "Ritardi a"
+        }
+    },
+    "about": {
+        "menu_item": {
+            "en": "About",
+            "it": "Il progetto"
+        },
+        "title": {
+            "en": "About",
+            "it": "Il progetto"
+        },
+        "description": {
+            "en": "<p>We are Francesco, Giacomo, and Roberto, EPFL students in Computer Science and Data Science. We are all Italian, and we all love our country. This is why we would like to give our contribution to innovate.</p><p>The motivation for our project comes from the crucial lack of open data regarding public transportation in Italy: differently from what happens in other European countries, there is no public database curating these data nationally and releasing them in an aggregate form. Transportation is unfortunately not an exception, since Italy ranks 32nd in the global rankings of the <a target='_blank' href='http://index.okfn.org/place/'>Open Data Index</a>, with major shortcomings in other key categories. A first effort in independently collecting a dataset of that kind has been carried on by <a target='_blank' href='https://trainstats.altervista.org/'>TrainStats</a>, but is very minimal, and it is not easy to navigate the website nor to quickly gain insights or general trends. In other words, these data are currently readable by engineers, who know how to approach and process them, but not by everyone else. The goal of this project is to fill this gap, by making them available to the general population in a simple and intuitive manner. On one side, this would be a service to the community, improving the information currently available and helping people in planning a more informed trip schedule. On the other, it would improve public accountability, pushing Trenitalia to improve its rail system to decrease delays and malfunctions.</p>",
+            "it": "<p>Siamo Francesco, Giacomo e Roberto, studenti di Informatica e Data Science all'EPFL, il Politecnico Federale di Losanna, in Svizzera. Siamo tutti italiani e amiamo il nostro paese. Ecco perché vorremo dare un contributo all'innovazione.</p><p>La motivazione per questo nostro progetto viene dalla cruciale mancanza di open data sul transporto pubblico in Italia: differentemente da quanto avviene negli altri paesi europei, no c'è un database pubblico che gestisca i dati a livello nazionale e li rilasci in forma aggregata. L'Italia è 32esima nelle classifiche globali del <a target='_blank' href='http://index.okfn.org/place/'>Open Data Index</a>, con molte criticità in diverse categorie importanti. Un primo tentativo di raccogliere in modo indipendente un database di dati sul trasporto pubblico è stato fatto da <a target='_blank' href='https://trainstats.altervista.org/'>TrainStats</a>, ma il sito non fornisce attualmente un modo per esplorare i dati in modo aggregato, per identificare le criticità del servizio ferroviario italiano. Lo scopo di questo progetto è di riempire questo buco, fornendo alla popolazione generale un accesso facile e intuitivo ai dati sulla performance dei treni italiani. Da un lato questo servizio può essere di aiuto ai cittadini, per fornire maggiori informazioni rispetto a quelle disponibili attualmente e per permettergli di programmare i viaggi in modo più informato. Da un altro lato, aumenta l'<i>accountability</i> nei confronti di Trenitalia e Ferrovie dello Stato, spingendole a migliorare il servizio pubblico cercando di ridurre i ritardi."
         }
     }
-  }
-  
+}

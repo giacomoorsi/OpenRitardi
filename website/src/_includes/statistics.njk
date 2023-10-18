@@ -1,25 +1,25 @@
 {% include 'template/header.njk' %}
 <!-- CONTENT -->
 <div class="uk-container uk-container-large uk-margin-large">
-    <h1>Statistics</h1>
-    <p><b>Note: this project is still under development and data shown is from December 2022 to March 2023</b>.</p>
+    <h1>{{ "statistics.title" | i18n }}</h1>
+    <p>{{ "statistics.description" | i18n | safe}}</p>
     <!-- Lorem ipsum -->
     <div uk-grid class="uk-grid-match uk-child-width-1-2@m">
         <!-- Worst trains -->
         <div>
             <div class="uk-card uk-card-default">
                 <div class="uk-card-header">
-                    <h3 class="uk-card-title uk-text-danger">Worst trains</h3>
+                    <h3 class="uk-card-title uk-text-danger">{{ "statistics.worst_trains" | i18n }}</h3>
                 </div>
                 <div class="uk-card-body">
                     <div class="uk-overflow-auto">
                         <table class="uk-table uk-table-divider uk-table-hover uk-table-small ot-ranking-table">
                             <thead>
                                 <tr>
-                                    <th width="35%">Train number</th>
-                                    <th>Direction</th>
-                                    <th uk-tooltip="This is the average delay of the train at each stop">
-                                        Avg delay</th>
+                                    <th width="35%">{{"global.train_number" | i18n }}</th>
+                                    <th>{{"global.destination" | i18n }}</th>
+                                    <th uk-tooltip="{{ "statistics.tooltip_delay_train" | i18n }}">
+                                        {{"global.average_delay" | i18n }}</th>
                                 </tr>
                             </thead>
                             <tbody id="worst-trains">
@@ -40,7 +40,7 @@
             <div>
                 <div class="uk-card uk-card-default">
                     <div class="uk-card-header">
-                        <h3 class="uk-card-title uk-text-success">Best trains</h3>
+                        <h3 class="uk-card-title uk-text-success">{{ "statistics.best_trains" | i18n }}</h3>
                     </div>
                     <div class="uk-card-body">
                         <div class="uk-overflow-auto">
@@ -49,8 +49,8 @@
                                     <tr>
                                         <th width="35%">Train number</th>
                                         <th>Direction</th>
-                                        <th uk-tooltip="This is the average delay of the train at each stop">
-                                            Avg delay</th>
+                                        <th uk-tooltip="{{ "statistics.tooltip_delay_train" | i18n }}">
+                                            {{ "global.average_delay" | i18n }}</th>
                                     </tr>
                                 </thead>
                                 <tbody id="best-trains">
@@ -74,19 +74,19 @@
         <div>
             <div class="uk-card uk-card-default">
                 <div class="uk-card-header">
-                    <h3 class="uk-card-title uk-text-danger">Worst stations</h3>
+                    <h3 class="uk-card-title uk-text-danger">{{ "statistics.worst_stations" | i18n }}</h3>
                 </div>
                 <div class="uk-card-body">
                     <div class="uk-overflow-auto">
                         <table class="uk-table uk-table-divider uk-table-hover uk-table-small ot-ranking-table">
                             <thead>
                                 <tr>
-                                    <th>Station</th>
-                                    <th uk-tooltip="The average arrival delay of trains at each stop">Average delay
+                                    <th>{{"global.station" | i18n }}</th>
+                                    <th uk-tooltip="{{ "tooltip_delay_station" | i18n }}">{{ "global.average_delay" | i18n }}
                                     </th>
                                     <th
-                                        uk-tooltip="The number of trains that went through this stop during the 3-month period analyzed">
-                                        Number of trains</th>
+                                        uk-tooltip="{{ "statistics.tooltip_number_trains_station" | i18n }}">
+                                        {{ "global.number_of_trains" | i18n }}</th>
                                 </tr>
                             </thead>
                             <tbody id="worst-stops">
@@ -107,19 +107,18 @@
             <div>
                 <div class="uk-card uk-card-default">
                     <div class="uk-card-header">
-                        <h3 class="uk-card-title uk-text-success">Best stations</h3>
+                        <h3 class="uk-card-title uk-text-success">{{ "statistics.best_stations" | i18n }}</h3>
                     </div>
                     <div class="uk-card-body">
                         <div class="uk-overflow-auto">
                             <table class="uk-table uk-table-divider uk-table-hover uk-table-small ot-ranking-table">
                                 <thead>
                                     <tr>
-                                        <th>Station</th>
-                                        <th uk-tooltip="The average arrival delay of trains at each stop">Average
-                                            delay</th>
+                                        <th>{{"global.station" | i18n }}</th>
+                                        <th uk-tooltip="{{ "statistics.tooltip_delay_station" | i18n }}">{{"global.average_delay" | i18n }}</th>
                                         <th
-                                            uk-tooltip="The number of trains that went through this stop during the 3-month period analyzed">
-                                            Number of trains</th>
+                                            uk-tooltip="{{ "statistics.tooltip_number_trains_station" | i18n }}">
+                                            {{ "global.number_of_trains" | i18n }}</th>
                                     </tr>
                                 </thead>
                                 <tbody id="best-stops">
@@ -140,21 +139,11 @@
         <div class="uk-card uk-card-default uk-card-body uk-width-1-1">
             <div uk-grid class="uk-child-width-1-2">
                 <div>
-                    <h2>Regional differences</h2>
-                    <p>
-                        The map on the right shows that Italy faces strong regional differences in the average delay
-                        of trains for <b>InterCity</b> trains. In particular, the quality of that service is very
-                        low in the South of Italy. Regional trains show a good performance in the entire country,
-                        while FrecciaRossa high-speed trains have a surprisingly bad performance in the entire
-                        country.
-                        <br><br>
-                        You can use the dropdown below to select the train type you want to see on the map. By
-                        hovering with the mouse on a region, you can see the average delay of trains in that region
-                        and the number of trains registered in the 3-month period considered.
-                    </p>
+                    <h2>{{ "statistics.regional_differences.title" | i18n }}</h2>
+                    <p>{{ "statistics.regional_differences.description" | i18n | safe }}</p>
 
                     <div>
-                        <h5>Train type</h5>
+                        <h5>{{ "global.train_type" | i18n }}</h5>
                         <div class="uk-margin-small">
                             <div class="uk-form-controls">
                                 <select class="uk-select" id="form-horizontal-select-trainType"

@@ -6,15 +6,12 @@
     <div class="uk-position-center-left home-overlay-form-container" style="z-index:5000">
         <div class="uk-card uk-card-default uk-card-body" style="width:450px; height: 100%">
             <h1 class="uk-card-title" style="font-size: 220%;">{{ "homepage.box_title" | i18n }}</h1>
-            <p style="font-size: 120%;">This map shows the average delay of trains at each Italian station.<br>
-                The size of the dot reflects the number of trains that go through each station every day, and the
-                color gives an instant idea on the performance of each station. <br><b>Note: this project is still under
-                    development and data shown is from December 2022 to March 2023</b>.</p>
+            <p style="font-size: 120%;">{{ "homepage.box_content" | i18n | safe }}</p>
 
-            <h3 class="uk-card-title">Filters</h3>
+            <h3 class="uk-card-title">{{"homepage.filters.label" | i18n}}</h3>
             <div uk-grid class="uk-grid-divider">
                 <div>
-                    <span style="font-size: 120%;">Day of week</span>
+                    <span style="font-size: 120%;">{{"homepage.filters.weekday" | i18n}}</span>
                     <div class="uk-margin-small">
                         <div class="uk-form-controls">
                             <select class="uk-select" id="form-horizontal-select-day"
@@ -33,7 +30,7 @@
                 </div>
 
                 <div>
-                    <span style="font-size: 120%;">Train type</span>
+                    <span style="font-size: 120%;">{{"homepage.filters.train_type" | i18n}}</span>
                     <div class="uk-margin-small">
                         <div class="uk-form-controls">
                             <select class="uk-select" id="form-horizontal-select-trainType"
@@ -52,12 +49,12 @@
 
 
             </div>
-            <h4>Search a train station</h4>
+            <h4>{{ "homepage.filters.search_label" | i18n }}</h4>
             <div>
                 <form class="uk-search uk-search-default uk-width-medium uk-margin-large " id="search-station"
                     style="background: #f9f9f9">
                     <button class="uk-search-toggle" uk-search-icon id="searchButton"></button>
-                    <input class="uk-search-input" type="search" placeholder="Search..." id="searchBox"
+                    <input class="uk-search-input" type="search" placeholder="{{ "global.search_box" | i18n }}" id="searchBox"
                         style="font-size: 120%;">
                 </form>
                 <div uk-dropdown="pos: bottom-center" id="stations_dropdown">
