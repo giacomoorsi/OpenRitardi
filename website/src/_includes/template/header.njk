@@ -22,10 +22,12 @@
 {% set language = page.fileSlug.slice(-2) %}
 {%if language == "en" %}
 {% set lang = "IT" %}
-{% set lang_url = "/" %}
+{# remove "/en" from url. Example: from /en/statistics.html changes to /statistics.html #}
+{% set lang_url = page.url.substring(3) %}
 {% else %}
 {% set lang = "EN" %}
-{% set lang_url = "/en/" %}
+{# add "/en" to url. Example: from /statistics.html changes to /en/statistics.html #}
+{% set lang_url = "/en" + page.url %}
 {% endif %}
 
 <!-- HEADER -->
