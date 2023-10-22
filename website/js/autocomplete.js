@@ -63,7 +63,7 @@ function displayStation(id) {
     }
 
     // close dropdown
-    UIkit.dropdown(search_options_dropdown_id).hide(animation = false);
+    UIkit.dropdown(search_options_dropdown_id).hide(animation = true);
 
     // add in text field the station stop
     searchBox.value = station['stop_name'];

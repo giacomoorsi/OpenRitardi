@@ -5,7 +5,7 @@
     <link rel="icon" type="image/x-icon" href="media/logo/favicon.png">
 
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
     <!-- UIkit CSS -->
@@ -30,13 +30,12 @@
 
 <body>
     <!-- HEADER -->
-    <div class="uk-navbar-container tm-navbar-container uk-sticky uk-active uk-sticky-below uk-sticky-fixed"
+    <div class="uk-navbar-container home-header tm-navbar-container uk-sticky uk-active uk-sticky-below uk-sticky-fixed"
         uk-sticky="media: 960; "">
         <div class=" uk-container uk-container-medium">
-        <nav class="uk-navbar" uk-navbar="" style="max-width: 1500px; margin:0 auto">
+        <nav class="uk-navbar" uk-navbar="">
             <div class="uk-navbar-left"><a class="uk-navbar-item uk-logo" href="index.html"
-                    aria-label="Back to Home"><img src="media/logo/logo.png" class="uk-margin-small-right" alt="UIkit"
-                        style="height:90px; margin-bottom:10px; margin-top:10px">
+                    aria-label="Back to Home"><img src="media/logo/logo.png" class="uk-margin-small-right header-logo" alt="UIkit">
                 </a></div>
             <div class="uk-navbar-right">
                 <ul class="uk-navbar-nav uk-visible@m">
@@ -102,9 +101,17 @@
 
         <!-- Create an overlay on the map that is 200px width and 80% height -->
         <div class="uk-position-center-left home-overlay-form-container" style="z-index:5000">
-            <div class="uk-card uk-card-default uk-card-body" style="width:450px; height: 100%">
-                <h1 class="uk-card-title" style="font-size: 220%;">Train delays</h1>
-                <p style="font-size: 120%;">This map shows the average delay of trains at each Italian station.<br>
+            <div class="uk-card uk-card-default uk-card-body">
+                <div class="overlay-title">
+                    <h1 class="uk-card-title">Train delays</h1>
+                    <div class="search-button-container">
+                        <button onclick="onCloseClick()" class="search-button">
+                            <img class="search-icon" src="./media/up_arrow_icon.svg">
+                            <div class="search-button-text">Close</div>
+                        </button>
+                    </div>
+                </div>
+                <p>This map shows the average delay of trains at each Italian station.<br>
                     The size of the dot reflects the number of trains that go through each station every day, and the
                     color gives an instant idea on the performance of each station. <br><b>Note: this project is still under development and data shown is from December 2022 to March 2023</b>.</p>
 
@@ -157,6 +164,8 @@
                         <input class="uk-search-input" type="search" placeholder="Search..." id="searchBox"
                             style="font-size: 120%;">
                     </form>
+
+
                     <div uk-dropdown="pos: bottom-center" id="stations_dropdown">
                         <ul class="uk-nav uk-dropdown-nav uk-width-large">
                             <table class="uk-table uk-table-small uk-table-hover">
@@ -171,14 +180,33 @@
         </div>
 
 
-        <div class="map-overlay uk-position-center-right" style="width: 150px; z-index:1000; margin-right: 1%">
+        <div class="map-overlay uk-position-center-right">
             <div class="map-overlay-inner" id="legend"></div>
         </div>
+
+        <div class="open-button-container">
+            <button onclick="onOpenClick(event)" class="open-button">
+                <img class="open-icon" src="./media/up_arrow_icon.svg">
+                <div class="open-button-text">Open</div>
+            </button>
+        </div>
+
+
     </div>
 
+    <script>
+        function onOpenClick(event) {
+            var overlay = document.getElementsByClassName("home-overlay-form-container")[0];
+            overlay.style.display = "block"; // Show the element
+        }
 
+        function onCloseClick(){
+            var overlay = document.getElementsByClassName("home-overlay-form-container")[0];
+            overlay.style.display = "none"; // Show the element
+        }
+    </script>
 
-
+    <script src="js/script.js" type="text/javascript"></script>
     <script src="js/autocomplete.js" type="text/javascript"></script>
     <script src="libraries/maps/legend.js" type="text/javascript"></script>
     <script src="js/stations_map_mapbox.js" type="text/javascript"></script>
