@@ -285,8 +285,7 @@ function updateDropdown(index) {
     content = `
     <div class="uk-child-width-1-2@s uk-grid-match uk-margin-small uk-grid-small" uk-grid>
         <div>
-            <div class="uk-text-center uk-card uk-card-default uk-card-body"
-                >
+            <div class="uk-text-center uk-card uk-card-default uk-card-body">
                 <span class="uk-h1 uk-margin-small" style="color: ${colormap(stop_data["avg_arrival_delay"])}">${generateDelayString(stop_data["avg_arrival_delay"])}</span>
                 <div class="uk-h4 uk-margin-small">Average delay</div>
             </div>
