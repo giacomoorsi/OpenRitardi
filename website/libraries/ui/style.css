@@ -247,7 +247,7 @@ Legend stuff
     margin-right: 1%
 }
 
-.uk-card-default{
+.home-overlay-form-container > * {
     width: 450px; 
     height: 100%;
 }
@@ -288,7 +288,7 @@ Mobile optimization
         transform: none;
     }
 
-    .uk-card-default{
+    .home-overlay-form-container > * {
         width: auto;
     }
 
