@@ -8,11 +8,21 @@ The website is available at [openritardi.it](https://openritardi.it)
 # Contribution
 Contribution is welcome! Please use the [Roadmap](https://github.com/giacomoorsi/OpenRitardi/issues/1) to suggest new features, feel free to open new issues. 
 
-If you develop locally, you can clone the folder and run 
+### Setup
+#### Website
+The website is stored on GitHub pages. The data for stations and train delays is currently stored in this repository in zip archives in the `data/dataset_generated` folder. 
+The GitHub action that prepares the website unzips all files and stores them in the `website/data` folder.  
+
+#### Data
+If you develop locally, you can clone the folder and run the following Bash command 
 ```bash
 $ bash prepare_data.sh
 ```
 to unzip all datasets locally.
 
+#### Development environment
+Once you have unzipped the data using the script above, you can run a local server to do your experiments. Feel free to use whatever local server. 
+A good possibilty is to use Visual Studio Code with the [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) extention enabled. You can easily launch a live server which points to the `website` folder and you can access the preview of the website from `localhost` and the port given by Live Server, in your favorite browser. 
+
 ### Pull requests
-Feel free to submit pull requests. Please document your code in English and write a PR description. **Test** your code before submitting a PR and after implementing PR comments!
+Feel free to submit pull requests. Please document your code in English and write a PR description. **Test** your code before submitting a PR and after implementing PR comments as it will most likely not be tested by the reviewers!
