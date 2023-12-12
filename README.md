@@ -21,7 +21,16 @@ to unzip all datasets locally.
 
 #### Development environment
 Once you have unzipped the data using the script above, you can run a local server to do your experiments. Feel free to use whatever local server. 
-A good possibilty is to use Visual Studio Code with the [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) extention enabled. You can easily launch a live server which points to the `website` folder and you can access the preview of the website from `localhost` and the port given by Live Server, in your favorite browser. 
+A good possibilty is to use Visual Studio Code with the [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) extention enabled. You can easily launch a live server which points to the `website/dist` folder and you can access the preview of the website from `localhost` and the port given by Live Server, in your favorite browser. 
+
+#### Website development
+You can statically compile the website with the following commands 
+```
+cd website
+npm install
+npm run build
+```
+The folder `dist` is the entrypoint of the website. 
 
 ### Pull requests
 Feel free to submit pull requests. Please document your code in English and write a PR description. **Test** your code before submitting a PR and after implementing PR comments as it will most likely not be tested by the reviewers!
