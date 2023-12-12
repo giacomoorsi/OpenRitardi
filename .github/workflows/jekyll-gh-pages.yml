@@ -34,7 +34,7 @@ jobs:
         run: bash prepare_data.sh
       - name: Install NodeJS dependencies
         run: npm --prefix website install 
-      - run: Build NodeJS website
+      - name: Build NodeJS website
         run: npm --prefix website build run
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
