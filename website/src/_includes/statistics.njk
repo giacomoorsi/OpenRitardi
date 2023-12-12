@@ -1,0 +1,177 @@
+{% include 'template/header.njk' %}
+<!-- CONTENT -->
+<div class="uk-container uk-container-large uk-margin-large">
+    <h1>{{ "statistics.title" | i18n }}</h1>
+    <p>{{ "statistics.description" | i18n | safe}}</p>
+    <!-- Lorem ipsum -->
+    <div uk-grid class="uk-grid-match uk-child-width-1-2@m">
+        <!-- Worst trains -->
+        <div>
+            <div class="uk-card uk-card-default">
+                <div class="uk-card-header">
+                    <h3 class="uk-card-title uk-text-danger">{{ "statistics.worst_trains" | i18n }}</h3>
+                </div>
+                <div class="uk-card-body">
+                    <div class="uk-overflow-auto">
+                        <table class="uk-table uk-table-divider uk-table-hover uk-table-small ot-ranking-table">
+                            <thead>
+                                <tr>
+                                    <th width="35%">{{"global.train_number" | i18n }}</th>
+                                    <th>{{"global.destination" | i18n }}</th>
+                                    <th uk-tooltip="{{ "statistics.tooltip_delay_train" | i18n }}">
+                                        {{"global.average_delay" | i18n }}</th>
+                                </tr>
+                            </thead>
+                            <tbody id="worst-trains">
+                                <tr>
+                                    <td colspan="3" style="text-align:center">
+                                        <div uk-spinner></div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End worst trains -->
+        <!-- Best trains -->
+        <div uk-grid class="uk-grid-match uk-child-width-1-2@m">
+            <div>
+                <div class="uk-card uk-card-default">
+                    <div class="uk-card-header">
+                        <h3 class="uk-card-title uk-text-success">{{ "statistics.best_trains" | i18n }}</h3>
+                    </div>
+                    <div class="uk-card-body">
+                        <div class="uk-overflow-auto">
+                            <table class="uk-table uk-table-divider uk-table-hover uk-table-small ot-ranking-table">
+                                <thead>
+                                    <tr>
+                                        <th width="35%">{{"global.train_number" | i18n }}</th>
+                                        <th>{{"global.destination" | i18n }}</th>
+                                        <th uk-tooltip="{{ "statistics.tooltip_delay_train" | i18n }}">
+                                            {{ "global.average_delay" | i18n }}</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="best-trains">
+                                    <tr>
+                                        <td colspan="3" style="text-align:center">
+                                            <div uk-spinner></div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End of section Best/Worst Trains -->
+    <!-- Best/Worst Stations -->
+    <div uk-grid class="uk-grid-match uk-child-width-1-2@m">
+        <!-- Worst stations -->
+        <div>
+            <div class="uk-card uk-card-default">
+                <div class="uk-card-header">
+                    <h3 class="uk-card-title uk-text-danger">{{ "statistics.worst_stations" | i18n }}</h3>
+                </div>
+                <div class="uk-card-body">
+                    <div class="uk-overflow-auto">
+                        <table class="uk-table uk-table-divider uk-table-hover uk-table-small ot-ranking-table">
+                            <thead>
+                                <tr>
+                                    <th>{{"global.station" | i18n }}</th>
+                                    <th uk-tooltip="{{ "statistics.tooltip_delay_station" | i18n }}">{{ "global.average_delay" | i18n }}
+                                    </th>
+                                    <th
+                                        uk-tooltip="{{ "statistics.tooltip_number_trains_station" | i18n }}">
+                                        {{ "global.number_of_trains" | i18n }}</th>
+                                </tr>
+                            </thead>
+                            <tbody id="worst-stops">
+                                <tr>
+                                    <td colspan="3" style="text-align:center">
+                                        <div uk-spinner></div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End worst stations -->
+        <!-- Best stations -->
+        <div uk-grid class="uk-grid-match uk-child-width-1-2@m">
+            <div>
+                <div class="uk-card uk-card-default">
+                    <div class="uk-card-header">
+                        <h3 class="uk-card-title uk-text-success">{{ "statistics.best_stations" | i18n }}</h3>
+                    </div>
+                    <div class="uk-card-body">
+                        <div class="uk-overflow-auto">
+                            <table class="uk-table uk-table-divider uk-table-hover uk-table-small ot-ranking-table">
+                                <thead>
+                                    <tr>
+                                        <th>{{"global.station" | i18n }}</th>
+                                        <th uk-tooltip="{{ "statistics.tooltip_delay_station" | i18n }}">{{"global.average_delay" | i18n }}</th>
+                                        <th
+                                            uk-tooltip="{{ "statistics.tooltip_number_trains_station" | i18n }}">
+                                            {{ "global.number_of_trains" | i18n }}</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="best-stops">
+                                    <tr>
+                                        <td colspan="3" style="text-align:center">
+                                            <div uk-spinner></div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="uk-margin">
+        <div class="uk-card uk-card-default uk-card-body uk-width-1-1">
+            <div uk-grid class="uk-child-width-1-2">
+                <div>
+                    <h2>{{ "statistics.regional_differences.title" | i18n }}</h2>
+                    <p>{{ "statistics.regional_differences.description" | i18n | safe }}</p>
+
+                    <div>
+                        <h5>{{ "global.train_type" | i18n }}</h5>
+                        <div class="uk-margin-small">
+                            <div class="uk-form-controls">
+                                <select class="uk-select" id="form-horizontal-select-trainType"
+                                    style="font-size: 110%; background: #f9f9f9">
+                                    <option style="font-size: 120%;">All trains</option>
+                                    <option style="font-size: 120%;">Regional</option>
+                                    <option style="font-size: 120%;">EuroCity</option>
+                                    <option style="font-size: 120%;" selected>InterCity</option>
+                                    <option style="font-size: 120%;">FrecciaRossa</option>
+                                    <option style="font-size: 120%;">FrecciaBianca</option>
+                                    <option style="font-size: 120%;">FrecciaArgento</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="uk-inline">
+                    <div id="regional-differences-map"></div>
+                    <div class="map-overlay uk-position-bottom-right">
+                        <div class="map-overlay-inner regional-legend">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/statistics.js" type="text/javascript"></script>
+<script src="/libraries/maps/legend.js" type="text/javascript"></script>
+<script src="/js/regional-differences.js" type="text/javascript"></script>

@@ -1,0 +1,404 @@
+#map {
+    width: 100%;
+    /* compute height 100% - 100px */
+    height: calc(100vh - 100px);
+}
+
+
+/* #home-overlay-container {
+    width: 100%;
+    height: calc(100vh - 100px);
+    position: absolute;
+    top: 100px;
+    left: 0;
+} */
+
+/**
+On larger devices than 1500px, add a margin to the left equal to the viewport width - 1500px/2
+**/
+/* #home-map-form-container {
+    margin-left: 0;
+}
+@media (min-width: 1280px) {
+    #home-map-form-container {
+        margin-left: calc((100vw - 1280px) / 2);
+    }
+} */
+
+.home-overlay-form-container {
+    margin-left: 0;
+}
+@media (min-width: 1280px) {
+    .home-overlay-form-container {
+        margin-left: calc((100vw - 1280px) / 2);
+    }
+}
+
+
+div.tooltip {
+    position: absolute;
+    text-align: center;
+    padding: .2rem;
+    background: #313639;
+    color: #f9f9f9;
+    border: 0px;
+    border-radius: 8px;
+    pointer-events: none;
+    font-size: .7rem;
+}
+
+.tooltip {
+    position: absolute;
+    z-index: 1001;
+    pointer-events: none;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5px;
+    font-size: 14px;
+    opacity: 0;
+}
+
+#autocompleteList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#autocompleteList li {
+    cursor: pointer;
+    padding: 5px;
+}
+
+#autocompleteList li:hover {
+    background-color: lightgray;
+}
+
+
+
+
+.map-legend {
+    background: #fff;
+    display: block;
+}
+
+body {
+    cursor: default;
+}
+
+p{
+    font-size: 120%;
+}
+
+.uk-navbar{
+    max-width: 1500px; 
+    margin:0 auto
+}
+
+.header-logo{
+    height:90px; 
+    margin-bottom:10px; 
+    margin-top:10px
+}
+
+.uk-navbar-container {
+    background: #ededed;
+}
+
+.uk-offcanvas-bar {
+    z-index: 10000;
+}
+
+
+
+.ot-ranking-table .ot-train-logo-ic {
+    height: 20px;
+}
+
+.ot-ranking-table .ot-train-logo-fr {
+    height: 14px;
+}
+
+.ot-ranking-table .ot-train-logo-re {
+    height: 18px;
+}
+
+.ot-ranking-table tbody tr {
+    cursor: pointer;
+}
+
+.ot-ranking-train-info .ot-train-logo-ic {
+    height: 40px;
+}
+
+#route-map {
+    width: 100%;
+    height: 500px;
+}
+
+
+
+.ot-about-page {
+    line-height: 25pt;
+    font-size: 14pt;
+    font-weight: 400;
+}
+
+#regional-differences-map {
+    width: 100%;
+    height: 500px;
+}
+
+
+/**
+Legend stuff
+**/
+.map-overlay {
+    /*font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;*/
+    /* position: absolute; */
+    width: 180px;
+    /* top: 0;
+    left: 0; */
+    padding: 10px;
+}
+
+.search-button-container, .open-button-container{
+    display: none;
+}
+
+.open-button-container{
+    position: fixed;
+    z-index: 2;
+    bottom: 60px;
+    right: 10px;
+    /* z-index: 5001;
+    bottom: 10px;
+    right: 10px; */
+}
+
+.overlay-title{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.open-button, .search-button{
+    background-color: #04944c;
+    color: white;
+
+    width: 100px;
+    height: 35px;
+
+    border: 2px;
+    border-radius: 10px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    overflow: hidden;
+    transition: background 400ms;
+    outline: 0;
+    border: 0;
+    /* border-radius: 0.25rem; */
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.open-button-text, .search-button-text{
+    font-size: 15px;;
+    padding-left: 5px;
+    font-weight: 550;
+}
+
+.open-icon, .search-icon{
+    filter: invert(100%);
+    height: 15px;
+    margin-right: 0.3rem;
+}
+
+.search-icon{
+    transform: rotate(180deg);
+}
+
+/* Style the ripple element */
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: rippleAnimation 0.6s linear;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+/* Add animation for the ripple effect */
+@keyframes rippleAnimation {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+.uk-position-center-right{
+    z-index: 2;
+    width: 150px;
+    margin-right: 1%
+}
+
+.home-overlay-form-container > * {
+    width: 450px; 
+    height: 100%;
+}
+
+.map-overlay .map-overlay-inner {
+    background-color: #fff;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+
+/**
+Mobile optimization
+**/
+@media (max-width: 600px) {
+    .open-button-container{
+        display: block;
+    }
+
+    .home-overlay-form-container{
+        display: none;
+        width: auto;
+        /* transform: translateY(-45%) !important; */
+        position: fixed !important;
+        bottom: 0 !important;
+
+    }
+
+    .home-header{
+        width: 100% !important;
+        position: fixed !important;
+        top: 0 !important;
+    }
+
+    .uk-position-center-right{
+        top: 0;
+        transform: none;
+    }
+
+    .home-overlay-form-container > * {
+        width: auto;
+    }
+
+    .uk-dropdown.uk-open {
+        left: 0 !important;
+        width: 100% !important;
+    }
+
+    .uk-margin-large {
+        margin-bottom: 13px;
+    }
+
+    h1,h2,h3,h4,h5,h6{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    h1{
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+
+    .uk-width-medium{
+        width: 100%;
+    }
+
+    .search-button-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+
+    .header-logo{
+        height: 40px;
+    }
+
+    .uk-navbar-toggle-icon{
+        min-height: none;
+    }
+
+    h1{
+        font-size: 21px !important;
+    }
+
+    p{
+        font-size: 100% !important;
+        margin-bottom: 13px !important;
+        margin-top: 13px !important;
+    }
+
+    h3{
+        font-size: 19px !important;
+    }
+
+    .uk-h3{
+        font-size: 18px;
+    }
+
+    h4{
+        font-size: 17px !important;
+    }
+
+    a{
+        font-size: 20px !important;
+    }
+
+    .uk-card-body{
+        padding: 20px 20px;
+    }
+
+    span, option, input, select{
+        font-size: 100% !important;
+    }
+
+    td{
+        font-size: 15px;
+        padding: 7px 7px;
+    }
+
+    .uk-grid-match{
+        width: auto;
+    }
+
+    .uk-inline, .uk-first-column{
+        width: 100% !important;
+    }
+
+    .uk-card{
+        height: auto;
+    }
+
+    canvas{
+        width: 100%;
+    }
+
+
+    .mapboxgl-popup-content{
+
+        .uk-text-lead{
+            width: auto !important;
+        }
+    
+        b{
+            font-size: medium !important;
+        }
+    
+        br{
+            font-size: small !important;
+        }
+    }
+
+}

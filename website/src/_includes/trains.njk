@@ -1,0 +1,74 @@
+{% include 'template/header.njk' %}
+<!-- CONTENT -->
+<!-- Search your train -->
+<div class="uk-container uk-container-large uk-section uk-section-muted">
+    <h1 class="uk-text-center">{{ "trains.title" | i18n }}</h1>
+    <div class="uk-text-justify uk-container uk-container-small">
+        <p>{{ "trains.description" | i18n | safe }}</p>
+    </div>
+    <div class="uk-text-center uk-margin">
+        <form class="uk-search uk-search-default uk-width-medium uk-margin-large">
+            <span uk-search-icon></span>
+            <input class="uk-search-input" type="search" placeholder="{{ "global.search_box" | i18n }}" style="background:#fff"
+                id="train_search_input">
+            <div uk-dropdown="pos: bottom-center" id="search_options_dropdown">
+                <ul class="uk-nav uk-dropdown-nav uk-width-large">
+                    <table class="uk-table uk-table-small uk-table-hover">
+                        <thead>
+                            <tr>
+                                <th>{{ "global.train_number" | i18n }}"</th>
+                                <th>{{ "global.departure" | i18n }}"</th>
+                                <th>{{ "global.destination" | i18n }}"</th>
+                            </tr>
+                        </thead>
+                        <tbody id="search_options_dropdown_content">
+                        </tbody>
+                    </table>
+                </ul>
+            </div>
+        </form>
+    </div>
+
+
+    <div class="uk-child-width-1-2@m uk-flex uk-flex-middle" uk-grid>
+        <!-- START: Card for train info -->
+        <div class="ot-ranking-train-info" id="searched_train_info_div">
+        </div>
+        <!-- END: Card for train info -->
+        <!-- START: Map for train -->
+        <div>
+            <div class="uk-card uk-card-default uk-card-body">
+                <div id="route-map"></div>
+            </div>
+        </div>
+        <!-- END: Map for train -->
+    </div>
+
+    <div class="uk-child-width-1-2@m uk-margin-large uk-grid-match uk-flex uk-flex-middle" uk-grid>
+        <div>
+            <div class="uk-card uk-card-default uk-card-body" id="histogram_container" style="overflow:visible">
+            </div>
+        </div>
+        <div>
+            <div class="uk-card uk-card-default uk-card-body">
+                <div class="uk-h3 uk-grid-small uk-flex uk-flex-middle" uk-grid>
+                    <div>{{ "trains.delays_at" | i18n }}</div>
+                    <div class="uk-width-expand">
+                        <select class="uk-select" style="display:inline-block" id="dropdown_stop">
+                            <option selected>VENTIMIGLIA</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="stop_statistics_container">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<script src="/libraries/maps/legend.js" type="text/javascript"></script>
+<script src="/js/route_map.js" type="text/javascript"></script>
+<script src="/js/trains_search.js" type="text/javascript"></script>
+<script src="/js/train_stats_display.js" type="text/javascript"></script>

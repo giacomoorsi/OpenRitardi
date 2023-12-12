@@ -1,0 +1,82 @@
+{# {% TODO: Move this definition to a different file to separate template from logic %} #}
+{% 
+    set menu = [
+        {
+            "url": "index.html",
+            "item": "homepage" 
+        },
+        {
+            "url": "trains.html",
+            "item": "trains"
+        },
+        {
+            "url": "statistics.html",
+            "item": "statistics"
+        },
+        {
+            "url": "about.html",
+            "item": "about"
+        }
+    ]
+ %}
+{% set language = page.fileSlug.slice(-2) %}
+{%if language == "en" %}
+{% set lang = "IT" %}
+{# remove "/en" from url. Example: from /en/statistics.html changes to /statistics.html #}
+{% set lang_url = page.url.substring(3) %}
+{% else %}
+{% set lang = "EN" %}
+{# add "/en" to url. Example: from /statistics.html changes to /en/statistics.html #}
+{% set lang_url = "/en" + page.url %}
+{% endif %}
+
+<!-- HEADER -->
+<div class="uk-navbar-container tm-navbar-container uk-sticky uk-active uk-sticky-below uk-sticky-fixed"
+    uk-sticky="media: 960; "">
+        <div class=" uk-container uk-container-medium">
+    <nav class="uk-navbar" uk-navbar="" style="max-width: 1500px; margin:0 auto">
+        <div class="uk-navbar-left"><a class="uk-navbar-item uk-logo" href="index.html" aria-label="Back to Home"><img
+                    src="/media/logo/logo.png" class="header-logo uk-margin-small-right" alt="UIkit"
+                    style="height:90px; margin-bottom:10px; margin-top:10px">
+            </a></div>
+        <div class="uk-navbar-right">
+            <ul class="uk-navbar-nav uk-visible@m">
+                {% for item in menu %}
+                <li {% if page.fileSlug.startsWith(item.item) %} class="uk-active" {% endif %}>
+                    <a href="{{ item.url }}">
+                        {{ (item.item + ".menu_item") | i18n }}
+                    </a>
+                </li>
+                {% endfor %}
+                <li>
+                    <a href="{{ lang_url }}" >
+                        <span class="uk-button uk-button-small uk-button-default">{{ lang }}</span>
+                    </a>
+                </li>
+            </ul>
+            <a class="uk-navbar-toggle uk-hidden@m uk-icon uk-navbar-toggle-icon" uk-navbar-toggle-icon=""
+                href="#offcanvas" uk-toggle="" aria-label="Open menu" role="button"></a>
+        </div>
+    </nav>
+</div>
+</div>
+<div id="offcanvas" uk-offcanvas="overlay: true" style="z-index: 10000;">
+    <div class="uk-offcanvas-bar uk-flex uk-flex-column">
+        <button class="uk-offcanvas-close" type="button" uk-close></button>
+        <ul class="uk-nav uk-nav-primary uk-nav-center uk-margin-auto-vertical">
+            {% for item in menu %}
+            <li {% if page.fileSlug.startsWith(item.item) %} class="uk-active" {% endif %}>
+                <a href="{{ item.url }}">
+                    {{ (item.item + ".menu_item") | i18n }}
+                </a>
+            </li>
+            {% endfor %}
+            <li>
+                <a href="{{ lang_url }}" >
+                    <span class="uk-button uk-button-small uk-button-default">{{ lang }}</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- END OF HEADER-->

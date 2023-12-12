@@ -133,8 +133,6 @@ dmypy.json
 .metals
 .scala-build
 
-# vscode
-.vscode/
 
 
 # sbt
@@ -156,3 +154,9 @@ website/Gemfile.lock
 # exclude GTFS timetable
 */gtfs/*
 */gtfs-out/*
+
+# remove node stuff
+website/node_modules
+
+# remove output dir
+website/dist
