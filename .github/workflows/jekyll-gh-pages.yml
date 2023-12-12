@@ -35,7 +35,7 @@ jobs:
       - name: Install NodeJS dependencies
         run: npm --prefix website install 
       - name: Build NodeJS website
-        run: npm --prefix website build run
+        run: npm --prefix website run build
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
