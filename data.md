@@ -13,6 +13,7 @@ Data is not collected by OpenRitardi directly, but it collected by [TrainStats](
 You can download datasets from [TrainStats's Mega folder](https://mega.nz/folder/jRImnIqD#XrqeWFZ3h12wS8O_U4APXQ). Choose the days that you want to download (a period of 3-month data is about 10GB). 
 ### Data raw format
 TrainStats datasets contain: 
+
 1. an entry for everytime a train stops at a station in a specific day, and contains information on the train (train class, number, departure, destination), the station, the scheduled time, the actual time and the delay
 2. general information on the railway status for a specific day, like Trenitalia or RFI text announcements
 3. broad statistics on the number of trains circulated on a specific day
@@ -29,23 +30,32 @@ Now that you have a tabular dataset, where each entry corresponds to the stop of
 
 ## What to do with the data
 Feel free to explore it, invent new visualizations or use cases. Below we provide a list of investigations we already carried out, and a list of additional ideas that might be relevant as well. 
+
 ### OpenRitardi's initial analysis
 The charts and the data displayed on OpenRitardi's website are computed in [this notebook](https://github.com/giacomoorsi/OpenRitardi/blob/master/data/data_generation.ipynb). 
 Some of the analysis we carried out are: 
+
 - obtaining the average delay of trains in each station, stratified by day of the week and train class, accessible on OpenRitardi's [homepage](https://www.openritardi.it)
 - obtaining statistics on delays for the stops of a given train, accessible [here](https://www.openritardi.it/trains.html)
 - obtaining the list of best/worst train stations and trains and a regional comparison of train delays, accessive [here](https://www.openritardi.it/statistics.html)
 
 ### Proposed ideas
+Something already explored by OpenRitardi for Italy: 
+
 - regional differences on average delays
 - differences by train type (regional, intercity, arrows) on average delays
+
+or some new analyses and visualizations: 
+
 - how long it takes on average to travel in each region (you have the coordinates of the stops and all the schedules, so you can calculate the average speed)
-- how many trains there are in each region
+- how many trains there are in each region per inhabitant (perhaps visualized with a cool heatplot)
 - average delays per station based on its size (larger stations often have lower average delays for example)
-- make a map of Italy where distance is not given by geographical distance but rather by the time it takes to travel around (Rome will be very close to Milan, but very far from Bari, while their geographical distance is comparable)
+- make a map of Italy where distance is not given by geographical distance but rather by the time it takes to travel around (Naples will be very close to Milan, but very far from Bari, while their geographical distance is comparable)
+- compute frequencies of trains connecting cities, for instance Milan is connected to Genova with 20 trains every day while it is connected to Rome 80 times a day. With this, it is possible to make a map of Italy with segments that connect cities and a segment width or color set by the frequency of connecting trains
 - get some inspiration from [Chronotrains](https://www.chronotrains.com/en), [BelgianTrains](https://www.mobilitydashboard.be/trains/train-delay/), [Swiss Federal Railways](https://company.sbb.ch/en/the-company/responsibility-society-environment/customers/punctuality.html), or others
 
 or even machine learning approches like:
+
 - predicting the delay of a train
 - using NLP techniques on Trenitalia text announcements to predict specific train delays
 - clustering trains or stations and obtain new insights
