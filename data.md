@@ -52,6 +52,7 @@ or some new analyses and visualizations:
 - average delays per station based on its size (larger stations often have lower average delays for example)
 - make a map of Italy where distance is not given by geographical distance but rather by the time it takes to travel around (Naples will be very close to Milan, but very far from Bari, while their geographical distance is comparable)
 - compute frequencies of trains connecting cities, for instance Milan is connected to Genova with 20 trains every day while it is connected to Rome 80 times a day. With this, it is possible to make a map of Italy with segments that connect cities and a segment width or color set by the frequency of connecting trains
+- aggregate statistics from stations of the same city (i.e. merge Milano Centrale, Milano Cadorna, Milano Rogoredo, ...)
 - get some inspiration from [Chronotrains](https://www.chronotrains.com/en), [BelgianTrains](https://www.mobilitydashboard.be/trains/train-delay/), [Swiss Federal Railways](https://company.sbb.ch/en/the-company/responsibility-society-environment/customers/punctuality.html), or others
 
 or even machine learning approches like:
