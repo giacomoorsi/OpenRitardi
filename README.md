@@ -4,8 +4,11 @@ The motivation for this project comes from the crucial lack of open data regardi
 # Website
 The website is available at [openritardi.it](https://openritardi.it)
 
+# OpenRitardi datasets
+We publish tutorials on how to use OpenRitardi data and replicate our analysis. We welcome contribution with new processing ideas and visualization. You can find more information [on this page](data.md) ([here](data.pdf) in pdf).
+
 # Contribution
-Contribution is welcome! Please use the [Roadmap](https://github.com/giacomoorsi/OpenRitardi/issues/1) to suggest new features, feel free to open new issues. 
+Contribution is welcome! Please use the [Roadmap](https://github.com/giacomoorsi/OpenRitardi/issues/1) to suggest new features, feel free to open new issues. We will credit you on the [About](https://www.openritardi.it/about.html) page on the website.
 
 ### Setup
 #### Website
