@@ -18,10 +18,10 @@ TrainStats datasets contain:
 2. general information on the railway status for a specific day, like Trenitalia or RFI text announcements
 3. broad statistics on the number of trains circulated on a specific day
 
-For OpenRitardi usecases we are mainly interested by 1. 
+For the current version of OpenRitardi, we mainly focused on the first group. You're free to explore the other two groups as well!
 
 ### Data pre-processing
-In order to convert TrainStats' json datasets in a nice tabular dataset which can be used for analysis, you can run our [data wrangling script](https://github.com/giacomoorsi/OpenRitardi/blob/master/exploratory_data_analysis/data_wrangling.ipynb) which uses Spark for big-data processing. 
+In order to convert TrainStats' json datasets in a nice tabular dataset which can be used for analysis, you can run our [data wrangling notebook](https://github.com/giacomoorsi/OpenRitardi/blob/master/exploratory_data_analysis/data_wrangling.ipynb) which uses Spark for big-data processing. 
 
 In this [requirements.txt](https://github.com/giacomoorsi/OpenRitardi/blob/master/exploratory_data_analysis/requirements.txt) file you can find the dependencies to be installed in order to run our data wrangling script. 
 
