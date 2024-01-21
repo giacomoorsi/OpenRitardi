@@ -12,25 +12,30 @@ The website is available at [openritardi.it](https://openritardi.it)
 ## OpenRitardi datasets
 We publish tutorials on how to use OpenRitardi data and replicate our analysis. We welcome contribution with new processing ideas and visualization. You can find more information [on this page](data.md) ([here](data.pdf) in pdf).
 
+---
+
 # Community 🤗
 We believe this project can be impactful, fun, and a chance to learn new skills or meet interesting people.
 Our mission is to showcase how the use of open data can improve public services. 
 
 We have decided to launch an open-source community to support this project with the following two guidelines:
-> 1. everybody can contribute with anything that (choose any of the following):
->    - excites them
- >    - believes is useful for the mission
- >    - believes is useful for themselves (e.g. learn web-development or data science skills)
-> 2. nobody in the community should feel any pressure to do any activity 
-> 
-> and with the following goals:
-> - expanding the current openritardi.it with new countries
-> - expanding the data science part of the project
-> - find a way to make it impactful
-> - build a community driven by the interest of open data and data science
+1. everybody can contribute with anything that (choose any of the following):
+  - excites them
+  - believes is useful for the mission
+  - believes is useful for themselves (e.g. learn web-development or data science skills)
+
+2. nobody in the community should feel any pressure to do any activity  
+
+and with the following goals:
+- expanding the current openritardi.it with new countries
+- expanding the data science part of the project
+- find a way to make it impactful
+- build a community driven by the interest of open data and data science
 
 
 🚀 You can join our community by signing up on our [Slack](https://join.slack.com/t/opentrains/shared_invite/zt-2b0qtfmpe-YQZZdpJkwR~PQKjrCZksEg)!
+
+---
 
 # Contribution 🤝
 Contribution is welcome! Please use the [Roadmap](https://github.com/giacomoorsi/OpenRitardi/issues/1) to suggest new features, feel free to open new issues. We will credit you on the [About](https://www.openritardi.it/about.html) page on the website.
