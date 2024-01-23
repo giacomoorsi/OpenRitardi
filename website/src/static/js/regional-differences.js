@@ -15,8 +15,8 @@ var height = document.getElementById("regional-differences-map").offsetHeight;
 
 // scales the color linearly
 let colormap = d3.scaleLinear()
-    .domain([-10, 0, 3, 7, 10])
-    .range(['#10ad0a', '#10ad0a', '#f7f414', '#e81710', '#e81710']);
+    .domain([-10, 0, 5, 10])
+    .range(['#10ad0a', '#10ad0a', '#f7f414', '#e81710']);
 
 // add color legend, without showing the negative values for the colormap
 const legend = Legend(colormap.range(colormap.range().slice(1))
