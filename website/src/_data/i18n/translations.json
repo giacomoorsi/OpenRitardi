@@ -2,8 +2,8 @@
     "global": {
         "train_types": {
             "all": {
-                "en": "All trains",
-                "it": "Tutti i treni"
+                "en": "All trains!!!",
+                "it": "Tutti i treni!!!"
             },
             "regional": {
                 "en": "Regional",

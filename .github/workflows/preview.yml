@@ -49,7 +49,7 @@ jobs:
         uses: actions/upload-pages-artifact@v1
 
   # Deployment job
-  deploy-preview:
+  deploy-preview: 
     runs-on: ubuntu-latest
     needs: build
     steps:
