@@ -49,7 +49,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - uses: actions/checkout@3
+      - uses: actions/checkout@v3
       - name: Deploy PR preview
         uses: rossjrw/pr-preview-action@v1.4.3
         with:
