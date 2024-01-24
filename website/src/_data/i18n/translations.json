@@ -88,8 +88,8 @@
             "it": "Stazioni"
         },
         "box_title": {
-            "en": "Average train delays",
-            "it": "Ritardi medi dei treni"
+            "en": "Average train delays!!!",
+            "it": "Ritardi medi dei treni!!!"
         },
         "box_content": {
             "en": "This map shows the average delay of trains at each Italian station.<br> The size of the dot reflects the number of trains that go through each station every day, and the color gives an instant idea on the performance of each station. <br><b>Note: this project is still under development and data shown is from December 2022 to March 2023</b>.",
