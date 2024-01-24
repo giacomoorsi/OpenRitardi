@@ -45,13 +45,16 @@ jobs:
         uses: actions/upload-pages-artifact@v1
 
   # Deployment job
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  deploy-preview:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2
+      - uses: actions/checkout@3
+      - name: Deploy PR preview
+        uses: rossjrw/pr-preview-action@v1.4.3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          preview-brach: master
+          source-dir: .
+          umbrella-dir: pr-preview
+          action: auto
