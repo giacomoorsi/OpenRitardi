@@ -12,19 +12,19 @@
             <input class="uk-search-input" type="search" placeholder="{{ "global.search_box" | i18n }}" style="background:#fff"
                 id="train_search_input">
             <div uk-dropdown="pos: bottom-center" id="search_options_dropdown">
-                <ul class="uk-nav uk-dropdown-nav uk-width-large">
-                    <table class="uk-table uk-table-small uk-table-hover">
+                <div class="uk-width-xlarge" style="overflow-y: scroll; max-height: 400px;">
+                    <table class="uk-table uk-table-small uk-table-hover uk-text-left">
                         <thead>
                             <tr>
-                                <th>{{ "global.train_number" | i18n }}"</th>
-                                <th>{{ "global.departure" | i18n }}"</th>
-                                <th>{{ "global.destination" | i18n }}"</th>
+                                <th>{{ "global.train_number" | i18n }}</th>
+                                <th>{{ "global.departure" | i18n }}</th>
+                                <th>{{ "global.destination" | i18n }}</th>
                             </tr>
                         </thead>
                         <tbody id="search_options_dropdown_content">
                         </tbody>
                     </table>
-                </ul>
+                </div>
             </div>
         </form>
     </div>
