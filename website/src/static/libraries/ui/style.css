@@ -109,6 +109,13 @@ p{
     z-index: 10000;
 }
 
+.uk-dropdown .uk-table-hover tr:hover {
+    color: #223046;
+}
+
+.uk-table-hover td {
+    cursor: pointer;
+}
 
 
 .ot-ranking-table .ot-train-logo-ic {
