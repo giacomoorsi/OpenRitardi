@@ -92,8 +92,8 @@
             "it": "Ritardi medi dei treni"
         },
         "box_content": {
-            "en": "This map shows the average delay of trains at each Italian station.<br> The size of the dot reflects the number of trains that go through each station every day, and the color gives an instant idea on the performance of each station. <br><b>Note: this project is still under development and data shown is from December 2022 to March 2023</b>.",
-            "it": "Questa mappa mostra il ritardo medio dei treni in ogni stazione italiana.<br>La dimensione del punto riflette il numero di treni che transitano in ogni stazione ogni giorno, mentre il colore mostrato è in base al ritardo di ogni stazione.<br><b>Nota: questo progetto è ancora in fase di sviluppo e i dati riportati si riferiscono al periodo compreso tra dicembre 2022 e marzo 2023.</b>"
+            "en": "This map shows the average delay of trains at each Italian station.<br> The size of the dot reflects the number of trains that go through each station every day, and the color gives an instant idea on the performance of each station. <br><b>Note: this project is still under development and data shown is from 2023</b>.",
+            "it": "Questa mappa mostra il ritardo medio dei treni in ogni stazione italiana.<br>La dimensione del punto riflette il numero di treni che transitano in ogni stazione ogni giorno, mentre il colore mostrato è in base al ritardo di ogni stazione.<br><b>Nota: questo progetto è ancora in fase di sviluppo e i dati riportati si riferiscono al 2023.</b>"
         },
         "filters": {
             "label": {
@@ -124,8 +124,8 @@
             "it": "Statistiche"
         },
         "description": {
-            "en": "<b>Note: this project is still under development and data shown is from December 2022 to March 2023.</b>",
-            "it": "<b>Nota: questo progetto è ancora in fase di sviluppo e i dati riportati si riferiscono al periodo compreso tra dicembre 2022 e marzo 2023.</b>"
+            "en": "<b>Note: this project is still under development and data shown is from 2023.</b>",
+            "it": "<b>Nota: questo progetto è ancora in fase di sviluppo e i dati riportati si riferiscono al 2023.</b>"
         },
         "worst_trains": {
             "en": "Worst trains",
@@ -150,7 +150,7 @@
             },
             "description": {
                 "en": "The map shows that Italy faces strong regional differences in  the average delay of trains for <b>InterCity</b> trains. In particular, the quality of that service is very low in the South of Italy. Regional trains show a good performance in the entire country, while FrecciaRossa high-speed trains have a surprisingly bad performance in the entire country. <br><br>You can use the dropdown below to select the train type you want to see on the map. By hovering with the mouse on a region, you can see the average delay of trains in that region and the number of trains registered in considered period.",
-                "it": "La mappa mostra che in Italia ci sono forti differenze regionali nella puntualità dei treni <b>InterCity</b>. Il sud Italia presenta ritardi molto più significativi che il nord. I treni regionali hanno una buona puntualità in tutta Italia mentre i treni ad alta velocità FrecciaRossa hanno ritardi medi sorprendenti in tutto il Paese. <br><br>Puoi usare il menu a tendina qui sotto per scegliere il tipo did treno da mostrare sulla mappa. Muovi il mouse su una regione per visualizzare il ritardo medio dei treni in quella regione e il numero di treni registrati nel periodo considerato."
+                "it": "La mappa mostra che in Italia ci sono forti differenze regionali nella puntualità dei treni <b>InterCity</b>. Il sud Italia presenta ritardi molto più significativi che il nord. I treni regionali hanno una buona puntualità in tutta Italia mentre i treni ad alta velocità FrecciaRossa hanno ritardi medi sorprendenti in tutto il Paese. <br><br>Puoi usare il menu a tendina qui sotto per scegliere il tipo di treno da mostrare sulla mappa. Muovi il mouse su una regione per visualizzare il ritardo medio dei treni in quella regione e il numero di treni registrati nel periodo considerato."
             }
         },
         "tooltip_delay_train": {
@@ -176,8 +176,8 @@
             "it": "Cerca un treno"
         },
         "description": {
-            "en": "Here you can search a train and obtain information on its historical delays. Type in the search box your train number (i.e. IC 655)<br><b>Note: this project is still under development and data shown is from December 2022 to March 2023.</b>",
-            "it": "Qui puoi cercare un treno e ottenere informazioni sui suoi ritardi passati. Digita il numero di un treno (es. IC 655)<br><b>Nota: questo progetto è ancora in fase di sviluppo e i dati riportati si riferiscono al periodo compreso tra dicembre 2022 e marzo 2023.</b>"
+            "en": "Here you can search a train and obtain information on its historical delays. Type in the search box your train number (i.e. IC 655)<br><b>Note: this project is still under development and data shown is from 2023.</b>",
+            "it": "Qui puoi cercare un treno e ottenere informazioni sui suoi ritardi passati. Digita il numero di un treno (es. IC 655)<br><b>Nota: questo progetto è ancora in fase di sviluppo e i dati riportati si riferiscono al 2023.</b>"
         },
         "avg_delay_per_stop": {
             "en": "Average delay per stop",

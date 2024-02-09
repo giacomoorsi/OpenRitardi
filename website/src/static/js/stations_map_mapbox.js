@@ -155,8 +155,8 @@ function generatePopupHTML(d) {
 
 // scales the color linearly
 let colormap = d3.scaleLinear()
-  .domain([-10, 0, 3, 7, 10])
-  .range(['#10ad0a', '#10ad0a', '#f7f414', '#e81710', '#e81710']);
+    .domain([-10, 0, 5, 10])
+    .range(['#10ad0a', '#10ad0a', '#f7f414', '#e81710']);
 
 const valuesToShow = [1000, 5000, 10_000]
 

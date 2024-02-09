@@ -84,7 +84,7 @@ function populate_dropdown_from_dataset(dataset) {
     let table_length = dataset.length > MAX_RESULTS ? MAX_RESULTS : dataset.length;
     for (let i = 0; i < table_length; i++) {
         let train = dataset[i];
-        dropdown_content_html += '<tr onclick="displayTrainInformation(' + train['train_id'] + ')"><td>' + train['train_class'] + ' ' + train['train_number'] + ' </td><td>' + train['train_departure_stop_name'] + '</td><td>' + train['train_arrival_stop_name'] + '</td></tr>';
+        dropdown_content_html += '<tr onclick="displayTrainInformation(\'' + train['train_id'] + '\')"><td>' + train['train_class'] + ' ' + train['train_number'] + ' </td><td>' + train['train_departure_stop_name'] + '</td><td>' + train['train_arrival_stop_name'] + '</td></tr>';
     }
     if (dataset.length === 0) {
         dropdown_content_html = '<tr><td colspan="3" class="uk-text-center">Sorry, we couldn\'t find any trains matching your search</td></tr>';

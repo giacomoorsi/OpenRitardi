@@ -3,7 +3,7 @@ We welcome any sort of analysis on Italian train data. We would be happy to know
 
 ## Introduction
 ### What is OpenRitardi?
-OpenRitardi is the first visualization tool of train delays in Italy. You can see the performance of each station and train, and see where the railway service can be improved. The project showcases how open data allows accountability and improves quality of service. OpenRitardi is *open source project* published on [GitHub](https://github.com/giacomoorsi/OpenRitardi).
+OpenRitardi is the first visualization tool of train delays in Italy. You can see the performance of each station and train, and see where the railway service can be improved. The project showcases how open data allows accountability and improves quality of service. OpenRitardi is *open source project* published on [GitHub](https://github.com/giacomoorsi/OpenRitardi). The project currently shows aggregated statistics for 2023. 
 
 ### Data source
 Data is not collected by OpenRitardi directly, but it collected by [TrainStats](https://trainstats.altervista.org/), which is a service that downloads daily data from ViaggiaTreno, the Trenitalia's website that lists train delays. OpenRitardi's contributors have used and analyzed the data, and we are happy to provide you with some guidelines. 

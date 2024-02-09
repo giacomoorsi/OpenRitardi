@@ -160,3 +160,7 @@ website/node_modules
 
 # remove output dir
 website/dist
+
+# remove extracted data in website
+website/data/*.zip
+website/data/*.csv
