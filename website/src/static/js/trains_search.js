@@ -80,7 +80,7 @@ let dropdown_content = document.getElementById('search_options_dropdown_content'
 function populate_dropdown_from_dataset(dataset) {
     let dropdown_content = document.getElementById('search_options_dropdown_content');
     let dropdown_content_html = '';
-    let MAX_RESULTS = 10;
+    let MAX_RESULTS = 100;
     let table_length = dataset.length > MAX_RESULTS ? MAX_RESULTS : dataset.length;
     for (let i = 0; i < table_length; i++) {
         let train = dataset[i];
