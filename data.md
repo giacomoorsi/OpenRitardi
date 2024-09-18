@@ -1,5 +1,5 @@
 # OpenRitardi Datasets
-We welcome any sort of analysis on Italian train data. We would be happy to know about your data analysis ideas and even provide you with feedback and support in that. If you obtain some interesting findings or data visualizations, we would be glad to include them on OpenRitardi's [website](https://www.openritardi.it) and credit you accordingly. 
+We welcome any sort of analysis on Italian train data. We would be happy to know about your data analysis ideas and even provide you with feedback and support in that. If you obtain some interesting findings or data visualizations, we would be glad to include them on OpenRitardi's [website](https://www.openritardi.org) and credit you accordingly. 
 
 ## Introduction
 ### What is OpenRitardi?
@@ -35,9 +35,9 @@ Feel free to explore it, invent new visualizations or use cases. Below we provid
 The charts and the data displayed on OpenRitardi's website are computed in [this notebook](https://github.com/giacomoorsi/OpenRitardi/blob/master/data/data_generation.ipynb). 
 Some of the analysis we carried out are: 
 
-- obtaining the average delay of trains in each station, stratified by day of the week and train class, accessible on OpenRitardi's [homepage](https://www.openritardi.it)
-- obtaining statistics on delays for the stops of a given train, accessible [here](https://www.openritardi.it/trains.html)
-- obtaining the list of best/worst train stations and trains and a regional comparison of train delays, accessive [here](https://www.openritardi.it/statistics.html)
+- obtaining the average delay of trains in each station, stratified by day of the week and train class, accessible on OpenRitardi's [homepage](https://www.openritardi.org)
+- obtaining statistics on delays for the stops of a given train, accessible [here](https://www.openritardi.org/trains.html)
+- obtaining the list of best/worst train stations and trains and a regional comparison of train delays, accessive [here](https://www.openritardi.org/statistics.html)
 
 ### Proposed ideas
 Something already explored by OpenRitardi for Italy: 

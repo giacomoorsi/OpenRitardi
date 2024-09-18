@@ -7,7 +7,7 @@ The goal of this project is to fill this gap, by making data available to the ge
 
 \**Ritardi* is the Italian for *Delays*
 ## Website
-The website is available at [openritardi.it](https://openritardi.it)
+The website is available at [openritardi.org](https://openritardi.org)
 
 ## OpenRitardi datasets
 We publish tutorials on how to use OpenRitardi data and replicate our analysis. We welcome contribution with new processing ideas and visualization. You can find more information [on this page](data.md) ([here](data.pdf) in pdf).
@@ -27,7 +27,7 @@ We have decided to launch an open-source community to support this project with 
 2. nobody in the community should feel any pressure to do any activity  
 
 and with the following goals:
-- expanding the current openritardi.it with new countries
+- expanding the current openritardi.org with new countries
 - expanding the data science part of the project
 - find a way to make it impactful
 - build a community driven by the interest of open data and data science
@@ -38,7 +38,7 @@ and with the following goals:
 ---
 
 # Contribution 🤝
-Contribution is welcome! Please use the [Roadmap](https://github.com/giacomoorsi/OpenRitardi/issues/1) to suggest new features, feel free to open new issues. We will credit you on the [About](https://www.openritardi.it/about.html) page on the website.
+Contribution is welcome! Please use the [Roadmap](https://github.com/giacomoorsi/OpenRitardi/issues/1) to suggest new features, feel free to open new issues. We will credit you on the [About](https://www.openritardi.org/about.html) page on the website.
 
 ### Setup
 #### Website
